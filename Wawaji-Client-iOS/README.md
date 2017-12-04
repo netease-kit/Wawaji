@@ -152,7 +152,7 @@ Content-Type: application/x-www-form-urlencoded;charset=utf-8
 |----------------------|--------------------|--------|-----|
 | sid  | String  | 提供初始化，注册，内部管理类管理的功能 | 否 |
 		
-    	* 在参数对应的sid未失效时，会返回sid对应的账号信息，并更新账号失效时间，其他情况（sid已失效或者sid不存在）会重新返回一个可用账号。.
+  在参数对应的sid未失效时，会返回sid对应的账号信息，并更新账号失效时间，其他情况（sid已失效或者sid不存在）会重新返回一个可用账号。.
 
 
   * 返回说明
@@ -229,11 +229,11 @@ Content-Type: application/x-www-form-urlencoded;charset=utf-8
 
      * 队列格式约定
        
-	       队列 array<item> 里只需要有账号昵称信息
-	       
-	       item 约定为键值对: {key:value},  key 为字符串 ， value 为字典形式 json 字符串 (由于 SDK 接口限制无法直接使用字典)。
-	       
-	       item 具体形式约定: {"accid" : "{\"nick\":\"user_nick\"}"}
+       队列 array<item> 里只需要有账号昵称信息
+
+       item 约定为键值对: {key:value},  key 为字符串 ， value 为字典形式 json 字符串 (由于 SDK 接口限制无法直接使用字典)。
+
+       item 具体形式约定: {"accid" : "{\"nick\":\"user_nick\"}"}
  
 * **<p id = "demo_ctrlService"> 控制业务 NTESControlService </p>**
 
