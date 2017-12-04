@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="920,623" mininfo="920,623" caption="0,0,0,42" sizebox="4,4,4,4" shadowattached="false">
+	<VBox bkcolor="bk_listitem_selected" bordersize="1,1,1,1" bordercolor="splitline_level1" padding="1,1,1,1" >
+        <HBox class="caption" height="42">
+            <Label name="title" font="1" normaltextcolor="dark2color" valign="center" margin="6" />
+            
+            <Control width="stretch"/>
+            
+            <HBox width="auto" height="auto" valign="top" margin="0,6">
+                <Button class="btn_wnd_min" name="minbtn" margin="4,6,0,0"/>
+                <Box width="21" margin="4,6,0,0">
+                    <Button class="btn_wnd_max" name="maxbtn"/>
+                    <Button class="btn_wnd_restore" name="restorebtn" visible="false"/>
+                </Box>
+                <Button class="btn_wnd_close" name="close_btn" margin="4,6,0,0"/>
+            </HBox>
+        </HBox>			
+		<HBox margin="0,0,0,0" width="stretch" height="stretch" bkcolor="bk_wnd_lightcolor" bordersize="1,1,1,1" bordercolor="splitline_level1" padding="1,1,1,1">
+			<VBox name="video_show" childmargin="1" bordersize="0,0,1,0" bordercolor="splitline_level1" padding="0,0,1,0">
+				<HBox childmargin="1" >
+					<BitmapControl name="video_screen_0" bkimage="screen_bg.png">  
+					</BitmapControl>
+					<BitmapControl name="video_screen_1" bkimage="screen_bg.png">
+					</BitmapControl>
+				</HBox>
+				<HBox childmargin="1" >
+					<BitmapControl name="video_screen_2" bkimage="screen_bg.png">
+					</BitmapControl>
+					<BitmapControl name="video_screen_3" bkimage="screen_bg.png">
+					</BitmapControl>
+				</HBox>
+				<HBox width="stretch" height="30" >
+					<Label font="1" normaltextcolor="dark2color" valign="center" margin="6" text="摄像头1"  />
+					<Combo class="list" height="30" name="camera1" margin="0,0,0,0" bkimage="file='../public/combo/normal.png' corner='5,5,30,5'"/>
+					<Label font="1" normaltextcolor="dark2color" valign="center" margin="6" text="摄像头2"  />
+					<Combo class="list" height="30" name="camera2" margin="0,0,0,0" bkimage="file='../public/combo/normal.png' corner='5,5,30,5'"/>
+					<CheckBox class="checkbox_font12" valign="center" name="paint_cb" margin="10,0,5,0" font="2" text="预览"/>
+					<CheckBox class="checkbox_font12" valign="center" name="stop" margin="10,0,5,0" font="2" text="中断"/>
+				</HBox>
+			</VBox>
+			<VBox width="300" >
+				<RichEdit name="log_edit" width="stretch" rich="true" multiline="true" readonly="true" vscrollbar="true" autovscroll="true" font="1" />
+			</VBox>
+		</HBox>
+    </VBox>
+</Window>

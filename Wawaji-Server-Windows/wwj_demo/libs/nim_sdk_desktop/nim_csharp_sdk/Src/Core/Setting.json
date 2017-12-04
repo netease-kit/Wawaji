@@ -1,0 +1,11 @@
+﻿{
+  "sdk": {
+    "version": "1.8.0.0",
+    "dependents": [
+      { "nim.dll": "1.8.0.0" },
+      { "nim_audio.dll": "1.1.0.0" },
+      { "nim_tools_http.dll": "1.1.0.0" },
+      { "nrtc.dll": "1.1.0.0" }
+    ]
+  }
+}

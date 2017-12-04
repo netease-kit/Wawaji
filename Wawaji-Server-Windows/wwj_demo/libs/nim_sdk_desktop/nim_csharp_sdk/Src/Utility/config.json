@@ -1,0 +1,43 @@
+﻿{
+  "sdk": {
+    "version": "2.0.0.0",
+    "dependents": [
+      { "nim.dll": "2.0.0.0" },
+      { "nim_audio.dll": "1.1.0.0" },
+      { "nim_tools_http.dll": "1.1.0.0" },
+      { "nrtc.dll": "1.1.0.0" },
+      { "nim_chatroom.dll": "2.0.0.0" }
+    ]
+  },
+  "configs": {
+    "index": 1,
+    "list": [
+      {
+        "server": {
+          "global_config": {
+            "db_encrypt_key": "fe416640c8e8a72734219e1847ad2547",
+            "preload_attach": true,
+            "sdk_log_level": 6,
+            "private_server_setting": true
+          },
+          "private_server_setting": {
+            "lbs": "http://223.252.220.223/lbs/conf",
+            "nos_lbs": "http://wanproxy.127.net/lbs?version=1.0",
+            "default_link": [ "223.252.220.222:2000" ],
+            "default_nos_upload": [ "http://223.252.196.40" ],
+            "default_nos_download": [ "http://nos.netease.com" ],
+            "default_nos_access": null,
+            "rsa_public_key_module": "00e3afe7487e6ac9ba69654672672ceddc05d5b6d45850859f11004d30c63e3691afd55722bdd2c75232b2a3561776201f84def8e38c508870ca7692b4228b0478e104460d7800dee3b6c3d8f89746ed48ee94f268f42b9c911437083d3815624e50de3fec3c0ec8ab3e71d5bdce3f4291d20538893cacdc00da9d1390ee39440d"
+          }
+        },
+        "appkey": "fe416640c8e8a72734219e1847ad2547",
+        "roomlistserver": "https://apptest.netease.im/api/chatroom/homeList"
+      },
+      {
+        "server": "",
+        "appkey": "45c6af3c98409b18a84451215d0bdd6e",
+        "roomlistserver": "https://app.netease.im/api/chatroom/homeList"
+      }
+    ]
+  }
+}

@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="stdafx.cpp" />
+    <ClCompile Include="api\nim_livestreaming_cpp.cpp">
+      <Filter>api</Filter>
+    </ClCompile>
+    <ClCompile Include="util\nls_sdk_util.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="api\nim_livestreaming_cpp.h">
+      <Filter>api</Filter>
+    </ClInclude>
+    <ClInclude Include="include\nlss_api.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\nlss_childvideo_api.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\nlss_define.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="include\nlss_type.h">
+      <Filter>include</Filter>
+    </ClInclude>
+    <ClInclude Include="util\nls_build_config.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="util\nls_sdk_util.h">
+      <Filter>util</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="ReadMe.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="api">
+      <UniqueIdentifier>{6906d94f-2733-4b3b-aa8d-4da977745a6b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="util">
+      <UniqueIdentifier>{a0285ef3-0a3f-4ba4-9822-7623c569d20d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="include">
+      <UniqueIdentifier>{0416dc5e-5d55-41d0-b664-5533c102664f}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

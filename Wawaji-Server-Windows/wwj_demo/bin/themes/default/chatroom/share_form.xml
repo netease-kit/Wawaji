@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="350,180" caption="0,0,0,34" textid="STRID_MEETING_SHARE_TITLE">
+    <VBox name="edit_box" bkcolor="bk_wnd_lightcolor" width="380" height="auto">
+        <HBox class="caption">
+            <Label class="font_title" name="title" textid="STRID_MEETING_SHARE_TITLE" width="stretch" valign="center" normaltextcolor="darkcolor"/>
+            <Button class="btn_wnd_close" name="closebtn" margin="4,6,0,0"/>
+        </HBox>
+		<Label margin="20,20,20,0" font="2" text="请复制到第三方播放器中打开" normaltextcolor="darkcolor"/>
+		<HBox margin="20,15,20,35" height="60" >
+		
+			<VBox height="auto" bkimage="file='../public/edit/edit0.png' corner='10,10,10,10'" padding="2,4,2,4">
+				<RichEdit class="simple" readonly="true" name="edit" height="20" font="2" vscrollbar="false" autovscroll="false" rich="true"/>
+			</VBox>
+
+			<VBox height="auto" width="auto" margin="20,0,0,20">
+				<Button  class="btn_global_green_80x30" name="button_ok" text="复制" margin="0,0,10,0" />
+				<Label name="tip" margin="0,10,0,0" font="2" text="复制地址成功" normaltextcolor="dark2color" visible="false"/>
+			</VBox>
+		</HBox>
+    </VBox>
+</Window>

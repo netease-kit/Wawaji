@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window size="370,400" caption="0,0,0,34" textid="STRID_MEETING_DOC_TITLE">
+    <VBox width="370" height="400" bkcolor="bk_wnd_lightcolor">
+        <HBox class="caption">
+            <Label class="font_title" name="title" textid="STRID_MEETING_DOC_TITLE" width="stretch" valign="center" normaltextcolor="darkcolor"/>
+            <Button class="btn_wnd_min" name="minbtn" margin="4,6,0,0"/>
+            <Button class="btn_wnd_close" name="closebtn" margin="4,6,0,0"/>
+        </HBox>
+        <VListBox class="list" name="list_docs" vscrollunit="80" />
+
+        <Control class="splitline_hor_level1" name="split_line" valign="bottom"/>
+        <ButtonBox name="btn_upload" height="34" text="上传课件(PDF/PPT)" normaltextcolor="textdefaultcolor" normalcolor="doc_normal_bk" hotcolor="doc_hot_bk" pushedcolor="doc_pushed_bk">
+
+        </ButtonBox>
+    </VBox>
+</Window>
