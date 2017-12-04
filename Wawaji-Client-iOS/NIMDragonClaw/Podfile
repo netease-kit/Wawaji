@@ -1,0 +1,10 @@
+# Uncomment the next line to define a global platform for your project
+platform :ios, '8.0'
+
+target 'NIMDragonClaw' do
+  pod 'NIMSDK', '~> 4.5.0'
+  pod 'RealReachability', '~>1.1.9'
+  pod 'CocoaLumberjack', '~> 3.2.1'
+  pod 'SVProgressHUD', '~> 2.1.2'
+  pod 'Toast', '~> 4.0.0'
+end
