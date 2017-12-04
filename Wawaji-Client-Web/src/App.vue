@@ -232,18 +232,24 @@ export default {
     },
     onWaitForGame () {
       this.gameState = 'QUEUE'
-      this.gameStatePrev = 'QUEUE'
+      setTimeout(() => {
+        this.gameStatePrev = 'QUEUE'
+      }, 50)
     },
     onGamePrepare () {
       this.playAction.resetCamera()
       this.gameState = 'PREPARE'
-      this.gameStatePrev = 'PREPARE'
+      setTimeout(() => {
+        this.gameStatePrev = 'PREPARE'
+      }, 50)
     },
     onGameStart () {
       this.videoPlayer.resetCamera()
       this.showRTC = true
       this.gameState = 'GAMEIN'
-      this.gameStatePrev = 'GAMEIN'
+      setTimeout(() => {
+        this.gameStatePrev = 'GAMEIN'
+      }, 50)
     },
     onWebRTCSetup () {
       // this.videoPlayer.resetCamera()
