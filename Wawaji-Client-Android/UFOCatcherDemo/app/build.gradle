@@ -1,0 +1,114 @@
+apply plugin: 'com.android.application'
+
+def static getGitVersion() {
+    try {
+        return 'git rev-parse --short HEAD'.execute().text.trim()
+    } catch (Throwable th) {
+        th.printStackTrace()
+        return ""
+    }
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+    buildToolsVersion rootProject.ext.buildToolsVersion
+
+    defaultConfig {
+        applicationId "com.netease.nim.ufocatcher.demo"
+
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        buildConfigField "String", "GIT_REVISION", "\"${getGitVersion()}\""
+        buildConfigField "String", "BUILD_DATE", "\"${new Date().toLocaleString()}\""
+
+        ndk {
+            abiFilters "armeabi-v7a", "x86", "arm64-v8a", "x86_64"
+        }
+    }
+
+    signingConfigs {
+        debug {
+            storeFile file("sign/debug.keystore")
+        }
+
+        release {
+            storeFile file('sign/release.keystore')
+            storePassword 'thisiskeystorepassword'
+            keyAlias 'nim_demo'
+            keyPassword 'thisiskeypassword'
+        }
+    }
+
+    buildTypes {
+        debug {
+            signingConfig signingConfigs.debug
+        }
+
+        release {
+            shrinkResources true
+            minifyEnabled true
+            zipAlignEnabled true
+            signingConfig signingConfigs.release
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    repositories {
+        flatDir {
+            dirs 'libs'
+        }
+    }
+
+    sourceSets {
+        main {
+            manifest.srcFile 'src/main/AndroidManifest.xml'
+            jniLibs.srcDirs = ['libs']
+            assets.srcDirs = ['src/main/assets']
+            res.srcDirs = ['src/main/res']
+        }
+    }
+
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+
+    dexOptions {
+        preDexLibraries false
+        jumboMode true
+        javaMaxHeapSize "4g"
+    }
+
+    compileOptions {
+        sourceCompatibility rootProject.ext.sourceCompatibility
+        targetCompatibility rootProject.ext.targetCompatibility
+    }
+}
+
+dependencies {
+    // jars
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    // support
+    implementation 'com.android.support:appcompat-v7:26.1.0'
+    implementation 'com.android.support:recyclerview-v7:26.1.0'
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    implementation 'com.android.support:design:26.1.0'
+
+    // 云信SDK
+    implementation 'com.netease.nimlib:basesdk:4.4.0'
+    implementation 'com.netease.nimlib:avchat:4.4.0'
+    implementation 'com.netease.nimlib:chatroom:4.4.0'
+    implementation 'com.netease.nimlib:nrtc:4.4.0'
+
+    // butter knife
+    implementation 'com.jakewharton:butterknife:8.8.1'
+    annotationProcessor 'com.jakewharton:butterknife-compiler:8.8.1'
+
+    // glide
+    implementation 'com.github.bumptech.glide:glide:4.2.0'
+    annotationProcessor 'com.github.bumptech.glide:compiler:4.2.0'
+    implementation 'jp.wasabeef:glide-transformations:3.0.1'
+}

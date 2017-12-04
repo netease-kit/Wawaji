@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="520,410" mininfo="520,410" caption="0,0,0,600" textid="STRING_TIPS">
+    <Box bkcolor="bk_wnd_lightcolor" >
+        <VBox width="auto" height="auto" halign="center" valign="center">
+			<Control width="auto" height="auto" bkimage="creating.gif" halign="center" />
+			<Label normaltextcolor="lightcolor" width="auto" height="auto" valign="center" margin="0,15,0,0" font="19" text="启动中..." halign="center" />
+        </VBox>
+    </Box>
+</Window>

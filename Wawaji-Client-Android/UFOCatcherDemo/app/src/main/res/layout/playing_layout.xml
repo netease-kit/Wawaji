@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/playing_layout"
+    android:layout_width="match_parent"
+    android:layout_height="210dp"
+    android:layout_alignParentBottom="true"
+    android:paddingLeft="40dip"
+    android:paddingRight="40dip"
+    android:visibility="gone"
+    tools:showIn="@layout/activity_live">
+
+    <ImageButton
+        android:id="@+id/left_btn"
+        android:layout_width="@dimen/play_btn_size"
+        android:layout_height="@dimen/play_btn_size"
+        android:layout_above="@+id/down_btn"
+        android:layout_alignParentLeft="true"
+        android:background="@drawable/go_left_selector" />
+
+    <ImageButton
+        android:id="@+id/down_btn"
+        android:layout_width="@dimen/play_btn_size"
+        android:layout_height="@dimen/play_btn_size"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="30dip"
+        android:layout_toRightOf="@id/left_btn"
+        android:background="@drawable/go_down_selector" />
+
+    <ImageButton
+        android:id="@+id/right_btn"
+        android:layout_width="@dimen/play_btn_size"
+        android:layout_height="@dimen/play_btn_size"
+        android:layout_above="@id/down_btn"
+        android:layout_toRightOf="@id/down_btn"
+        android:background="@drawable/go_right_selector" />
+
+    <ImageButton
+        android:id="@+id/up_btn"
+        android:layout_width="@dimen/play_btn_size"
+        android:layout_height="@dimen/play_btn_size"
+        android:layout_above="@id/left_btn"
+        android:layout_toRightOf="@id/left_btn"
+        android:background="@drawable/go_up_selector" />
+
+    <LinearLayout
+        android:id="@+id/go_btn_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:background="@drawable/go_selector"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/go_image"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="15dp"
+            android:background="@mipmap/ic_go_word" />
+
+        <TextView
+            android:id="@+id/go_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textColor="@color/white"
+            android:textSize="15sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -140,11 +140,11 @@ Android 娃娃机 Demo 工程基于以下开发
 
 #### 目录结构
 
-![Alt text](./目录结构.png)
+![Alt text](./res/目录结构.png)
 
 #### 总体结构
 
-![Alt text](./总体结构.png)
+![Alt text](./res/总体结构.png)
 
 #### 详细说明
 

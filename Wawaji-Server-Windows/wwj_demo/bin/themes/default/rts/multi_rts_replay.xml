@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window caption="0,0,0,34">
+    <VBox width="auto" height="auto" bkcolor="bk_wnd_lightcolor">
+        <HBox class="caption">
+            <Label class="font_title" name="title" width="stretch" valign="center" normaltextcolor="darkcolor"/>
+            <Button class="btn_wnd_close" name="closebtn" margin="10,6,0,0"/>
+        </HBox>
+		<HBox name="board_page" height="auto" width="auto" >
+			<Box name="board_box" height="489" width="652" >
+			</Box>
+			<Control class="splitline_ver_level1"/>
+			<VBox width="auto" >
+				<VListBox class="list" name="members_list" vscrollunit="80"/>
+				<Control class="splitline_hor_level1"/>
+				<VBox height="auto" width="auto" padding="10,10,10,10" childmargin="10" >
+					<HBox height="auto" width="auto" childmargin="10" >
+						<Button  class="btn_global_green_80x30" name="btn_load" normaltextcolor="white" text="载入数据"/>
+						<Label valign="center" font="2" height="20" text="进度（秒）" />
+						<Label name="time_pos" margin="0,0,10,0" valign="center" font="2" height="20" text="0/0" />
+					</HBox>
+					<HBox height="auto" width="auto" childmargin="10" >
+						<Button  class="btn_global_green_80x30" name="btn_end" normaltextcolor="white" text="最终画面"/>
+						<Combo class="list" height="30" width="80" name="play_speed" bkimage="file='../public/combo/normal.png' corner='5,5,30,5'"/>
+					</HBox>
+					<HBox height="auto" width="auto" childmargin="10" >
+						<Button  class="btn_global_green_80x30" name="btn_start" normaltextcolor="white" text="播放"/>
+						<Button  class="btn_global_green_80x30" name="btn_pause" normaltextcolor="white" text="暂停"/>
+						<Button  class="btn_global_green_80x30" name="btn_stop" normaltextcolor="white" text="停止"/>
+					</HBox>
+				</VBox>
+			</VBox>
+		</HBox>
+    </VBox>
+</Window>

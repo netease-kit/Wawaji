@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/textMessageLayout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/nim_message_view_bottom"
+    android:paddingBottom="8dp"
+    android:paddingTop="8dp">
+
+    <TextView
+        android:id="@+id/buttonSendMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/nim_message_button_bottom_send_selector"
+        android:contentDescription=""
+        android:gravity="center"
+        android:layout_marginRight="6dp"
+        android:layout_alignParentRight="true"
+        android:text="@string/send"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+    <EditText
+        android:id="@+id/editTextMessage"
+        android:textCursorDrawable="@null"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_toLeftOf="@id/buttonSendMessage"
+        android:autoLink="web|email|phone"
+        android:background="@drawable/nim_message_input_edittext_box"
+        android:maxHeight="72dip"
+        android:maxLines="4"
+        android:textSize="16sp" />
+
+</RelativeLayout>
