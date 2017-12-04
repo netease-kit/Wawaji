@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#5bcabc</color>
+    <color name="colorPrimaryDark">#5bcabc</color>
+    <color name="colorAccent">#5bcabc</color>
+    <color name="black">#000000</color>
+
+    <color name="white">#ffffff</color>
+    <color name="color_black_333333">#333333</color>
+    <color name="color_green_C2FF9A">#C2FF9A</color>
+    <color name="color_gray_alpha40">#66000000</color>
+    <color name="im_list_select_hover">#dbdbdb</color>
+    <color name="transparent">#00000000</color>
+    <color name="color_green_00cdbc">#00cdbc</color>
+    <color name="color_green_5ccd84">#5CCD84</color>
+    <color name="color_red_ff7849">#ff7849</color>
+</resources>
