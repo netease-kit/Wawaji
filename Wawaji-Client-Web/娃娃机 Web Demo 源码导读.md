@@ -1,8 +1,5 @@
 ## 娃娃机 Web Demo 源码导读
 
-### 体验地址
-- [webrtc-娃娃机](https://app.netease.im/webdemo/wawaji)
-
 ### 工程说明
 
 本娃娃机 Demo 工程基于以下开发
