@@ -18,7 +18,7 @@
     <div v-if="gameState=='INIT'" class="control">
       <div v-if="currentPlayer" class="tip">{{currentPlayer}}正在游戏中…</div>
       <div class="queue-player">前面还有<span class="light">{{queueCount}}</span>人排队</div>
-      <button class="begin" @click="waitForGame">开始排队</button>
+      <button v-show="showPrepareBtn" class="begin" @click="waitForGame">开始排队</button>
     </div>
     <div v-else-if="gameState=='QUEUE'" class="control">
       <div v-if="currentPlayer" class="tip">{{currentPlayer}}正在游戏中…</div>
@@ -75,6 +75,11 @@ export default {
       } else if (curVal === 'GAMEIN') {
         this.gameCountDownNum = 30
         this.gameCountDown()
+      } else if (curVal === 'INIT') {
+        this.showPrepareBtn = false
+        setTimeout(() => {
+          this.showPrepareBtn = true
+        }, 500)
       }
       console.log(curVal, oldVal)
     }
@@ -85,7 +90,8 @@ export default {
       gameCountDownTimer: null,
       countDownNum: 10,
       countDownTimer: null,
-      audioMute: false
+      audioMute: false,
+      showPrepareBtn: true,
     }
   },
   methods: {
@@ -125,14 +131,17 @@ export default {
       this.playAction.playGrab()
     },
     waitForGame () {
-      this.chatroomAction.waitForGame()
+      setTimeout(() => {
+        console.log(new Date(), 'wait for game')
+        this.chatroomAction.waitForGame()
+      }, 10)
       this.$emit('onWaitForGame')
     },
     giveUpForGame () {
       setTimeout(() => {
         // UI更新以后才真正发出放弃游戏请求
         this.chatroomAction.giveUpForGame()
-      }, 1)
+      }, 10)
       this.$emit('onGameEnd')
     },
     countDown () {
@@ -164,11 +173,10 @@ export default {
     },
     endGame () {
       clearTimeout(this.countDownTimer)
+      console.log(new Date(), 'end game')
       this.videoRTC.endGame()
-      setTimeout(() => {
-        // 真正发出放弃游戏请求以后才UI更新
-        this.$emit('onGameEnd')
-      }, 100)
+      // 真正发出放弃游戏请求以后才UI更新
+      this.$emit('onGameEnd')
     }
   },
   computed: {
