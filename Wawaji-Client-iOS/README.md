@@ -1,4 +1,10 @@
-## 网易云信在线抓娃娃 iOS 实现说明
+## 网易云信在线抓娃娃 iOS Demo 使用说明
+
+* Demo 工程位于 `NIMDragonClaw` 目录
+* 工程依赖 `CocoaPods`，请在工程根目录运行 `pod install`
+* 在使用中有任何问题可以提 issue 联系我们
+
+## 网易云信在线抓娃娃 iOS Demo 实现说明
 
 ### 一）终端整体业务逻辑介绍
 
