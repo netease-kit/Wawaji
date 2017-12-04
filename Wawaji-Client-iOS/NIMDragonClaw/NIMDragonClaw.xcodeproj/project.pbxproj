@@ -1,0 +1,905 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6A0353E9A2A5A0CF21146351 /* libPods-NIMDragonClaw.a in Frameworks */ = {isa = PBXBuildFile; fileRef = D53E535AD46EB658F70AC396 /* libPods-NIMDragonClaw.a */; };
+		831801DB1FCBF60000CA1631 /* NTESNetwork.m in Sources */ = {isa = PBXBuildFile; fileRef = 831801D41FCBF60000CA1631 /* NTESNetwork.m */; };
+		831801DC1FCBF60000CA1631 /* NTESFetchDragroomTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 831801D71FCBF60000CA1631 /* NTESFetchDragroomTask.m */; };
+		831801DD1FCBF60000CA1631 /* NTESLoginTask.m in Sources */ = {isa = PBXBuildFile; fileRef = 831801D91FCBF60000CA1631 /* NTESLoginTask.m */; };
+		831802051FCBF64C00CA1631 /* color.c in Sources */ = {isa = PBXBuildFile; fileRef = 831801E01FCBF64C00CA1631 /* color.c */; };
+		831802061FCBF64C00CA1631 /* common.c in Sources */ = {isa = PBXBuildFile; fileRef = 831801E11FCBF64C00CA1631 /* common.c */; };
+		831802071FCBF64C00CA1631 /* rgb.fsh.c in Sources */ = {isa = PBXBuildFile; fileRef = 831801E31FCBF64C00CA1631 /* rgb.fsh.c */; };
+		831802081FCBF64C00CA1631 /* yuv420p.fsh.c in Sources */ = {isa = PBXBuildFile; fileRef = 831801E41FCBF64C00CA1631 /* yuv420p.fsh.c */; };
+		831802091FCBF64C00CA1631 /* yuv420sp.fsh.c in Sources */ = {isa = PBXBuildFile; fileRef = 831801E51FCBF64C00CA1631 /* yuv420sp.fsh.c */; };
+		8318020A1FCBF64C00CA1631 /* yuv444p10le.fsh.c in Sources */ = {isa = PBXBuildFile; fileRef = 831801E61FCBF64C00CA1631 /* yuv444p10le.fsh.c */; };
+		8318020B1FCBF64C00CA1631 /* renderer.c in Sources */ = {isa = PBXBuildFile; fileRef = 831801E81FCBF64C00CA1631 /* renderer.c */; };
+		8318020C1FCBF64C00CA1631 /* renderer_rgb.c in Sources */ = {isa = PBXBuildFile; fileRef = 831801E91FCBF64C00CA1631 /* renderer_rgb.c */; };
+		8318020D1FCBF64C00CA1631 /* renderer_yuv420p.c in Sources */ = {isa = PBXBuildFile; fileRef = 831801EA1FCBF64C00CA1631 /* renderer_yuv420p.c */; };
+		8318020E1FCBF64C00CA1631 /* renderer_yuv420sp.c in Sources */ = {isa = PBXBuildFile; fileRef = 831801EB1FCBF64C00CA1631 /* renderer_yuv420sp.c */; };
+		8318020F1FCBF64C00CA1631 /* renderer_yuv444p10le.c in Sources */ = {isa = PBXBuildFile; fileRef = 831801EC1FCBF64C00CA1631 /* renderer_yuv444p10le.c */; };
+		831802101FCBF64C00CA1631 /* shader.c in Sources */ = {isa = PBXBuildFile; fileRef = 831801ED1FCBF64C00CA1631 /* shader.c */; };
+		831802111FCBF64C00CA1631 /* mvp.vsh.c in Sources */ = {isa = PBXBuildFile; fileRef = 831801EF1FCBF64C00CA1631 /* mvp.vsh.c */; };
+		831802121FCBF64C00CA1631 /* ijksdl_timer.c in Sources */ = {isa = PBXBuildFile; fileRef = 831801FC1FCBF64C00CA1631 /* ijksdl_timer.c */; };
+		831802131FCBF64C00CA1631 /* IJKSDLGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 831802041FCBF64C00CA1631 /* IJKSDLGLView.m */; };
+		8326A68E1FC6736E00A8AF40 /* NTESCanvas.m in Sources */ = {isa = PBXBuildFile; fileRef = 8326A68D1FC6736E00A8AF40 /* NTESCanvas.m */; };
+		8326A6911FC678BD00A8AF40 /* NTESGLView.m in Sources */ = {isa = PBXBuildFile; fileRef = 8326A68F1FC678BC00A8AF40 /* NTESGLView.m */; };
+		832C48ED1FC2FABF00BBC6BB /* NTESDragroomListCellCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 832C48EC1FC2FABF00BBC6BB /* NTESDragroomListCellCollectionViewCell.m */; };
+		8335671F1FBEB01300542505 /* NTESAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 8335671E1FBEB01300542505 /* NTESAppDelegate.m */; };
+		833567271FBEB01300542505 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 833567261FBEB01300542505 /* Assets.xcassets */; };
+		8335672D1FBEB01300542505 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8335672C1FBEB01300542505 /* main.m */; };
+		833567941FBED30900542505 /* NSDictionary+NTESJson.m in Sources */ = {isa = PBXBuildFile; fileRef = 833567801FBED30900542505 /* NSDictionary+NTESJson.m */; };
+		8335679D1FBED30900542505 /* UIView+NTES.m in Sources */ = {isa = PBXBuildFile; fileRef = 833567921FBED30900542505 /* UIView+NTES.m */; };
+		838958941FC278720061DB28 /* NTESDragroomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 8389588E1FC278700061DB28 /* NTESDragroomViewController.m */; };
+		838958951FC278720061DB28 /* NTESDragroomListViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838958901FC278710061DB28 /* NTESDragroomListViewController.m */; };
+		838958961FC278720061DB28 /* NTESLivePlayerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 838958931FC278710061DB28 /* NTESLivePlayerViewController.m */; };
+		838958A41FC278890061DB28 /* libNELivePlayer.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 838958A11FC278890061DB28 /* libNELivePlayer.a */; };
+		838958A51FC278890061DB28 /* libNMCBasicModule.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 838958A21FC278890061DB28 /* libNMCBasicModule.a */; };
+		838958A61FC278890061DB28 /* libyuv.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 838958A31FC278890061DB28 /* libyuv.a */; };
+		838958A81FC279E30061DB28 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = 838958A71FC279E30061DB28 /* libresolv.tbd */; };
+		838958AC1FC283680061DB28 /* NTESLoginService.m in Sources */ = {isa = PBXBuildFile; fileRef = 838958AB1FC283680061DB28 /* NTESLoginService.m */; };
+		838958AF1FC283CD0061DB28 /* NTESControlService.m in Sources */ = {isa = PBXBuildFile; fileRef = 838958AE1FC283CD0061DB28 /* NTESControlService.m */; };
+		838958B21FC284600061DB28 /* NTESInfoManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 838958B11FC284600061DB28 /* NTESInfoManager.m */; };
+		838958B81FC2CFE80061DB28 /* NTESUser.m in Sources */ = {isa = PBXBuildFile; fileRef = 838958B71FC2CFE80061DB28 /* NTESUser.m */; };
+		838958BB1FC2D0DD0061DB28 /* NTESInfoService.m in Sources */ = {isa = PBXBuildFile; fileRef = 838958BA1FC2D0DD0061DB28 /* NTESInfoService.m */; };
+		838958C01FC2D9B50061DB28 /* NTESDragroom.m in Sources */ = {isa = PBXBuildFile; fileRef = 838958BF1FC2D9B50061DB28 /* NTESDragroom.m */; };
+		839030081FCD41F800060997 /* sound.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 839030071FCD41F800060997 /* sound.mp3 */; };
+		83C699DB1FC593460012AEC8 /* NTESService.m in Sources */ = {isa = PBXBuildFile; fileRef = 83C699DA1FC593460012AEC8 /* NTESService.m */; };
+		A10826DD1FC6DDE6008A16AC /* NTESChatView.m in Sources */ = {isa = PBXBuildFile; fileRef = A10826DA1FC6DDE4008A16AC /* NTESChatView.m */; };
+		A10826DE1FC6DDE6008A16AC /* NTESNormalMsgView.m in Sources */ = {isa = PBXBuildFile; fileRef = A10826DB1FC6DDE5008A16AC /* NTESNormalMsgView.m */; };
+		A10826DF1FC6DDE6008A16AC /* NTESNormalMessageCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A10826DC1FC6DDE6008A16AC /* NTESNormalMessageCell.m */; };
+		A13E961A1FD167A00004D84E /* UIAlertView+NTESBlock.m in Sources */ = {isa = PBXBuildFile; fileRef = A13E96191FD167A00004D84E /* UIAlertView+NTESBlock.m */; };
+		A14FABC91FCBD3B80076D754 /* NTESTryResultView.m in Sources */ = {isa = PBXBuildFile; fileRef = A14FABC81FCBD3B80076D754 /* NTESTryResultView.m */; };
+		A1A9A13D1FC41E7F001F80A6 /* UIButton+Captcha.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A9A13B1FC41E7E001F80A6 /* UIButton+Captcha.m */; };
+		A1A9A1451FC53F9E001F80A6 /* NTESGrowingTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A9A13F1FC53F9E001F80A6 /* NTESGrowingTextView.m */; };
+		A1A9A1461FC53F9E001F80A6 /* NTESTextInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A9A1401FC53F9E001F80A6 /* NTESTextInputView.m */; };
+		A1A9A1471FC53F9E001F80A6 /* NTESGrowingInternalTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A1A9A1441FC53F9E001F80A6 /* NTESGrowingInternalTextView.m */; };
+		A1E9047E1FC63161004F33CF /* NTESBottomBar.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E9047D1FC63161004F33CF /* NTESBottomBar.m */; };
+		A1E904A41FC6BD48004F33CF /* NTESTextMessage.m in Sources */ = {isa = PBXBuildFile; fileRef = A1E904A21FC6BD47004F33CF /* NTESTextMessage.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		2D849CC6055A0AEE8F36A636 /* Pods-NIMDragonClaw.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIMDragonClaw.release.xcconfig"; path = "Pods/Target Support Files/Pods-NIMDragonClaw/Pods-NIMDragonClaw.release.xcconfig"; sourceTree = "<group>"; };
+		831801D31FCBF60000CA1631 /* NTESNetwork.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESNetwork.h; sourceTree = "<group>"; };
+		831801D41FCBF60000CA1631 /* NTESNetwork.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESNetwork.m; sourceTree = "<group>"; };
+		831801D61FCBF60000CA1631 /* NTESFetchDragroomTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESFetchDragroomTask.h; sourceTree = "<group>"; };
+		831801D71FCBF60000CA1631 /* NTESFetchDragroomTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESFetchDragroomTask.m; sourceTree = "<group>"; };
+		831801D81FCBF60000CA1631 /* NTESLoginTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESLoginTask.h; sourceTree = "<group>"; };
+		831801D91FCBF60000CA1631 /* NTESLoginTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESLoginTask.m; sourceTree = "<group>"; };
+		831801DA1FCBF60000CA1631 /* NTESNetworkTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESNetworkTask.h; sourceTree = "<group>"; };
+		831801E01FCBF64C00CA1631 /* color.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = color.c; sourceTree = "<group>"; };
+		831801E11FCBF64C00CA1631 /* common.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = common.c; sourceTree = "<group>"; };
+		831801E31FCBF64C00CA1631 /* rgb.fsh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = rgb.fsh.c; sourceTree = "<group>"; };
+		831801E41FCBF64C00CA1631 /* yuv420p.fsh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yuv420p.fsh.c; sourceTree = "<group>"; };
+		831801E51FCBF64C00CA1631 /* yuv420sp.fsh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yuv420sp.fsh.c; sourceTree = "<group>"; };
+		831801E61FCBF64C00CA1631 /* yuv444p10le.fsh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = yuv444p10le.fsh.c; sourceTree = "<group>"; };
+		831801E71FCBF64C00CA1631 /* internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = internal.h; sourceTree = "<group>"; };
+		831801E81FCBF64C00CA1631 /* renderer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = renderer.c; sourceTree = "<group>"; };
+		831801E91FCBF64C00CA1631 /* renderer_rgb.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = renderer_rgb.c; sourceTree = "<group>"; };
+		831801EA1FCBF64C00CA1631 /* renderer_yuv420p.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = renderer_yuv420p.c; sourceTree = "<group>"; };
+		831801EB1FCBF64C00CA1631 /* renderer_yuv420sp.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = renderer_yuv420sp.c; sourceTree = "<group>"; };
+		831801EC1FCBF64C00CA1631 /* renderer_yuv444p10le.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = renderer_yuv444p10le.c; sourceTree = "<group>"; };
+		831801ED1FCBF64C00CA1631 /* shader.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = shader.c; sourceTree = "<group>"; };
+		831801EF1FCBF64C00CA1631 /* mvp.vsh.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = mvp.vsh.c; sourceTree = "<group>"; };
+		831801F01FCBF64C00CA1631 /* ijksdl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl.h; sourceTree = "<group>"; };
+		831801F11FCBF64C00CA1631 /* ijksdl_class.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_class.h; sourceTree = "<group>"; };
+		831801F21FCBF64C00CA1631 /* ijksdl_endian.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_endian.h; sourceTree = "<group>"; };
+		831801F31FCBF64C00CA1631 /* ijksdl_error.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_error.h; sourceTree = "<group>"; };
+		831801F41FCBF64C00CA1631 /* ijksdl_fourcc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_fourcc.h; sourceTree = "<group>"; };
+		831801F51FCBF64C00CA1631 /* ijksdl_gles2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_gles2.h; sourceTree = "<group>"; };
+		831801F61FCBF64C00CA1631 /* ijksdl_inc_internal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_inc_internal.h; sourceTree = "<group>"; };
+		831801F71FCBF64C00CA1631 /* ijksdl_log.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_log.h; sourceTree = "<group>"; };
+		831801F81FCBF64C00CA1631 /* ijksdl_misc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_misc.h; sourceTree = "<group>"; };
+		831801F91FCBF64C00CA1631 /* ijksdl_mutex.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_mutex.h; sourceTree = "<group>"; };
+		831801FA1FCBF64C00CA1631 /* ijksdl_stdinc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_stdinc.h; sourceTree = "<group>"; };
+		831801FB1FCBF64C00CA1631 /* ijksdl_thread.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_thread.h; sourceTree = "<group>"; };
+		831801FC1FCBF64C00CA1631 /* ijksdl_timer.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = ijksdl_timer.c; sourceTree = "<group>"; };
+		831801FD1FCBF64C00CA1631 /* ijksdl_timer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_timer.h; sourceTree = "<group>"; };
+		831801FE1FCBF64C00CA1631 /* ijksdl_video.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_video.h; sourceTree = "<group>"; };
+		831801FF1FCBF64C00CA1631 /* ijksdl_vout.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_vout.h; sourceTree = "<group>"; };
+		831802011FCBF64C00CA1631 /* ijksdl_ios.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_ios.h; sourceTree = "<group>"; };
+		831802021FCBF64C00CA1631 /* ijksdl_vout_overlay_videotoolbox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ijksdl_vout_overlay_videotoolbox.h; sourceTree = "<group>"; };
+		831802031FCBF64C00CA1631 /* IJKSDLGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IJKSDLGLView.h; sourceTree = "<group>"; };
+		831802041FCBF64C00CA1631 /* IJKSDLGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = IJKSDLGLView.m; sourceTree = "<group>"; };
+		8326A68C1FC6736E00A8AF40 /* NTESCanvas.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESCanvas.h; sourceTree = "<group>"; };
+		8326A68D1FC6736E00A8AF40 /* NTESCanvas.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTESCanvas.m; sourceTree = "<group>"; };
+		8326A68F1FC678BC00A8AF40 /* NTESGLView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESGLView.m; sourceTree = "<group>"; };
+		8326A6901FC678BD00A8AF40 /* NTESGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESGLView.h; sourceTree = "<group>"; };
+		832C48EB1FC2FABF00BBC6BB /* NTESDragroomListCellCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESDragroomListCellCollectionViewCell.h; sourceTree = "<group>"; };
+		832C48EC1FC2FABF00BBC6BB /* NTESDragroomListCellCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESDragroomListCellCollectionViewCell.m; sourceTree = "<group>"; };
+		8335671A1FBEB01300542505 /* NIMDragonClaw.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NIMDragonClaw.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8335671D1FBEB01300542505 /* NTESAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESAppDelegate.h; sourceTree = "<group>"; };
+		8335671E1FBEB01300542505 /* NTESAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTESAppDelegate.m; sourceTree = "<group>"; };
+		833567261FBEB01300542505 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8335672B1FBEB01300542505 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8335672C1FBEB01300542505 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		8335676A1FBEBDD000542505 /* NIMDragonClaw-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NIMDragonClaw-Prefix.pch"; sourceTree = "<group>"; };
+		8335676B1FBEBEA300542505 /* NTESGlobalMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESGlobalMacro.h; sourceTree = "<group>"; };
+		8335677F1FBED30900542505 /* NSDictionary+NTESJson.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+NTESJson.h"; sourceTree = "<group>"; };
+		833567801FBED30900542505 /* NSDictionary+NTESJson.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+NTESJson.m"; sourceTree = "<group>"; };
+		833567911FBED30900542505 /* UIView+NTES.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+NTES.h"; sourceTree = "<group>"; };
+		833567921FBED30900542505 /* UIView+NTES.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+NTES.m"; sourceTree = "<group>"; };
+		8389588E1FC278700061DB28 /* NTESDragroomViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESDragroomViewController.m; sourceTree = "<group>"; };
+		8389588F1FC278700061DB28 /* NTESDragroomListViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESDragroomListViewController.h; sourceTree = "<group>"; };
+		838958901FC278710061DB28 /* NTESDragroomListViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESDragroomListViewController.m; sourceTree = "<group>"; };
+		838958911FC278710061DB28 /* NTESDragroomViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESDragroomViewController.h; sourceTree = "<group>"; };
+		838958921FC278710061DB28 /* NTESLivePlayerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESLivePlayerViewController.h; sourceTree = "<group>"; };
+		838958931FC278710061DB28 /* NTESLivePlayerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESLivePlayerViewController.m; sourceTree = "<group>"; };
+		838958981FC278800061DB28 /* NTESDragroom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESDragroom.h; sourceTree = "<group>"; };
+		8389589E1FC278890061DB28 /* NELivePlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELivePlayer.h; sourceTree = "<group>"; };
+		8389589F1FC278890061DB28 /* NELivePlayerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NELivePlayerController.h; sourceTree = "<group>"; };
+		838958A11FC278890061DB28 /* libNELivePlayer.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNELivePlayer.a; sourceTree = "<group>"; };
+		838958A21FC278890061DB28 /* libNMCBasicModule.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libNMCBasicModule.a; sourceTree = "<group>"; };
+		838958A31FC278890061DB28 /* libyuv.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libyuv.a; sourceTree = "<group>"; };
+		838958A71FC279E30061DB28 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		838958AA1FC283680061DB28 /* NTESLoginService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESLoginService.h; sourceTree = "<group>"; };
+		838958AB1FC283680061DB28 /* NTESLoginService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTESLoginService.m; sourceTree = "<group>"; };
+		838958AD1FC283CD0061DB28 /* NTESControlService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESControlService.h; sourceTree = "<group>"; };
+		838958AE1FC283CD0061DB28 /* NTESControlService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTESControlService.m; sourceTree = "<group>"; };
+		838958B01FC284600061DB28 /* NTESInfoManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESInfoManager.h; sourceTree = "<group>"; };
+		838958B11FC284600061DB28 /* NTESInfoManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTESInfoManager.m; sourceTree = "<group>"; };
+		838958B61FC2CFE80061DB28 /* NTESUser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESUser.h; sourceTree = "<group>"; };
+		838958B71FC2CFE80061DB28 /* NTESUser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTESUser.m; sourceTree = "<group>"; };
+		838958B91FC2D0DD0061DB28 /* NTESInfoService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESInfoService.h; sourceTree = "<group>"; };
+		838958BA1FC2D0DD0061DB28 /* NTESInfoService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTESInfoService.m; sourceTree = "<group>"; };
+		838958BF1FC2D9B50061DB28 /* NTESDragroom.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESDragroom.m; sourceTree = "<group>"; };
+		839030071FCD41F800060997 /* sound.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = sound.mp3; sourceTree = "<group>"; };
+		83C699D91FC593460012AEC8 /* NTESService.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESService.h; sourceTree = "<group>"; };
+		83C699DA1FC593460012AEC8 /* NTESService.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTESService.m; sourceTree = "<group>"; };
+		A10826D81FC6DDE3008A16AC /* NTESNormalMsgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESNormalMsgView.h; sourceTree = "<group>"; };
+		A10826D91FC6DDE4008A16AC /* NTESChatView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESChatView.h; sourceTree = "<group>"; };
+		A10826DA1FC6DDE4008A16AC /* NTESChatView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESChatView.m; sourceTree = "<group>"; };
+		A10826DB1FC6DDE5008A16AC /* NTESNormalMsgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESNormalMsgView.m; sourceTree = "<group>"; };
+		A10826DC1FC6DDE6008A16AC /* NTESNormalMessageCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESNormalMessageCell.m; sourceTree = "<group>"; };
+		A10826E01FC6DE06008A16AC /* NTESNormalMessageCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESNormalMessageCell.h; sourceTree = "<group>"; };
+		A13E96181FD167A00004D84E /* UIAlertView+NTESBlock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+NTESBlock.h"; sourceTree = "<group>"; };
+		A13E96191FD167A00004D84E /* UIAlertView+NTESBlock.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+NTESBlock.m"; sourceTree = "<group>"; };
+		A14FABC71FCBD3B80076D754 /* NTESTryResultView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = NTESTryResultView.h; sourceTree = "<group>"; };
+		A14FABC81FCBD3B80076D754 /* NTESTryResultView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = NTESTryResultView.m; sourceTree = "<group>"; };
+		A175439A1FC7EA3D00BF3023 /* NTESControlCommandDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESControlCommandDefine.h; sourceTree = "<group>"; };
+		A1A9A13B1FC41E7E001F80A6 /* UIButton+Captcha.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Captcha.m"; sourceTree = "<group>"; };
+		A1A9A13C1FC41E7F001F80A6 /* UIButton+Captcha.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIButton+Captcha.h"; sourceTree = "<group>"; };
+		A1A9A13F1FC53F9E001F80A6 /* NTESGrowingTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESGrowingTextView.m; sourceTree = "<group>"; };
+		A1A9A1401FC53F9E001F80A6 /* NTESTextInputView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESTextInputView.m; sourceTree = "<group>"; };
+		A1A9A1411FC53F9E001F80A6 /* NTESGrowingInternalTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESGrowingInternalTextView.h; sourceTree = "<group>"; };
+		A1A9A1421FC53F9E001F80A6 /* NTESGrowingTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESGrowingTextView.h; sourceTree = "<group>"; };
+		A1A9A1431FC53F9E001F80A6 /* NTESTextInputView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESTextInputView.h; sourceTree = "<group>"; };
+		A1A9A1441FC53F9E001F80A6 /* NTESGrowingInternalTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESGrowingInternalTextView.m; sourceTree = "<group>"; };
+		A1E9047C1FC63161004F33CF /* NTESBottomBar.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESBottomBar.h; sourceTree = "<group>"; };
+		A1E9047D1FC63161004F33CF /* NTESBottomBar.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESBottomBar.m; sourceTree = "<group>"; };
+		A1E904A21FC6BD47004F33CF /* NTESTextMessage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NTESTextMessage.m; sourceTree = "<group>"; };
+		A1E904A31FC6BD48004F33CF /* NTESTextMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NTESTextMessage.h; sourceTree = "<group>"; };
+		D53E535AD46EB658F70AC396 /* libPods-NIMDragonClaw.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NIMDragonClaw.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA4BF0CAB6541113F6F59FC9 /* Pods-NIMDragonClaw.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NIMDragonClaw.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NIMDragonClaw/Pods-NIMDragonClaw.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		833567171FBEB01300542505 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A0353E9A2A5A0CF21146351 /* libPods-NIMDragonClaw.a in Frameworks */,
+				838958A51FC278890061DB28 /* libNMCBasicModule.a in Frameworks */,
+				838958A81FC279E30061DB28 /* libresolv.tbd in Frameworks */,
+				838958A61FC278890061DB28 /* libyuv.a in Frameworks */,
+				838958A41FC278890061DB28 /* libNELivePlayer.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		831801D21FCBF60000CA1631 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				831801D31FCBF60000CA1631 /* NTESNetwork.h */,
+				831801D41FCBF60000CA1631 /* NTESNetwork.m */,
+				831801D51FCBF60000CA1631 /* Task */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		831801D51FCBF60000CA1631 /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				831801D61FCBF60000CA1631 /* NTESFetchDragroomTask.h */,
+				831801D71FCBF60000CA1631 /* NTESFetchDragroomTask.m */,
+				831801D81FCBF60000CA1631 /* NTESLoginTask.h */,
+				831801D91FCBF60000CA1631 /* NTESLoginTask.m */,
+				831801DA1FCBF60000CA1631 /* NTESNetworkTask.h */,
+			);
+			path = Task;
+			sourceTree = "<group>";
+		};
+		831801DE1FCBF64C00CA1631 /* ijksdl */ = {
+			isa = PBXGroup;
+			children = (
+				831801DF1FCBF64C00CA1631 /* gles2 */,
+				831801F01FCBF64C00CA1631 /* ijksdl.h */,
+				831801F11FCBF64C00CA1631 /* ijksdl_class.h */,
+				831801F21FCBF64C00CA1631 /* ijksdl_endian.h */,
+				831801F31FCBF64C00CA1631 /* ijksdl_error.h */,
+				831801F41FCBF64C00CA1631 /* ijksdl_fourcc.h */,
+				831801F51FCBF64C00CA1631 /* ijksdl_gles2.h */,
+				831801F61FCBF64C00CA1631 /* ijksdl_inc_internal.h */,
+				831801F71FCBF64C00CA1631 /* ijksdl_log.h */,
+				831801F81FCBF64C00CA1631 /* ijksdl_misc.h */,
+				831801F91FCBF64C00CA1631 /* ijksdl_mutex.h */,
+				831801FA1FCBF64C00CA1631 /* ijksdl_stdinc.h */,
+				831801FB1FCBF64C00CA1631 /* ijksdl_thread.h */,
+				831801FC1FCBF64C00CA1631 /* ijksdl_timer.c */,
+				831801FD1FCBF64C00CA1631 /* ijksdl_timer.h */,
+				831801FE1FCBF64C00CA1631 /* ijksdl_video.h */,
+				831801FF1FCBF64C00CA1631 /* ijksdl_vout.h */,
+				831802001FCBF64C00CA1631 /* ios */,
+			);
+			path = ijksdl;
+			sourceTree = "<group>";
+		};
+		831801DF1FCBF64C00CA1631 /* gles2 */ = {
+			isa = PBXGroup;
+			children = (
+				831801E01FCBF64C00CA1631 /* color.c */,
+				831801E11FCBF64C00CA1631 /* common.c */,
+				831801E21FCBF64C00CA1631 /* fsh */,
+				831801E71FCBF64C00CA1631 /* internal.h */,
+				831801E81FCBF64C00CA1631 /* renderer.c */,
+				831801E91FCBF64C00CA1631 /* renderer_rgb.c */,
+				831801EA1FCBF64C00CA1631 /* renderer_yuv420p.c */,
+				831801EB1FCBF64C00CA1631 /* renderer_yuv420sp.c */,
+				831801EC1FCBF64C00CA1631 /* renderer_yuv444p10le.c */,
+				831801ED1FCBF64C00CA1631 /* shader.c */,
+				831801EE1FCBF64C00CA1631 /* vsh */,
+			);
+			path = gles2;
+			sourceTree = "<group>";
+		};
+		831801E21FCBF64C00CA1631 /* fsh */ = {
+			isa = PBXGroup;
+			children = (
+				831801E31FCBF64C00CA1631 /* rgb.fsh.c */,
+				831801E41FCBF64C00CA1631 /* yuv420p.fsh.c */,
+				831801E51FCBF64C00CA1631 /* yuv420sp.fsh.c */,
+				831801E61FCBF64C00CA1631 /* yuv444p10le.fsh.c */,
+			);
+			path = fsh;
+			sourceTree = "<group>";
+		};
+		831801EE1FCBF64C00CA1631 /* vsh */ = {
+			isa = PBXGroup;
+			children = (
+				831801EF1FCBF64C00CA1631 /* mvp.vsh.c */,
+			);
+			path = vsh;
+			sourceTree = "<group>";
+		};
+		831802001FCBF64C00CA1631 /* ios */ = {
+			isa = PBXGroup;
+			children = (
+				831802011FCBF64C00CA1631 /* ijksdl_ios.h */,
+				831802021FCBF64C00CA1631 /* ijksdl_vout_overlay_videotoolbox.h */,
+				831802031FCBF64C00CA1631 /* IJKSDLGLView.h */,
+				831802041FCBF64C00CA1631 /* IJKSDLGLView.m */,
+			);
+			path = ios;
+			sourceTree = "<group>";
+		};
+		832C48EA1FC2FABF00BBC6BB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				A14FABC61FCBD22C0076D754 /* resultView */,
+				A10826E01FC6DE06008A16AC /* NTESNormalMessageCell.h */,
+				A10826DC1FC6DDE6008A16AC /* NTESNormalMessageCell.m */,
+				A10826D91FC6DDE4008A16AC /* NTESChatView.h */,
+				A10826DA1FC6DDE4008A16AC /* NTESChatView.m */,
+				A10826D81FC6DDE3008A16AC /* NTESNormalMsgView.h */,
+				A10826DB1FC6DDE5008A16AC /* NTESNormalMsgView.m */,
+				A1E9047B1FC63161004F33CF /* BottomView */,
+				A1A9A13E1FC53F9E001F80A6 /* InputView */,
+				832C48EB1FC2FABF00BBC6BB /* NTESDragroomListCellCollectionViewCell.h */,
+				832C48EC1FC2FABF00BBC6BB /* NTESDragroomListCellCollectionViewCell.m */,
+				8326A68C1FC6736E00A8AF40 /* NTESCanvas.h */,
+				8326A68D1FC6736E00A8AF40 /* NTESCanvas.m */,
+				8326A6901FC678BD00A8AF40 /* NTESGLView.h */,
+				8326A68F1FC678BC00A8AF40 /* NTESGLView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		833567111FBEB01200542505 = {
+			isa = PBXGroup;
+			children = (
+				8335671C1FBEB01300542505 /* NIMDragonClaw */,
+				8335671B1FBEB01300542505 /* Products */,
+				AF69B8C2CD924407297F74CF /* Pods */,
+				CF685F5A74B0215BE2D75665 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		8335671B1FBEB01300542505 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8335671A1FBEB01300542505 /* NIMDragonClaw.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8335671C1FBEB01300542505 /* NIMDragonClaw */ = {
+			isa = PBXGroup;
+			children = (
+				833567341FBEB9A000542505 /* Classes */,
+				8335671D1FBEB01300542505 /* NTESAppDelegate.h */,
+				8335671E1FBEB01300542505 /* NTESAppDelegate.m */,
+				833567261FBEB01300542505 /* Assets.xcassets */,
+				8335676A1FBEBDD000542505 /* NIMDragonClaw-Prefix.pch */,
+				8335676B1FBEBEA300542505 /* NTESGlobalMacro.h */,
+				8335672B1FBEB01300542505 /* Info.plist */,
+				8335672C1FBEB01300542505 /* main.m */,
+				839030071FCD41F800060997 /* sound.mp3 */,
+			);
+			path = NIMDragonClaw;
+			sourceTree = "<group>";
+		};
+		833567341FBEB9A000542505 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				838958A91FC2834D0061DB28 /* Service */,
+				8335677C1FBED30900542505 /* Category */,
+				833567421FBEB9A000542505 /* Manager */,
+				838958971FC278800061DB28 /* Model */,
+				833567451FBEB9A000542505 /* UI */,
+				8389589B1FC278890061DB28 /* Vendors */,
+			);
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		833567421FBEB9A000542505 /* Manager */ = {
+			isa = PBXGroup;
+			children = (
+				838958B01FC284600061DB28 /* NTESInfoManager.h */,
+				838958B11FC284600061DB28 /* NTESInfoManager.m */,
+			);
+			path = Manager;
+			sourceTree = "<group>";
+		};
+		833567451FBEB9A000542505 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				832C48EA1FC2FABF00BBC6BB /* View */,
+				833567471FBEB9A000542505 /* ViewController */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		833567471FBEB9A000542505 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				8389588F1FC278700061DB28 /* NTESDragroomListViewController.h */,
+				838958901FC278710061DB28 /* NTESDragroomListViewController.m */,
+				838958911FC278710061DB28 /* NTESDragroomViewController.h */,
+				8389588E1FC278700061DB28 /* NTESDragroomViewController.m */,
+				838958921FC278710061DB28 /* NTESLivePlayerViewController.h */,
+				838958931FC278710061DB28 /* NTESLivePlayerViewController.m */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		8335677C1FBED30900542505 /* Category */ = {
+			isa = PBXGroup;
+			children = (
+				A1A9A13C1FC41E7F001F80A6 /* UIButton+Captcha.h */,
+				A1A9A13B1FC41E7E001F80A6 /* UIButton+Captcha.m */,
+				8335677F1FBED30900542505 /* NSDictionary+NTESJson.h */,
+				833567801FBED30900542505 /* NSDictionary+NTESJson.m */,
+				833567911FBED30900542505 /* UIView+NTES.h */,
+				833567921FBED30900542505 /* UIView+NTES.m */,
+				A13E96181FD167A00004D84E /* UIAlertView+NTESBlock.h */,
+				A13E96191FD167A00004D84E /* UIAlertView+NTESBlock.m */,
+			);
+			path = Category;
+			sourceTree = "<group>";
+		};
+		838958971FC278800061DB28 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A1E904A31FC6BD48004F33CF /* NTESTextMessage.h */,
+				A1E904A21FC6BD47004F33CF /* NTESTextMessage.m */,
+				838958981FC278800061DB28 /* NTESDragroom.h */,
+				838958BF1FC2D9B50061DB28 /* NTESDragroom.m */,
+				838958B61FC2CFE80061DB28 /* NTESUser.h */,
+				838958B71FC2CFE80061DB28 /* NTESUser.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8389589B1FC278890061DB28 /* Vendors */ = {
+			isa = PBXGroup;
+			children = (
+				831801DE1FCBF64C00CA1631 /* ijksdl */,
+				8389589C1FC278890061DB28 /* LivePlayer */,
+			);
+			path = Vendors;
+			sourceTree = "<group>";
+		};
+		8389589C1FC278890061DB28 /* LivePlayer */ = {
+			isa = PBXGroup;
+			children = (
+				8389589D1FC278890061DB28 /* include */,
+				838958A01FC278890061DB28 /* libs */,
+			);
+			path = LivePlayer;
+			sourceTree = "<group>";
+		};
+		8389589D1FC278890061DB28 /* include */ = {
+			isa = PBXGroup;
+			children = (
+				8389589E1FC278890061DB28 /* NELivePlayer.h */,
+				8389589F1FC278890061DB28 /* NELivePlayerController.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		838958A01FC278890061DB28 /* libs */ = {
+			isa = PBXGroup;
+			children = (
+				838958A11FC278890061DB28 /* libNELivePlayer.a */,
+				838958A21FC278890061DB28 /* libNMCBasicModule.a */,
+				838958A31FC278890061DB28 /* libyuv.a */,
+			);
+			path = libs;
+			sourceTree = "<group>";
+		};
+		838958A91FC2834D0061DB28 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+				831801D21FCBF60000CA1631 /* Network */,
+				A175439A1FC7EA3D00BF3023 /* NTESControlCommandDefine.h */,
+				838958AA1FC283680061DB28 /* NTESLoginService.h */,
+				838958AB1FC283680061DB28 /* NTESLoginService.m */,
+				838958AD1FC283CD0061DB28 /* NTESControlService.h */,
+				838958AE1FC283CD0061DB28 /* NTESControlService.m */,
+				838958B91FC2D0DD0061DB28 /* NTESInfoService.h */,
+				838958BA1FC2D0DD0061DB28 /* NTESInfoService.m */,
+				83C699D91FC593460012AEC8 /* NTESService.h */,
+				83C699DA1FC593460012AEC8 /* NTESService.m */,
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		A14FABC61FCBD22C0076D754 /* resultView */ = {
+			isa = PBXGroup;
+			children = (
+				A14FABC71FCBD3B80076D754 /* NTESTryResultView.h */,
+				A14FABC81FCBD3B80076D754 /* NTESTryResultView.m */,
+			);
+			path = resultView;
+			sourceTree = "<group>";
+		};
+		A1A9A13E1FC53F9E001F80A6 /* InputView */ = {
+			isa = PBXGroup;
+			children = (
+				A1A9A1431FC53F9E001F80A6 /* NTESTextInputView.h */,
+				A1A9A1401FC53F9E001F80A6 /* NTESTextInputView.m */,
+				A1A9A1421FC53F9E001F80A6 /* NTESGrowingTextView.h */,
+				A1A9A13F1FC53F9E001F80A6 /* NTESGrowingTextView.m */,
+				A1A9A1411FC53F9E001F80A6 /* NTESGrowingInternalTextView.h */,
+				A1A9A1441FC53F9E001F80A6 /* NTESGrowingInternalTextView.m */,
+			);
+			path = InputView;
+			sourceTree = "<group>";
+		};
+		A1E9047B1FC63161004F33CF /* BottomView */ = {
+			isa = PBXGroup;
+			children = (
+				A1E9047C1FC63161004F33CF /* NTESBottomBar.h */,
+				A1E9047D1FC63161004F33CF /* NTESBottomBar.m */,
+			);
+			path = BottomView;
+			sourceTree = "<group>";
+		};
+		AF69B8C2CD924407297F74CF /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				DA4BF0CAB6541113F6F59FC9 /* Pods-NIMDragonClaw.debug.xcconfig */,
+				2D849CC6055A0AEE8F36A636 /* Pods-NIMDragonClaw.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		CF685F5A74B0215BE2D75665 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				838958A71FC279E30061DB28 /* libresolv.tbd */,
+				D53E535AD46EB658F70AC396 /* libPods-NIMDragonClaw.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		833567191FBEB01300542505 /* NIMDragonClaw */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 833567301FBEB01300542505 /* Build configuration list for PBXNativeTarget "NIMDragonClaw" */;
+			buildPhases = (
+				108D9948D4F3BF2077AA40D1 /* [CP] Check Pods Manifest.lock */,
+				833567161FBEB01300542505 /* Sources */,
+				833567171FBEB01300542505 /* Frameworks */,
+				833567181FBEB01300542505 /* Resources */,
+				29BDD000254761C364344C74 /* [CP] Embed Pods Frameworks */,
+				866F892B4BFAC373FCF90EBC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NIMDragonClaw;
+			productName = NIMDragonClaw;
+			productReference = 8335671A1FBEB01300542505 /* NIMDragonClaw.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		833567121FBEB01200542505 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0910;
+				ORGANIZATIONNAME = Netease;
+				TargetAttributes = {
+					833567191FBEB01300542505 = {
+						CreatedOnToolsVersion = 9.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 833567151FBEB01200542505 /* Build configuration list for PBXProject "NIMDragonClaw" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 833567111FBEB01200542505;
+			productRefGroup = 8335671B1FBEB01300542505 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				833567191FBEB01300542505 /* NIMDragonClaw */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		833567181FBEB01300542505 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				839030081FCD41F800060997 /* sound.mp3 in Resources */,
+				833567271FBEB01300542505 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		108D9948D4F3BF2077AA40D1 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-NIMDragonClaw-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		29BDD000254761C364344C74 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NIMDragonClaw/Pods-NIMDragonClaw-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		866F892B4BFAC373FCF90EBC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-NIMDragonClaw/Pods-NIMDragonClaw-resources.sh",
+				"${PODS_ROOT}/NIMSDK/NIMAVChat/Resources/NMCVideoFilter.bundle",
+				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NIMDragonClaw/Pods-NIMDragonClaw-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		833567161FBEB01300542505 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				838958B21FC284600061DB28 /* NTESInfoManager.m in Sources */,
+				A10826DE1FC6DDE6008A16AC /* NTESNormalMsgView.m in Sources */,
+				831802061FCBF64C00CA1631 /* common.c in Sources */,
+				831802111FCBF64C00CA1631 /* mvp.vsh.c in Sources */,
+				A1A9A1471FC53F9E001F80A6 /* NTESGrowingInternalTextView.m in Sources */,
+				8335679D1FBED30900542505 /* UIView+NTES.m in Sources */,
+				831801DD1FCBF60000CA1631 /* NTESLoginTask.m in Sources */,
+				8318020C1FCBF64C00CA1631 /* renderer_rgb.c in Sources */,
+				8326A6911FC678BD00A8AF40 /* NTESGLView.m in Sources */,
+				8335672D1FBEB01300542505 /* main.m in Sources */,
+				83C699DB1FC593460012AEC8 /* NTESService.m in Sources */,
+				833567941FBED30900542505 /* NSDictionary+NTESJson.m in Sources */,
+				831802121FCBF64C00CA1631 /* ijksdl_timer.c in Sources */,
+				831802051FCBF64C00CA1631 /* color.c in Sources */,
+				A1E904A41FC6BD48004F33CF /* NTESTextMessage.m in Sources */,
+				A10826DD1FC6DDE6008A16AC /* NTESChatView.m in Sources */,
+				831802071FCBF64C00CA1631 /* rgb.fsh.c in Sources */,
+				838958AF1FC283CD0061DB28 /* NTESControlService.m in Sources */,
+				838958C01FC2D9B50061DB28 /* NTESDragroom.m in Sources */,
+				831801DC1FCBF60000CA1631 /* NTESFetchDragroomTask.m in Sources */,
+				838958941FC278720061DB28 /* NTESDragroomViewController.m in Sources */,
+				A10826DF1FC6DDE6008A16AC /* NTESNormalMessageCell.m in Sources */,
+				831802081FCBF64C00CA1631 /* yuv420p.fsh.c in Sources */,
+				831802131FCBF64C00CA1631 /* IJKSDLGLView.m in Sources */,
+				A1A9A1461FC53F9E001F80A6 /* NTESTextInputView.m in Sources */,
+				831802101FCBF64C00CA1631 /* shader.c in Sources */,
+				8326A68E1FC6736E00A8AF40 /* NTESCanvas.m in Sources */,
+				8318020D1FCBF64C00CA1631 /* renderer_yuv420p.c in Sources */,
+				831802091FCBF64C00CA1631 /* yuv420sp.fsh.c in Sources */,
+				8318020A1FCBF64C00CA1631 /* yuv444p10le.fsh.c in Sources */,
+				838958AC1FC283680061DB28 /* NTESLoginService.m in Sources */,
+				8318020B1FCBF64C00CA1631 /* renderer.c in Sources */,
+				8318020F1FCBF64C00CA1631 /* renderer_yuv444p10le.c in Sources */,
+				A1A9A1451FC53F9E001F80A6 /* NTESGrowingTextView.m in Sources */,
+				A14FABC91FCBD3B80076D754 /* NTESTryResultView.m in Sources */,
+				838958951FC278720061DB28 /* NTESDragroomListViewController.m in Sources */,
+				8318020E1FCBF64C00CA1631 /* renderer_yuv420sp.c in Sources */,
+				A13E961A1FD167A00004D84E /* UIAlertView+NTESBlock.m in Sources */,
+				838958BB1FC2D0DD0061DB28 /* NTESInfoService.m in Sources */,
+				831801DB1FCBF60000CA1631 /* NTESNetwork.m in Sources */,
+				A1E9047E1FC63161004F33CF /* NTESBottomBar.m in Sources */,
+				A1A9A13D1FC41E7F001F80A6 /* UIButton+Captcha.m in Sources */,
+				8335671F1FBEB01300542505 /* NTESAppDelegate.m in Sources */,
+				838958B81FC2CFE80061DB28 /* NTESUser.m in Sources */,
+				838958961FC278720061DB28 /* NTESLivePlayerViewController.m in Sources */,
+				832C48ED1FC2FABF00BBC6BB /* NTESDragroomListCellCollectionViewCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		8335672E1FBEB01300542505 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		8335672F1FBEB01300542505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		833567311FBEB01300542505 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DA4BF0CAB6541113F6F59FC9 /* Pods-NIMDragonClaw.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 569GNZ5392;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/NIMDragonClaw/NIMDragonClaw-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/M80AttributedLabel\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/NIMKit\"",
+					"\"${PODS_ROOT}/Headers/Public/NIMSDK\"",
+					"\"${PODS_ROOT}/Headers/Public/RealReachability\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/SVProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/TZImagePickerController\"",
+					"\"${PODS_ROOT}/Headers/Public/Toast\"",
+					"$(SRCROOT)/NIMDragonClaw/Classes/Vendors",
+				);
+				INFOPLIST_FILE = NIMDragonClaw/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NIMDragonClaw/Classes/Vendors/LivePlayer/libs",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Netease.NIMDragonClaw;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		833567321FBEB01300542505 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2D849CC6055A0AEE8F36A636 /* Pods-NIMDragonClaw.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 569GNZ5392;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "$(PROJECT_DIR)/NIMDragonClaw/NIMDragonClaw-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					"\"${PODS_ROOT}/Headers/Public\"",
+					"\"${PODS_ROOT}/Headers/Public/CocoaLumberjack\"",
+					"\"${PODS_ROOT}/Headers/Public/M80AttributedLabel\"",
+					"\"${PODS_ROOT}/Headers/Public/Masonry\"",
+					"\"${PODS_ROOT}/Headers/Public/NIMKit\"",
+					"\"${PODS_ROOT}/Headers/Public/NIMSDK\"",
+					"\"${PODS_ROOT}/Headers/Public/RealReachability\"",
+					"\"${PODS_ROOT}/Headers/Public/SDWebImage\"",
+					"\"${PODS_ROOT}/Headers/Public/SVProgressHUD\"",
+					"\"${PODS_ROOT}/Headers/Public/TZImagePickerController\"",
+					"\"${PODS_ROOT}/Headers/Public/Toast\"",
+					"$(SRCROOT)/NIMDragonClaw/Classes/Vendors",
+				);
+				INFOPLIST_FILE = NIMDragonClaw/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/NIMDragonClaw/LivePlayer/libs",
+					"$(PROJECT_DIR)/NIMDragonClaw/Classes/Vendors/LivePlayer/libs",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.Netease.NIMDragonClaw;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		833567151FBEB01200542505 /* Build configuration list for PBXProject "NIMDragonClaw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8335672E1FBEB01300542505 /* Debug */,
+				8335672F1FBEB01300542505 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		833567301FBEB01300542505 /* Build configuration list for PBXNativeTarget "NIMDragonClaw" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				833567311FBEB01300542505 /* Debug */,
+				833567321FBEB01300542505 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 833567121FBEB01200542505 /* Project object */;
+}
