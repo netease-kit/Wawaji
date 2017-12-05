@@ -1,5 +1,3 @@
-[TOC]
-
 # 网易云信在线抓娃娃Demo Server实现说明
 ## 1 概述
 ### 1.1 服务器业务说明
@@ -369,7 +367,8 @@ demo-server/src/main/resources/profile
 	}
 	```
 + 响应状态码  
-	具体请参考 [错误码表](demo错误码表)
+	400、403、600、800、900  
+	具体请参考 [错误码表](error_code.md)
 
 #### 4.2.2 控制娃娃机房间状态
 + 接口说明  
@@ -411,7 +410,8 @@ demo-server/src/main/resources/profile
 	}
 	```
 + 响应状态码  
-	具体请参考 [错误码表](demo错误码表)
+	400、403、800   
+	具体请参考 [错误码表](error_code.md)
 	
 ### 4.3 娃娃机调用接口
 #### 4.3.1 查询房间列表
@@ -463,7 +463,8 @@ demo-server/src/main/resources/profile
 	}
 	```
 + 响应状态码  
-具体请参考 [错误码表](demo错误码表) 
+	400、800、804  
+	具体请参考 [错误码表](error_code.md) 
 
 ### 4.4 玩家调用接口
 #### 4.4.1 获取游客账户信息
@@ -511,7 +512,8 @@ demo-server/src/main/resources/profile
 	}
 	```
 + 响应状态码  
-	具体请参考 [错误码表](demo错误码表) 
+	1100、1101、1102  
+	具体请参考 [错误码表](error_code.md) 
 
 #### 4.4.2 查询房间列表
 + 接口说明  
@@ -580,5 +582,6 @@ demo-server/src/main/resources/profile
 	}
 	```
 + 响应状态码  
-具体请参考 [错误码表](demo错误码表) 
+	400、401、600、800  
+	具体请参考 [错误码表](error_code.md) 
 
