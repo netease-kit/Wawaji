@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="requestLoggingFilter" class="com.netease.mmc.demo.common.filter.MDCRequestLoggingFilter">
+        <constructor-arg name="mainRequestLoggerName" value="requestLog"/>
+        <property name="includePayload" value="true"/>
+        <property name="includeJsonResponse" value="true"/>
+        <property name="alwaysPrintRequestBody" value = "true"/>
+        <property name="excludeRegex" value="/.+\.(jpg|jpeg|png|gif|js|css|swf|html|ico|ttf|eot|woff|svg)"/>
+    </bean>
+</beans>

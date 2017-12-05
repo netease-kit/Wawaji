@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netease.mmc.demo.dao.DollsRoomDao">
+    <resultMap id="dollsRoomDOMap" type="com.netease.mmc.demo.dao.domain.DollsRoomDO">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="room_id" jdbcType="BIGINT" property="roomId"/>
+        <result column="creator" jdbcType="VARCHAR" property="creator"/>
+        <result column="creator_token" jdbcType="VARCHAR" property="creatorToken"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="is_public" jdbcType="BIT" property="isPublic"/>
+        <result column="live_config" jdbcType="VARCHAR" property="liveConfig"
+                typeHandler="com.netease.mmc.demo.dao.handler.LiveConfigTypeHandler"/>
+        <result column="created_at" jdbcType="TIMESTAMP" property="createdAt"/>
+        <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt"/>
+    </resultMap>
+    <sql id="dollsRoomDO_Base_Column_List">
+        id, room_id, creator, creator_token, `name`, is_public, live_config, created_at,
+        updated_at
+    </sql>
+    <select id="findByPrimaryKey" parameterType="java.lang.Long" resultMap="dollsRoomDOMap">
+        select
+        <include refid="dollsRoomDO_Base_Column_List"/>
+        from demo_dolls_room
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <insert id="insertSelective" parameterType="com.netease.mmc.demo.dao.domain.DollsRoomDO">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into demo_dolls_room
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="roomId != null">
+                room_id,
+            </if>
+            <if test="creator != null">
+                creator,
+            </if>
+            <if test="creatorToken != null">
+                creator_token,
+            </if>
+            <if test="name != null">
+                `name`,
+            </if>
+            <if test="isPublic != null">
+                is_public,
+            </if>
+            <if test="liveConfig != null">
+                live_config,
+            </if>
+            created_at, updated_at,
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="roomId != null">
+                #{roomId,jdbcType=BIGINT},
+            </if>
+            <if test="creator != null">
+                #{creator,jdbcType=VARCHAR},
+            </if>
+            <if test="creatorToken != null">
+                #{creatorToken,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="isPublic != null">
+                #{isPublic,jdbcType=BIT},
+            </if>
+            <if test="liveConfig != null">
+                #{liveConfig,jdbcType=VARCHAR,typeHandler=com.netease.mmc.demo.dao.handler.LiveConfigTypeHandler},
+            </if>
+            <choose>
+                <when test="createdAt != null">
+                    #{createdAt},
+                </when>
+                <otherwise>
+                    now(),
+                </otherwise>
+            </choose>
+            <choose>
+                <when test="updatedAt != null">
+                    #{updatedAt},
+                </when>
+                <otherwise>
+                    now(),
+                </otherwise>
+            </choose>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.netease.mmc.demo.dao.domain.DollsRoomDO">
+        update demo_dolls_room
+        <set>
+            <if test="roomId != null">
+                room_id = #{roomId,jdbcType=BIGINT},
+            </if>
+            <if test="creator != null">
+                creator = #{creator,jdbcType=VARCHAR},
+            </if>
+            <if test="creatorToken != null">
+                creator_token = #{creatorToken,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                `name` = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="isPublic != null">
+                is_public = #{isPublic,jdbcType=BIT},
+            </if>
+            <if test="liveConfig != null">
+                live_config =
+                #{liveConfig,jdbcType=VARCHAR,typeHandler=com.netease.mmc.demo.dao.handler.LiveConfigTypeHandler},
+            </if>
+            <choose>
+                <when test="updatedAt != null">
+                    updated_at = #{updatedAt},
+                </when>
+                <otherwise>
+                    updated_at = now(),
+                </otherwise>
+            </choose>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateIsPublicByRoomId">
+        UPDATE demo_dolls_room SET is_public = #{isPublic} WHERE room_id = #{roomId}
+    </update>
+    <select id="listPublicRoom" resultMap="dollsRoomDOMap">
+        SELECT
+        <include refid="dollsRoomDO_Base_Column_List"/>
+        FROM demo_dolls_room WHERE is_public = 1
+        <if test="limit != null and offset != null ">
+            LIMIT #{limit} OFFSET #{offset}
+        </if>
+    </select>
+    <select id="findByAccid" resultMap="dollsRoomDOMap">
+        SELECT
+        <include refid="dollsRoomDO_Base_Column_List"/>
+        FROM demo_dolls_room WHERE creator = #{accid}
+    </select>
+    <select id="findByRoomId" resultMap="dollsRoomDOMap">
+        SELECT
+        <include refid="dollsRoomDO_Base_Column_List"/>
+        FROM demo_dolls_room WHERE room_id = #{roomId}
+    </select>
+</mapper>

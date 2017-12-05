@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+       http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+	   http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+
+    <import resource="classpath:applicationContext-requestLogger.xml"/>
+    <import resource="classpath:applicationContext-common-service.xml"/>
+    <import resource="classpath:applicationContext-session.xml"/>
+    <import resource="classpath:applicationContext-ip.xml"/>
+
+    <context:property-placeholder order="0" location="classpath:db.properties" ignore-unresolvable="true"/>
+    <context:property-placeholder order="0" location="classpath:config.properties" ignore-unresolvable="true"/>
+
+    <aop:aspectj-autoproxy/>
+</beans>

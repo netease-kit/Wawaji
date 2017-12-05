@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netease.mmc.demo.dao.SeqDao">
+  <resultMap id="seqDOMap" type="com.netease.mmc.demo.dao.domain.SeqDO">
+    <id column="id" jdbcType="BIGINT" property="id" />
+  </resultMap>
+  <sql id="seqDO_Base_Column_List">
+    id
+  </sql>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from demo_seq
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+  <insert id="insert" parameterType="com.netease.mmc.demo.dao.domain.SeqDO">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into demo_seq ()
+    values ()
+  </insert>
+  <insert id="insertSelective" parameterType="com.netease.mmc.demo.dao.domain.SeqDO">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into demo_seq
+    <trim prefix="(" suffix=")" suffixOverrides="," />
+    <trim prefix="values (" suffix=")" suffixOverrides="," />
+  </insert>
+</mapper>
