@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE generatorConfiguration PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd" >
+<generatorConfiguration>
+    <context id="mysql" targetRuntime="MyBatis3" defaultModelType="flat" introspectedColumnImpl="">
+        <property name="javaFileEncoding" value="UTF-8"/>
+        <property name="autoDelimitKeywords" value="true"/>
+        <property name="beginningDelimiter" value="`"/>
+        <property name="endingDelimiter" value="`"/>
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <plugin type="com.netease.mmc.demo.common.mybatis.generator.plugins.ToStringPlugin"/>
+        <plugin type="com.netease.mmc.demo.common.mybatis.generator.plugins.DisableExampleGeneratePlugin"/>
+        <plugin type="com.netease.mmc.demo.common.mybatis.generator.plugins.JavaClientCommentGeneratePlugin"/>
+        <plugin type="com.netease.mmc.demo.common.mybatis.generator.plugins.GenerateRulesOverwritePlugin"/>
+        <plugin type="com.netease.mmc.demo.common.mybatis.generator.plugins.MySqlCreatedAtUpdatedAtColumnAutoGeneratePlugin"/>
+        <plugin type="com.netease.mmc.demo.common.mybatis.generator.plugins.StatementIdRenamePlugin"/>
+        <commentGenerator type="com.netease.mmc.demo.common.mybatis.generator.extend.MysqlCommentGenerator"/>
+        <jdbcConnection driverClass="com.mysql.jdbc.Driver" connectionURL="jdbc:mysql://10.240.76.63:3306/appdemo"
+                        userId="admin" password=""/>
+        <javaTypeResolver type="com.netease.mmc.demo.common.mybatis.generator.extend.MysqlJavaTypeResolverImpl">
+            <property name="forceBigDecimals" value="true"/>
+            <property name="forceInteger" value="true"/>
+            <property name="tryNotWarpClass" value="true"/>
+        </javaTypeResolver>
+        <javaModelGenerator targetPackage="com.netease.mmc.demo.dao.domain" targetProject="src/main/java"/>
+        <sqlMapGenerator targetPackage="mybatis" targetProject="src/main/resources"/>
+        <javaClientGenerator targetPackage="com.netease.mmc.demo.dao" targetProject="src/main/java"
+                             type="XMLMAPPER"/>
+
+        <!-- 所有表的默认设置：
+          默认自增主键字段为id，如果不是需在table中单独配置generatedKey;
+          默认created_at在插入时如果为null则以now()自动替换，updated_at在insert和update时如果为null则以now()自动替换;
+           -->
+        <table tableName="demo_seq" domainObjectName="SeqDO" mapperName="SeqDao">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+        
+        <table tableName="demo_dolls_tourist" domainObjectName="TouristDO" mapperName="TouristDao">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+
+        <table tableName="demo_dolls_room" domainObjectName="DollsRoomDO" mapperName="DollsRoomDao">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+            <columnOverride column="live_config"
+                            javaType="com.netease.mmc.demo.dao.domain.DollsLiveConfigDO"
+                            typeHandler="com.netease.mmc.demo.dao.handler.LiveConfigTypeHandler"/>
+        </table>
+
+        <table tableName="demo_dolls_live" domainObjectName="DollsLiveDO" mapperName="DollsLiveDao">
+            <generatedKey column="id" sqlStatement="MySql" identity="true"/>
+        </table>
+    </context>
+</generatorConfiguration>

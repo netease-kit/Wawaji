@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:util="http://www.springframework.org/schema/util"
+	   xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util.xsd">
+    <!-- 白名单IP -->
+	<util:list id="whiteIpList" value-type="java.lang.String">
+		<value>127.0.0.1</value>
+	</util:list>
+
+	<!-- 内部ip白名单配置，指定能够访问房间管理接口的ip列表 -->
+	<bean id="internalIpInterceptor" class="com.netease.mmc.demo.web.interceptor.IpSecurityInterceptor">
+		<property name="ipFilter" value="true"/>
+		<property name="allowIpList">
+			<list>
+				<value>127.0.0.1</value>
+				<!--<value>192.168.1.*</value>-->
+				<!--<value>192.168.1.*-192.168.2.*</value>-->
+			</list>
+		</property>
+	</bean>
+
+	<!-- 娃娃机主机ip白名单配置，用于指定能够查询娃娃机主机信息的ip列表，默认关闭 -->
+	<bean id="catcherIpInterceptor" class="com.netease.mmc.demo.web.interceptor.IpSecurityInterceptor">
+		<property name="ipFilter" value="false"/>
+		<property name="allowIpList">
+			<list>
+				<value>192.168.1.*-192.168.2.*</value>
+			</list>
+		</property>
+	</bean>
+</beans>
