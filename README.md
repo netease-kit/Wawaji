@@ -18,13 +18,12 @@
 
 建议按照如下顺序阅读相应文档
 
-* [解决方案概述](http://dev.netease.im/docs/product/%E9%80%9A%E7%94%A8/%E7%BD%91%E6%98%93%E4%BA%91%E4%BF%A1%E5%9C%A8%E7%BA%BF%E6%8A%93%E5%A8%83%E5%A8%83%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88Demo%E8%AF%B4%E6%98%8E%E6%96%87%E6%A1%A3)
 * [Server-Windows 解决方案](./Wawaji-Server-Windows)
 * [Server-AppServer 解决方案](./Wawaji-Server-AppServer)
 * [Client-iOS 解决方案](./Wawaji-Client-iOS)
 * [Client-Android 解决方案](./Wawaji-Client-Android)
 * [Client-Web 解决方案](./Wawaji-Client-Web)
-
+* [Client-Html5 解决方案](./Wawaji-Client-Html5)
 
 
 
