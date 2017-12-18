@@ -7,45 +7,39 @@
 
 #include "nls_sdk_util.h"
 #include "base/util/string_util.h"
+#include "base/win32/path_util.h"
 
 namespace nim_livestream
 {
-	NLSSDKInstance::NLSSDKInstance()
-	{
-		instance_nls_ = NULL;
-	}
+	HINSTANCE NLSSDKInstance::instance_nls_ = NULL;
+	std::map<std::string, void*> NLSSDKInstance::function_map;
 
-	NLSSDKInstance::~NLSSDKInstance()
+	bool NLSSDKInstance::LoadSdkDll()
 	{
-		function_map.clear();
-	}
-
-	bool NLSSDKInstance::LoadSdkDll(const char *cur_module_dir, const char *sdk_dll_file_name)
-	{
-		std::string dir(cur_module_dir);
-		dir.append(sdk_dll_file_name);
-
+		if (instance_nls_)
+			return true;
+		std::wstring dir = nbase::win32::GetCurrentModuleDirectory() + L"live_stream\\";
 #if defined (WIN32)
-		std::wstring utf16_dir;
-		utf16_dir = nbase::UTF8ToUTF16(dir);
-		instance_nls_ = ::LoadLibraryEx(utf16_dir.c_str(), NULL, LOAD_WITH_ALTERED_SEARCH_PATH);
+		instance_nls_ = ::LoadLibraryEx((dir + L"LSMediaCapture.dll").c_str(), NULL, LOAD_WITH_ALTERED_SEARCH_PATH);
+		if (instance_nls_ == NULL)
+		{
+			assert(0);
+			return false;
+		}
+		//主动加载要用到的基础库，解决中文目录下sdk找不到这个库的路径的问题
+		::LoadLibraryEx((dir + L"libgcc_s_dw2-1.dll").c_str(), NULL, LOAD_WITH_ALTERED_SEARCH_PATH);
 #else
 		//int flag = RTLD_GLOBAL | RTLD_LAZY;  //如果是RTLD_GLOBAL，则静态库中定义的全局变量在共享库中名同地址也同
 		//int flag = RTLD_LOCAL | RTLD_LAZY;  //如果是RTLD_LOCAL，则静态库中定义的全局变量在共享库中名同地址不同
-		instance_nls_ = dlopen(dir.c_str(), RTLD_LAZY);//so必须是绝对路径，如Android系统下是“/data/data/{程序包名}/lib/{so文件名}”
+		std::string dir_utf8 = nbase::UTF16ToUTF8(dir);
+		instance_nls_ = dlopen((dir_utf8 + "LSMediaCapture.dll").c_str(), RTLD_LAZY);//so必须是绝对路径，如Android系统下是“/data/data/{程序包名}/lib/{so文件名}”
+		dlopen((dir_utf8 + "libgcc_s_dw2-1.dll").c_str(), RTLD_LAZY); //主动加载要用到的基础库，解决中文目录下sdk找不到这个库的路径的问题
 #endif
-
-		if (instance_nls_ == NULL)
-		{
-			return false;
-		}
-
 		return true;
 	}
 
 	void NLSSDKInstance::UnLoadSdkDll()
 	{
-		assert(instance_nls_);
 		if (instance_nls_)
 		{
 #if defined (WIN32)
@@ -55,5 +49,6 @@ namespace nim_livestream
 #endif
 			instance_nls_ = NULL;
 		}
+		function_map.clear();
 	}
 }

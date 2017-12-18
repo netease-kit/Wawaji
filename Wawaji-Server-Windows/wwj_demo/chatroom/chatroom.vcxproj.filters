@@ -25,6 +25,9 @@
     <Filter Include="gui\live_stream">
       <UniqueIdentifier>{b301043f-b21b-494d-a229-9026d0208169}</UniqueIdentifier>
     </Filter>
+    <Filter Include="gui\rts_stream">
+      <UniqueIdentifier>{60cc661c-c601-42b2-bb92-bc183aa44806}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="stdafx.h">
@@ -47,6 +50,24 @@
     </ClInclude>
     <ClInclude Include="gui\live_stream\live_stream.h">
       <Filter>gui\live_stream</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\rts_stream\rts_stream.h">
+      <Filter>gui\rts_stream</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\rts_stream\Mpeg1Transcoder.h">
+      <Filter>gui\rts_stream</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\game_cmd\serial_win32_wmq.h">
+      <Filter>gui\game_cmd</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\game_cmd\serial_common.h">
+      <Filter>gui\game_cmd</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\game_cmd\serial_control_factory.h">
+      <Filter>gui\game_cmd</Filter>
+    </ClInclude>
+    <ClInclude Include="gui\game_cmd\serial_win32_jj.h">
+      <Filter>gui\game_cmd</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -76,6 +97,24 @@
     </ClCompile>
     <ClCompile Include="gui\live_stream\live_stream.cpp">
       <Filter>gui\live_stream</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\rts_stream\rts_stream.cpp">
+      <Filter>gui\rts_stream</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\rts_stream\Mpeg1Transcoder.cpp">
+      <Filter>gui\rts_stream</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\game_cmd\serial_win32_wmq.cpp">
+      <Filter>gui\game_cmd</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\game_cmd\serial_common.cpp">
+      <Filter>gui\game_cmd</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\game_cmd\serial_control_factory.cpp">
+      <Filter>gui\game_cmd</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\game_cmd\serial_win32_jj.cpp">
+      <Filter>gui\game_cmd</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

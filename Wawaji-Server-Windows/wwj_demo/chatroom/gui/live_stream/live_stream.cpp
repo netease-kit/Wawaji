@@ -4,8 +4,9 @@ WWJCameraLiveStream::WWJCameraLiveStream()
 {
 	push_rtmp_url_1_ = nim_ui::LoginManager::GetInstance()->wwj_info_.push_url1_;
 	push_rtmp_url_2_ = nim_ui::LoginManager::GetInstance()->wwj_info_.push_url2_;
-	livestreaming_session_1_.LoadLivestreamingDll();
-	livestreaming_session_2_.LoadLivestreamingDll();
+	QLOG_APP(L"Push rtmp url 1: {0}") << nbase::UTF8ToUTF16(push_rtmp_url_1_);
+	QLOG_APP(L"Push rtmp url 2: {0}") << nbase::UTF8ToUTF16(push_rtmp_url_2_);
+	nim_livestream::LsSession::LoadLivestreamingDll();
 	wwj_ls_error_cb_ = nullptr;
 	wwj_ls_start_cb_ = nullptr;
 }
@@ -14,9 +15,8 @@ WWJCameraLiveStream::~WWJCameraLiveStream()
 {
 	wwj_ls_error_cb_ = nullptr;
 	wwj_ls_start_cb_ = nullptr;
-	livestreaming_session_1_.UnLoadLivestreamingDll();
-	livestreaming_session_2_.UnLoadLivestreamingDll();
-	QLOG_APP(L" ~WWJCameraLiveStream success!");
+	nim_livestream::LsSession::UnLoadLivestreamingDll();
+	QLOG_APP(L"~WWJCameraLiveStream success!");
 }
 
 bool WWJCameraLiveStream::LiveStreamInit()
@@ -43,11 +43,14 @@ bool WWJCameraLiveStream::LiveStreamInit()
 			else if (EN_NLSS_ERR_NETTIMEOUT == errCode)
 			{
 				livestreaming_session_1_.OnLiveStreamError(); //将直播状态改为未开启
-				QLOG_APP(L" live stream error.");
+				QLOG_APP(L" live stream 1 error.");
+				restart_live_stream_timer_1_.Cancel();
+				StdClosure time_out_cb = restart_live_stream_timer_1_.ToWeakCallback(nbase::Bind(&WWJCameraLiveStream::RestartLiveStreamOnError, this, 1));
+				nbase::ThreadManager::PostDelayedTask(time_out_cb, nbase::TimeDelta::FromSeconds(3));
 			}
 			else if (EN_NLSS_ERR_URLINVALID == errCode)
 			{
-				QLOG_APP(L" live stream phsh rtmp url stop invalid .");
+				QLOG_APP(L" live stream push rtmp url stop invalid .");
 			}
 			if (wwj_ls_error_cb_)
 			{
@@ -58,7 +61,12 @@ bool WWJCameraLiveStream::LiveStreamInit()
 		if (livestreaming_session_1_.InitSession(push_rtmp_url_1_, "1", error_cb1))
 		{
 			livestreaming_session_1_.SetVideoMng(&nim_comp::VideoManager::GetInstance()->video_frame_mng_);
-			QLOG_APP(L"Init live stream 1  success.");
+			QLOG_APP(L"Init live stream 1 success.");
+		}
+		else
+		{
+			QLOG_ERR(L"Init live stream 1 error.");
+			return false;
 		}
 	}
 	if (!livestreaming_session_2_.IsLsInit())
@@ -76,11 +84,14 @@ bool WWJCameraLiveStream::LiveStreamInit()
 			else if (EN_NLSS_ERR_NETTIMEOUT == errCode)
 			{
 				livestreaming_session_2_.OnLiveStreamError(); //将直播状态改为未开启
-				QLOG_APP(L" live stream error .");
+				QLOG_APP(L" live stream 2 error .");
+				restart_live_stream_timer_2_.Cancel();
+				StdClosure time_out_cb = restart_live_stream_timer_2_.ToWeakCallback(nbase::Bind(&WWJCameraLiveStream::RestartLiveStreamOnError, this, 2));
+				nbase::ThreadManager::PostDelayedTask(time_out_cb, nbase::TimeDelta::FromSeconds(3));
 			}
 			else if (EN_NLSS_ERR_URLINVALID == errCode)
 			{
-				QLOG_APP(L" live stream phsh rtmp url stop invalid.");
+				QLOG_APP(L" live stream push rtmp url stop invalid.");
 			}
 			if (wwj_ls_error_cb_)
 			{
@@ -92,15 +103,16 @@ bool WWJCameraLiveStream::LiveStreamInit()
 		if (livestreaming_session_2_.InitSession(push_rtmp_url_2_,"2", error_cb2))
 		{
 			livestreaming_session_2_.SetVideoMng(&nim_comp::VideoManager::GetInstance()->video_frame_mng_);
-			QLOG_APP(L"Init live stream 2  success.");
+			QLOG_APP(L"Init live stream 2 success.");
+		}
+		else
+		{
+			QLOG_ERR(L"Init live stream 2 error.");
+			livestreaming_session_1_.ClearSession();
+			return false;
 		}
 	}
-	if (livestreaming_session_1_.IsLsInit() && livestreaming_session_2_.IsLsInit())
-	{
-		return true;
-	}
-	QLOG_ERR(L"Init live stream error.");
-	return false;
+	return true;
 }
 
 void WWJCameraLiveStream::StartLiveStream()
@@ -125,14 +137,19 @@ void WWJCameraLiveStream::StartLiveStream()
 	auto cb = [this](int32_t type, bool ret)
 	{
 		is_starting_live_stream_ = false;
-		start_live_stream_timer_.Cancel();
+		if (type == 1)
+			restart_live_stream_timer_1_.Cancel();
+		else
+			restart_live_stream_timer_2_.Cancel();
 		if (ret)
 		{
 			QLOG_APP(L"start live stream success!");
 		}
 		else
 		{
-			QLOG_ERR(L"stop live stream error!");
+			QLOG_ERR(L"start live stream error!");
+			StdClosure time_out_cb = (type == 1 ? restart_live_stream_timer_1_ : restart_live_stream_timer_2_).ToWeakCallback(nbase::Bind(&WWJCameraLiveStream::RestartLiveStreamOnError, this, type));
+			nbase::ThreadManager::PostDelayedTask(time_out_cb, nbase::TimeDelta::FromSeconds(3));
 		}
 		if (wwj_ls_start_cb_)
 		{
@@ -144,23 +161,9 @@ void WWJCameraLiveStream::StartLiveStream()
 	nim_livestream::OptCallback cb1 = start_live_stream_flag_.ToWeakCallback(nbase::Bind(cb, 1, std::placeholders::_1));
 	if (!livestreaming_session_1_.OnStartLiveStream(cb1))
 		cb1(false);
-	else
-	{
-		start_live_stream_timeout_ = false;
-		start_live_stream_timer_.Cancel();
-		StdClosure time_out_cb = start_live_stream_timer_.ToWeakCallback(nbase::Bind(&WWJCameraLiveStream::OnStartLiveStreamTimeout, this));
-		nbase::ThreadManager::PostDelayedTask(time_out_cb, nbase::TimeDelta::FromSeconds(30));
-	}
 	nim_livestream::OptCallback cb2 = start_live_stream_flag_.ToWeakCallback(nbase::Bind(cb, 2, std::placeholders::_1));
 	if (!livestreaming_session_2_.OnStartLiveStream(cb2))
 		cb2(false);
-	else
-	{
-		start_live_stream_timeout_ = false;
-		start_live_stream_timer_.Cancel();
-		StdClosure time_out_cb = start_live_stream_timer_.ToWeakCallback(nbase::Bind(&WWJCameraLiveStream::OnStartLiveStreamTimeout, this));
-		nbase::ThreadManager::PostDelayedTask(time_out_cb, nbase::TimeDelta::FromSeconds(30));
-	}
 }
 
 void WWJCameraLiveStream::StopLiveStream()
@@ -194,12 +197,43 @@ void WWJCameraLiveStream::StopLiveStream()
 	livestreaming_session_2_.OnStopLiveStream(stop_live_stream_flag_.ToWeakCallback(cb));
 }
 
-void WWJCameraLiveStream::OnStartLiveStreamTimeout()
+void WWJCameraLiveStream::RestartLiveStreamOnError(int &camera_num)
 {
-	is_starting_live_stream_ = false;
-	start_live_stream_timeout_ = true;
-	start_live_stream_flag_.Cancel(); //不再执行StartLiveStream的回调
-	livestreaming_session_1_.OnStopLiveStream(nullptr); //停止推流
-	livestreaming_session_2_.OnStopLiveStream(nullptr); //停止推流
-	QLOG_ERR(L"starting live stream timeout.");
+	auto cb = [this,camera_num](int32_t type, bool ret)
+	{
+		is_starting_live_stream_ = false;
+		if (type == 1)
+			restart_live_stream_timer_1_.Cancel();
+		else
+			restart_live_stream_timer_2_.Cancel();
+		if (ret)
+		{
+			QLOG_APP(L"restart live stream success camera_num={0}!") << camera_num;
+		}
+		else
+		{
+			StdClosure time_out_cb = (type == 1 ? restart_live_stream_timer_1_ : restart_live_stream_timer_2_).ToWeakCallback(nbase::Bind(&WWJCameraLiveStream::RestartLiveStreamOnError, this, type));
+			nbase::ThreadManager::PostDelayedTask(time_out_cb, nbase::TimeDelta::FromSeconds(3));
+		}
+		if (wwj_ls_start_cb_)
+		{
+			Post2UI(nbase::Bind(wwj_ls_start_cb_, type, ret));
+		}
+	};
+	QLOG_APP(L"Start live stream camera_num={0}!") << camera_num;
+	is_starting_live_stream_ = true;
+	if (camera_num == 1)
+	{
+		restart_live_stream_flag_1_.Cancel();
+		nim_livestream::OptCallback cb1 = restart_live_stream_flag_1_.ToWeakCallback(nbase::Bind(cb, 1, std::placeholders::_1));
+		if (!livestreaming_session_1_.OnStartLiveStream(cb1))
+			cb1(false);
+	}
+	else
+	{
+		restart_live_stream_flag_2_.Cancel();
+		nim_livestream::OptCallback cb2 = restart_live_stream_flag_2_.ToWeakCallback(nbase::Bind(cb, 2, std::placeholders::_1));
+		if (!livestreaming_session_2_.OnStartLiveStream(cb2))
+			cb2(false);
+	}
 }

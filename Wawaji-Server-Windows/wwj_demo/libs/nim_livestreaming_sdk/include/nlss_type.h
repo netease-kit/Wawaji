@@ -312,8 +312,9 @@ typedef enum enum_NLSS_ERRCODE{
 *
 *  @param enStatus:  直播状态
 *  @param enErrCode: 错误码
+*  @param pUserData: Nlss_SetStatusCB设置回调时传入的用户自定义数据
 */
-typedef void(*PFN_NLSS_STATUS_NTY)(EN_NLSS_STATUS enStatus, EN_NLSS_ERRCODE enErrCode);
+typedef void(*PFN_NLSS_STATUS_NTY)(EN_NLSS_STATUS enStatus, EN_NLSS_ERRCODE enErrCode, void* pUserData);
 
 /**
 *  @brief 获取最新一帧视频截图后的回调

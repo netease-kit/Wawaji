@@ -1,4 +1,4 @@
-#include "nim_livestreaming_cpp.h"
+ï»¿#include "nim_livestreaming_cpp.h"
 #include "base/file/file_util.h"
 #include "base/util/string_util.h"
 #include "base/memory/singleton.h"
@@ -36,54 +36,37 @@ namespace nim_livestream
 
 	LsSession::~LsSession()
 	{
-		
+		ClearSession();
 	}
 
 	bool LsSession::LoadLivestreamingDll()
 	{
-		if (NULL == nls_sdk_instance)
+		bool ret = NLSSDKInstance::LoadSdkDll();
+		if (!ret)
 		{
-			nls_sdk_instance = new NLSSDKInstance();
+			QLOG_ERR(L"LsManange LoadSdkDll error");
 		}
-		current_work_dir_ = QPath::GetAppPath() + L"live_stream\\";
-	
-		if (!nls_sdk_instance->LoadSdkDll(nbase::UTF16ToUTF8(current_work_dir_).c_str(), "LSMediaCapture.dll"))
-		{
-			QLOG_ERR(L"LsSession LoadSdkDll error!");
-			return false;
-		}
-
-		//Ö÷¶¯¼ÓÔØÒªÓÃµ½µÄ»ù´¡¿â£¬½â¾öÖĞÎÄÄ¿Â¼ÏÂsdkÕÒ²»µ½Õâ¸ö¿âµÄÂ·¾¶µÄÎÊÌâ
-		::LoadLibraryEx((current_work_dir_ + L"libgcc_s_dw2-1.dll").c_str(), NULL, LOAD_WITH_ALTERED_SEARCH_PATH);
-
-		return true;
+		return ret;
 	}
 
 	void  LsSession::UnLoadLivestreamingDll()
 	{
-		assert(nls_sdk_instance);
-		if (nls_sdk_instance)
-		{
-	        nls_sdk_instance->UnLoadSdkDll();
-			delete nls_sdk_instance;
-			nls_sdk_instance = NULL;
-			QLOG_APP(L"UnLoadLivestreamingDll success.");
-		}
+		NLSSDKInstance::UnLoadSdkDll();
 	}
 
-	//Ö±²¥·¢Éú´íÎó»Øµ÷£¬µ±Ö±²¥¹ı³ÌÖĞ·¢Éú´íÎó£¬Í¨ÖªÓ¦ÓÃ²ã£¬Ó¦ÓÃ²ã¿ÉÒÔ×öÏàÓ¦µÄ´¦Àí
-	LsErrorCallback ls_error_cb = nullptr;
-	void ErrorCallback(EN_NLSS_STATUS enStatus, EN_NLSS_ERRCODE enErrCode)
+	//ç›´æ’­å‘ç”Ÿé”™è¯¯å›è°ƒï¼Œå½“ç›´æ’­è¿‡ç¨‹ä¸­å‘ç”Ÿé”™è¯¯ï¼Œé€šçŸ¥åº”ç”¨å±‚ï¼Œåº”ç”¨å±‚å¯ä»¥åšç›¸åº”çš„å¤„ç†
+	void ErrorCallback(EN_NLSS_STATUS enStatus, EN_NLSS_ERRCODE enErrCode, void* pUserData)
 	{
 		QLOG_ERR(L"livesteaming {0}, {1}") << enStatus << enErrCode;
 		switch (enStatus)
 		{
-		case EN_NLSS_STATUS_ERR: //Ö±²¥³ö´í
+		case EN_NLSS_STATUS_ERR: //ç›´æ’­å‡ºé”™
 		{
-			if (ls_error_cb)
+			if (pUserData)
 			{
-				StdClosure closure = [=](){
-					ls_error_cb(enErrCode);
+				StdClosure closure = [=]() {
+					LsSession* session = (LsSession*)pUserData;
+					session->ls_error_cb_(enErrCode);
 				};
 				Post2UI(closure);
 			}
@@ -94,51 +77,62 @@ namespace nim_livestream
 		}
 	}
 
-	bool LsSession::InitSession(const std::string& url, const std::string&camera_id, LsErrorCallback ls_error_cb_)
+	bool LsSession::InitSession(const std::string& url, const std::string&camera_id, LsErrorCallback ls_error_cb)
 	{
 		nbase::NAutoLock auto_lock(&lock_);
 		if (ls_client_ == NULL)
 		{
-		ls_client_ = new _HNLSSERVICE;
-		std::wstring work_dir = QPath::GetAppPath() + L"live_stream\\";
-		std::wstring log_dir = QPath::GetNimAppDataDir() + L"live_stream\\";
-		if (!nbase::FilePathIsExist(log_dir, true))
-			nbase::CreateDirectory(log_dir);
-		NLSS_RET ret = NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_Create)(nbase::UTF16ToUTF8(work_dir).c_str(), nbase::UTF16ToUTF8(log_dir).c_str(), pLsClient);
-		QLOG_APP(L"ls sdk dir {0}") << work_dir;
-		if (ret != NLSS_OK)
-		{
-		delete ls_client_;
-		ls_client_ = nullptr;
-		assert(0);
-		return false;
-		}
+			init_session_ = false;
+			ls_client_ = new _HNLSSERVICE;
+			std::wstring work_dir = QPath::GetAppPath() + L"live_stream\\";
+			std::wstring log_dir = QPath::GetNimAppDataDir() + L"live_stream\\";
+			if (!nbase::FilePathIsExist(log_dir, true))
+				nbase::CreateDirectory(log_dir);
+			NLSS_RET ret = NIS_SDK_GET_FUNC(Nlss_Create)(nbase::UTF16ToUTF8(work_dir).c_str(), nbase::UTF16ToUTF8(log_dir).c_str(), pLsClient);
+			QLOG_APP(L"ls sdk dir {0}") << work_dir;
+			if (ret != NLSS_OK)
+			{
+				delete ls_client_;
+				ls_client_ = nullptr;
+				assert(0);
+				return false;
+			}
 
-		NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_SetStatusCB)(LsClient, ErrorCallback);
-		ls_error_cb = ls_error_cb_;
+			NIS_SDK_GET_FUNC(Nlss_SetStatusCB)(LsClient, ErrorCallback, (void*)this);
+			ls_error_cb_ = ls_error_cb;
 
-		NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_GetDefaultParam)(LsClient, &ls_param_);
-		ls_param_.stAudioParam.stIn.iInSamplerate = 44100;
-		ls_param_.stAudioParam.stIn.paaudioDeviceName = "";
-		ls_param_.stAudioParam.stIn.enInType = EN_NLSS_AUDIOIN_NONE;
-		ls_param_.stVideoParam.enOutCodec = EN_NLSS_VIDEOOUT_CODEC_X264;
-		ls_param_.stVideoParam.bHardEncode = false;
-		ls_param_.stVideoParam.iOutFps = 15;
-		ls_param_.stVideoParam.iOutBitrate = 400000;
-		ls_param_.stVideoParam.iOutHeight = SCREEN_W;
-		ls_param_.stVideoParam.iOutWidth = SCREEN_H;
-		ls_param_.enOutContent = EN_NLSS_OUTCONTENT_VIDEO;
-		ls_param_.paOutUrl = (char*)url.c_str();
-		if (NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_InitParam)(LsClient, &ls_param_) != NLSS_OK)
-		{
-			delete ls_client_;
-			ls_client_ = nullptr;
-			assert(0);
-			return false;
-		}
-		NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_Start)(LsClient);
-		init_session_ = true;
-		camera_id_ = camera_id;
+			NIS_SDK_GET_FUNC(Nlss_GetDefaultParam)(LsClient, &ls_param_);
+			ls_param_.stAudioParam.stIn.iInSamplerate = 44100;
+			ls_param_.stAudioParam.stIn.paaudioDeviceName = "";
+			ls_param_.stAudioParam.stIn.enInType = EN_NLSS_AUDIOIN_NONE;
+			ls_param_.stVideoParam.enOutCodec = EN_NLSS_VIDEOOUT_CODEC_X264;
+			ls_param_.stVideoParam.bHardEncode = false;
+			ls_param_.stVideoParam.iOutFps = 15;
+			ls_param_.stVideoParam.iOutBitrate = 400000;
+			ls_param_.stVideoParam.iOutHeight = SCREEN_W;
+			ls_param_.stVideoParam.iOutWidth = SCREEN_H;
+			ls_param_.enOutContent = EN_NLSS_OUTCONTENT_VIDEO;
+			ls_param_.paOutUrl = (char*)url.c_str();
+			if (NIS_SDK_GET_FUNC(Nlss_InitParam)(LsClient, &ls_param_) != NLSS_OK)
+			{
+				NIS_SDK_GET_FUNC(Nlss_Destroy)(LsClient);
+				delete ls_client_;
+				ls_client_ = nullptr;
+				assert(0);
+				return false;
+			}
+			ret = NIS_SDK_GET_FUNC(Nlss_Start)(LsClient);
+			if (ret != NLSS_OK)
+			{
+				NIS_SDK_GET_FUNC(Nlss_UninitParam)(LsClient);
+				NIS_SDK_GET_FUNC(Nlss_Destroy)(LsClient);
+				delete ls_client_;
+				ls_client_ = nullptr;
+				assert(0);
+				return false;
+			}
+			init_session_ = true;
+			camera_id_ = camera_id;
 		}
 		return true;
 	}
@@ -148,7 +142,7 @@ namespace nim_livestream
 		nbase::NAutoLock auto_lock(&lock_);
 		if (live_streaming_)
 		{
-			return true; //µ±Ç°ÒÑ¾­ÔÚÍÆÁ÷£¬·µ»ØTRUE
+			return true; //å½“å‰å·²ç»åœ¨æ¨æµï¼Œè¿”å›TRUE
 		}
 		if (ls_client_)
 		{
@@ -176,7 +170,7 @@ namespace nim_livestream
 		}));
 	}
 
-	//¿ªÊ¼Ö±²¥
+	//å¼€å§‹ç›´æ’­
 	void LsSession::DoStartLiveStream(OptCallback cb)
 	{
 		nbase::NAutoLock auto_lock(&lock_);
@@ -196,12 +190,12 @@ namespace nim_livestream
 				ls_child_video_in_param_.u.stInCustomVideo.iInWidth = CAMERA_W;
 				ls_child_video_in_param_.u.stInCustomVideo.iInHeight = CAMERA_H;
 				pLsChildClient = new _HNLSSCHILDSERVICE;
-				LsChildClient = NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_ChildVideoOpen)(LsClient, &ls_child_video_in_param_);
-				NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_ChildVideoSetBackLayer)(LsChildClient);
-				NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_ChildVideoStartCapture)(LsChildClient);
+				LsChildClient = NIS_SDK_GET_FUNC(Nlss_ChildVideoOpen)(LsClient, &ls_child_video_in_param_);
+				NIS_SDK_GET_FUNC(Nlss_ChildVideoSetBackLayer)(LsChildClient);
+				NIS_SDK_GET_FUNC(Nlss_ChildVideoStartCapture)(LsChildClient);
 			}
 
-			if (NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_StartLiveStream)(LsClient) == NLSS_OK)
+			if (NIS_SDK_GET_FUNC(Nlss_StartLiveStream)(LsClient) == NLSS_OK)
 			{
 				live_streaming_ = true;
 				ls_data_timer_.Cancel();
@@ -209,7 +203,7 @@ namespace nim_livestream
 				nbase::ThreadManager::PostRepeatedTask(kThreadLiveStreaming, ls_data_timer_.ToWeakCallback(task), nbase::TimeDelta::FromMilliseconds(60));
 				success = true;
 			}
-			else //¿ªÆôÖ±²¥´íÎó£¬²»¹ÜÊ²Ã´Ô­Òò£¬Ö»·µ»ØNLSS_ERROR
+			else //å¼€å¯ç›´æ’­é”™è¯¯ï¼Œä¸ç®¡ä»€ä¹ˆåŸå› ï¼Œåªè¿”å›NLSS_ERROR
 				QLOG_ERR(L"Nlss_StartLiveStream error.");
 		}
 		if (cb)
@@ -218,10 +212,7 @@ namespace nim_livestream
 		}
 	}
 
-	//½áÊøÖ±²¥
-
-
-	//½áÊøÖ±²¥
+	//ç»“æŸç›´æ’­
 	void LsSession::DoStopLiveStream(OptCallback cb)
 	{
 		nbase::NAutoLock auto_lock(&lock_);
@@ -230,27 +221,18 @@ namespace nim_livestream
 		{
 			ls_data_timer_.Cancel();
 			ret = false;
-			NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_StopLiveStream)(LsClient);
+			NIS_SDK_GET_FUNC(Nlss_StopLiveStream)(LsClient);
 			live_streaming_ = false;
 			ret = true;
 		}
 		if (ls_child_client_)
 		{
-			NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_ChildVideoStopCapture)(LsChildClient);
-			NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_ChildVideoClose)(LsChildClient);
+			NIS_SDK_GET_FUNC(Nlss_ChildVideoStopCapture)(LsChildClient);
+			NIS_SDK_GET_FUNC(Nlss_ChildVideoClose)(LsChildClient);
 			delete ls_child_client_;
 			ls_child_client_ = nullptr;
 		}
-		if (ls_client_)
-		{
-			NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_Stop)(LsClient);
-			NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_UninitParam)(LsClient);
-			//NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_Destroy)(LsClient);
-			ls_client_ = nullptr;
-		}
 		QLOG_APP(L"StopLiveStream success.");
-		init_session_ = false;
-		camera_id_ == "";
 		if (cb)
 		{
 			Post2UI(nbase::Bind(cb, ret));
@@ -266,16 +248,39 @@ namespace nim_livestream
 
 	void LsSession::DoClearSession()
 	{
+		nbase::NAutoLock auto_lock(&lock_);
+		if (live_streaming_ && ls_client_)
+		{
+			ls_data_timer_.Cancel();
+			NIS_SDK_GET_FUNC(Nlss_StopLiveStream)(LsClient);
+			live_streaming_ = false;
+		}
+		if (ls_child_client_)
+		{
+			NIS_SDK_GET_FUNC(Nlss_ChildVideoStopCapture)(LsChildClient);
+			NIS_SDK_GET_FUNC(Nlss_ChildVideoClose)(LsChildClient);
+			delete ls_child_client_;
+			ls_child_client_ = nullptr;
+		}
+		if (ls_client_)
+		{
+			NIS_SDK_GET_FUNC(Nlss_Stop)(LsClient);
+			NIS_SDK_GET_FUNC(Nlss_UninitParam)(LsClient);
+			NIS_SDK_GET_FUNC(Nlss_Destroy)(LsClient);
+			delete ls_client_;
+			ls_client_ = nullptr;
+			init_session_ = false;
+		}
 	}
 
-	//Ö±²¥¹ı³ÌÖĞµÄÍ³¼ÆĞÅÏ¢
+	//ç›´æ’­è¿‡ç¨‹ä¸­çš„ç»Ÿè®¡ä¿¡æ¯
 	bool LsSession::GetStaticInfo(NLSS_OUT ST_NLSS_STATS &pstStats)
 	{
 		nbase::NAutoLock auto_lock(&lock_);
 		bool ret = false;
 		if (ls_client_)
 		{
-			ret = NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_GetStaticInfo)(LsClient, &pstStats) == NLSS_OK;
+			ret = NIS_SDK_GET_FUNC(Nlss_GetStaticInfo)(LsClient, &pstStats) == NLSS_OK;
 		}
 		return ret;
 	}
@@ -297,7 +302,7 @@ namespace nim_livestream
 			if (ret && (!data.empty()))
 			{
 				data.resize(width * height * 3 / 2);
-				NIS_SDK_GET_FUNC(nls_sdk_instance, Nlss_VideoChildSendCustomData)(LsChildClient, (char*)data.c_str(), data.size());
+				NIS_SDK_GET_FUNC(Nlss_VideoChildSendCustomData)(LsChildClient, (char*)data.c_str(), data.size());
 			}
 		}
 	}
@@ -318,7 +323,7 @@ namespace nim_livestream
 		bool ret = false;
 		if (!is_recording_)
 		{
-			ret = NIS_SDK_GET_FUNC(nls_sdk_instance,Nlss_StartRecord)(LsClient, path) == NLSS_OK;
+			ret = NIS_SDK_GET_FUNC(Nlss_StartRecord)(LsClient, path) == NLSS_OK;
 			is_recording_ = ret;
 		}
 		return ret;
@@ -329,7 +334,7 @@ namespace nim_livestream
 		nbase::NAutoLock auto_lock(&lock_);
 		if (is_recording_)
 		{
-			NIS_SDK_GET_FUNC(nls_sdk_instance,Nlss_StopRecord)(LsClient);
+			NIS_SDK_GET_FUNC(Nlss_StopRecord)(LsClient);
 			is_recording_ = false;
 		}
 	}

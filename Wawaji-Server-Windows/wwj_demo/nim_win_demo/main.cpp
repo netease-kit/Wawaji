@@ -47,6 +47,9 @@ void MainThread::Cleanup()
 
 void MainThread::PreMessageLoop()
 {
+	serial_thread_.reset(new MiscThread(kThreadSerialOpt, "Serial Opt Thread"));
+	serial_thread_->Start();
+
 	misc_thread_.reset( new MiscThread(kThreadGlobalMisc, "Global Misc Thread") );
 	misc_thread_->Start();
 
@@ -62,6 +65,9 @@ void MainThread::PreMessageLoop()
 
 void MainThread::PostMessageLoop()
 {
+	serial_thread_->Stop();
+	serial_thread_.reset(NULL);
+
 	misc_thread_->Stop();
 	misc_thread_.reset(NULL);
 

@@ -47,6 +47,7 @@ private:
 	*/
 	void PostMessageLoop();
 private:
+	std::unique_ptr<MiscThread>	serial_thread_;
 	std::unique_ptr<MiscThread>	misc_thread_;
 	std::unique_ptr<MiscThread>	ls_thread_;
 	std::unique_ptr<MiscThread>	screen_capture_thread_;

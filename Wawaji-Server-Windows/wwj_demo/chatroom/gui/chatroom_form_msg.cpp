@@ -39,7 +39,8 @@ void ChatroomForm::OnEnterCallback(int error_code, const ChatRoomInfo& info, con
 {
 	if (error_code != nim::kNIMResSuccess)
 	{
-		RequestRoomError(creater_id_.empty() ? L"加入房间失败" : L"房间连接中断");
+		AddText(nbase::StringPrintf("enter room err code %d", error_code), GAME_CLR_WINNING);
+		//RequestRoomError(creater_id_.empty() ? L"加入房间失败" : L"房间连接中断");
 		return;
 	}
 	if (info.id_ == 0)
@@ -69,6 +70,7 @@ void ChatroomForm::OnGetChatRoomInfoCallback(__int64 room_id, int error_code, co
 
 		std::wstring room_name = nbase::StringPrintf(L"房间号：%lld", room_id_);
 		name_->SetText(room_name);
+		AddText(nbase::StringPrintf("enter room success %d", room_id_), GAME_CLR_STEP);
 
 		//MeetingInit();
 
@@ -128,7 +130,7 @@ void ChatroomForm::DoNextMemberCallback(int64_t room_id, int error_code, const C
 				game_uid_ = element.key_;//valus["accid"].asString();
 				if (!game_uid_.empty())
 				{
-					bool webrtc = false;
+					GamePlayType play_type = kGptVChat;
 					Json::Value values;
 					Json::Reader reader;
 					if (reader.parse(element.value_, values))
@@ -136,7 +138,12 @@ void ChatroomForm::DoNextMemberCallback(int64_t room_id, int error_code, const C
 						if (values["webrtc"].asInt() > 0)
 						{
 							AddText("webrtc player");
-							webrtc = true;
+							play_type = kGptWebrtc;
+						}
+						if (values["h5"].asInt() > 0)
+						{
+							AddText("h5 player");
+							play_type = kGptH5;
 						}
 						std::string name = values["nick"].asString();
 						if (!name.empty())
@@ -144,10 +151,12 @@ void ChatroomForm::DoNextMemberCallback(int64_t room_id, int error_code, const C
 							AddText(nbase::StringPrintf("next member %s", name.c_str()));
 						}
 					}
+					game_play_type_ = play_type;
 					game_step_ = kGameStepInvite;
 					game_session_id_ = nim::Tool::GetUuid();
 					game_que_key_ = element.key_;
-					StartVChat(game_uid_, webrtc);
+					//StartVChat(game_uid_, webrtc);
+					GameInvite(game_uid_);
 					return;
 				}
 			}

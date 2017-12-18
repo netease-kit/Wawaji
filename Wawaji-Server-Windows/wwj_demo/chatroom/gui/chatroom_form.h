@@ -2,7 +2,8 @@
 
 #include "gui/video/helper/ui_bitmap_control.h"
 #include "gui/video/screen_capture_tool.h"
-#include "game_cmd/serial_win32.h"
+#include "game_cmd/serial_control_factory.h"
+#include "rts_stream/rts_stream.h"
 #include <time.h>
 
 typedef enum GameStep
@@ -28,7 +29,18 @@ typedef enum GameControlType
 	kGctRetNotify = 4,
 	kGctAck = 5,
 
+	kGctH5Invite = 11,
+	kGctH5Accpt = 12,
+	kGctH5Reject = 13,
+
 	kGctAddCoins = 1001,
+};
+typedef enum GamePlayType
+{
+	kGptNone = 0,
+	kGptVChat = 1,
+	kGptWebrtc = 2,
+	kGptH5 = 3,
 };
 
 #define GAME_START_TIME_OUT	15
@@ -44,6 +56,7 @@ typedef enum GameControlType
 
 namespace nim_chatroom
 {
+	int32_t GetConfigValueNum(const std::string& key, int32_t def_value);
 	class ChatroomForm : public nim_comp::WindowEx
 	{
 	public:
@@ -123,10 +136,17 @@ namespace nim_chatroom
 		bool CloseGameHandle();
 		bool ResetClaw();
 		int32_t DoGameControl(int32_t command, const std::string &data);
+
+		void GameInvite(const std::string& uid);
+		void GameStart();
 		void GameTimeout();
+		void GameClaw();
 		void GameEnd();
 		void GameReset();
 		void QueuePollCb(const StdClosure &task, int64_t room_id, int error_code, const ChatRoomQueueElement& element);
+
+		int64_t GetSerial();
+		void H5Invite(const std::string& uid);
 
 	public:
 		static const LPTSTR kClassName;
@@ -137,22 +157,28 @@ namespace nim_chatroom
 		std::string		room_enter_token_;
 
 	private:
+		nbase::NLock serial_opt_lock_;
 		bool			has_enter_;
 		bool			exit_;
 		std::string		creater_id_;	//创建者信息
+		GamePlayType	game_play_type_;
 		std::string		game_uid_;
 		std::string		game_que_key_;
 		std::string		game_session_id_;
-		nim_wwj::WwjControl		game_handle_;
+		nim_wwj::WwjControl*		game_handle_;
 		GameStep		game_step_;
 		bool			game_stop_;
 		int32_t			game_get_member_try_num_;
 		bool			game_camera_front_;
 		bool			game_ret_success_;
+		int64_t			serial_;
 
 		AutoUnregister	unregister_cb;
 
 		ChatRoomInfo info_;
+
+		WWJRtsStream rts_stream_1_;
+		WWJRtsStream rts_stream_2_;
 
 		nbase::WeakCallbackFlag paint_video_timer_;
 		nbase::WeakCallbackFlag game_start_timer_;

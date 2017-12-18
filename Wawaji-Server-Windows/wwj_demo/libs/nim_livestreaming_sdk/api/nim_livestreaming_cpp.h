@@ -1,4 +1,4 @@
-#ifndef NIM_LIVESTREAM_API_CPP_H_
+ï»¿#ifndef NIM_LIVESTREAM_API_CPP_H_
 #define NIM_LIVESTREAM_API_CPP_H_
 #include "ui_component/ui_kit/module/video/video_frame_mng.h"
 #include "base/synchronization/lock.h"
@@ -12,7 +12,7 @@ namespace nim_livestream
 	typedef NLSS_RET(*Nlss_GetDefaultParam)(_HNLSSERVICE hNLSService, NLSS_OUT ST_NLSS_PARAM *pstParam);
 	typedef NLSS_RET(*Nlss_InitParam)(_HNLSSERVICE hNLSService, ST_NLSS_PARAM *pstParam);
 	typedef void(*Nlss_UninitParam)(_HNLSSERVICE hNLSService);
-	typedef void(*Nlss_SetStatusCB)(_HNLSSERVICE hNLSService, PFN_NLSS_STATUS_NTY pFunStatusNty);
+	typedef void(*Nlss_SetStatusCB)(_HNLSSERVICE hNLSService, PFN_NLSS_STATUS_NTY pFunStatusNty, void* pUserData);
 	typedef NLSS_RET(*Nlss_Start)(_HNLSSERVICE hNLSService);
 	typedef void(*Nlss_Stop)(_HNLSSERVICE hNLSService);
 	typedef NLSS_RET(*Nlss_StartLiveStream)(_HNLSSERVICE hNLSService);
@@ -28,7 +28,7 @@ namespace nim_livestream
 	typedef NLSS_RET(*Nlss_StartRecord)(_HNLSSERVICE hNLSService, char *pcRecordPath);
 	typedef void(*Nlss_StopRecord)(_HNLSSERVICE hNLSService);
 
-	//²Ù×÷½á¹û
+	//æ“ä½œç»“æœ
 	typedef std::function<void(bool ret)> OptCallback;
 	typedef std::function<void(EN_NLSS_ERRCODE errCode)> LsErrorCallback;
 	typedef void(*ErrorOpt) (bool);
@@ -36,28 +36,29 @@ namespace nim_livestream
 
 	class LsSession :public virtual nbase::SupportWeakCallback
 	{
-
 	public:
 		LsSession();
 		~LsSession();
 	public:
-		//³õÊ¼»¯ºÍÊÍ·Ådll£¬±ØĞëÏÈµ÷ÓÃinit²ÅÄÜÊ¹ÓÃnim_lsÖĞµÄÆäËû½Ó¿Ú
-		bool LoadLivestreamingDll();
-		void UnLoadLivestreamingDll();
-		//³õÊ¼»¯Ö±²¥Ä£¿é
+		//åˆå§‹åŒ–å’Œé‡Šæ”¾dllï¼Œå¿…é¡»å…ˆè°ƒç”¨initæ‰èƒ½ä½¿ç”¨nim_lsä¸­çš„å…¶ä»–æ¥å£
+		static bool LoadLivestreamingDll();
+		static void UnLoadLivestreamingDll();
+		//åˆå§‹åŒ–ç›´æ’­æ¨¡å—
 		bool InitSession(const std::string& url, const std::string&camera_id, LsErrorCallback ls_error_cb_);
 		void ClearSession();
+		friend void ErrorCallback(EN_NLSS_STATUS enStatus, EN_NLSS_ERRCODE enErrCode, void* pUserData);
 
-		//¿ªÊ¼Ö±²¥ÍÆÁ÷
+		//å¼€å§‹ç›´æ’­æ¨æµ
 		bool OnStartLiveStream(OptCallback cb);
-		//½áÊøÖ±²¥ÍÆÁ÷
+		//ç»“æŸç›´æ’­æ¨æµ
 		bool OnStopLiveStream(OptCallback cb);
 		void OnLiveStreamError();
+
 
 		bool IsLivingsteam() { return live_streaming_; }
 		bool IsLsInit() { return init_session_; }
 
-		//Ö±²¥¹ı³ÌÖĞµÄÍ³¼ÆĞÅÏ¢
+		//ç›´æ’­è¿‡ç¨‹ä¸­çš„ç»Ÿè®¡ä¿¡æ¯
 		bool GetStaticInfo(NLSS_OUT ST_NLSS_STATS  &pstStats);
 
 		bool StartRecord(char*path);
@@ -65,9 +66,9 @@ namespace nim_livestream
 
 		void SetVideoMng( nim_comp::VideoFrameMng* video_mng){ video_frame_mng_ = video_mng; }
 	private:
-		//¿ªÊ¼Ö±²¥ÍÆÁ÷
+		//å¼€å§‹ç›´æ’­æ¨æµ
 		void DoStartLiveStream(OptCallback cb);
-		//½áÊøÖ±²¥ÍÆÁ÷
+		//ç»“æŸç›´æ’­æ¨æµ
 		void DoStopLiveStream(OptCallback cb);
 		void DoClearSession();
 		
@@ -84,10 +85,9 @@ namespace nim_livestream
 		bool live_streaming_;
 		bool is_recording_;
 		std::wstring current_work_dir_;
-		ErrorOpt error_cb_ ;
+		LsErrorCallback ls_error_cb_;
 		std::string camera_id_;
 		nim_comp::VideoFrameMng* video_frame_mng_;
-		NLSSDKInstance *nls_sdk_instance = NULL;
 	};
 }
 #endif// NIM_LIVESTREAM_API_CPP_H_

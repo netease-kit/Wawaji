@@ -119,54 +119,43 @@ void ChatroomForm::PaintVideo()
 }
 void ChatroomForm::StartVChat(const std::string& uid, bool webrtc)
 {
-	if (game_step_ == kGameStepInvite)
+	Json::FastWriter fs;
+	Json::Value value;
+	value[nim::kNIMVChatSessionId] = game_session_id_;
+	value[nim::kNIMVChatUids].append(uid);
+	value[nim::kNIMVChatNeedBadge] = 0;
+	value[nim::kNIMVChatNeedFromNick] = 0;
+	value[nim::kNIMVChatPushEnable] = 0;
+	value[nim::kNIMVChatCustomVideo] = 1;
+	value[nim::kNIMVChatKeepCalling] = 0;
+	std::string record_key = GetConfigValue("kVideoRecord");
+	if (!record_key.empty() && atoi(record_key.c_str()) > 0)
 	{
-		AddText(nbase::StringPrintf("game invite %s", uid.c_str()), GAME_CLR_STEP);
-		//ResetClaw();
-		game_ret_timer_.Cancel();
-		game_go_timer_.Cancel();
-		game_start_timer_.Cancel();
-		StdClosure task = nbase::Bind(&ChatroomForm::OnVChatStartCallback, this, 0);
-		nbase::ThreadManager::PostDelayedTask(kThreadUI, game_start_timer_.ToWeakCallback(task), nbase::TimeDelta::FromSeconds(GAME_START_TIME_OUT));
+		value[nim::kNIMVChatVideoRecord] = 1;
+	}
+	if (webrtc)
+	{
+		value[nim::kNIMVChatWebrtc] = 1;
+	}
+	if (1)
+	{
+		value[nim::kNIMVChatVideoQuality] = nim::kNIMVChatVideoQualitySuper;
+	}
+	std::string json_value = fs.write(value);
+	if (!nim::VChat::Start(nim::kNIMVideoChatModeVideo, nbase::UTF16ToUTF8(L"开始游戏"), "", json_value))
+	{
+		AddText("vchat start error", GAME_CLR_WINNING);
+		GameEnd();
+	}
+	else
+	{
+		auto start_cb = nbase::Bind(&ChatroomForm::OnVChatStartCallback, this, std::placeholders::_1);
+		auto connect_cb = nbase::Bind(&ChatroomForm::OnVChatConnectCallback, this, std::placeholders::_1);
+		auto people_cb = nbase::Bind(&ChatroomForm::OnVChatPeopleChangeCallback, this, std::placeholders::_1, std::placeholders::_2);
+		nim_comp::VideoManager::GetInstance()->SetChatRoomCb(start_cb, connect_cb, people_cb);
+		screen_[3]->SetAccount(game_uid_);
 
-		Json::FastWriter fs;
-		Json::Value value;
-		value[nim::kNIMVChatSessionId] = game_session_id_;
-		value[nim::kNIMVChatUids].append(uid);
-		value[nim::kNIMVChatNeedBadge] = 0;
-		value[nim::kNIMVChatNeedFromNick] = 0;
-		value[nim::kNIMVChatPushEnable] = 0;
-		value[nim::kNIMVChatCustomVideo] = 1;
-		value[nim::kNIMVChatKeepCalling] = 0;
-		std::string record_key = GetConfigValue("kVideoRecord");
-		if (!record_key.empty() && atoi(record_key.c_str()) > 0)
-		{
-			value[nim::kNIMVChatVideoRecord] = 1;
-		}
-		if (webrtc)
-		{
-			value[nim::kNIMVChatWebrtc] = 1;
-		}
-		if (1)
-		{
-			value[nim::kNIMVChatVideoQuality] = nim::kNIMVChatVideoQualitySuper;
-		}
-		std::string json_value = fs.write(value);
-		if (!nim::VChat::Start(nim::kNIMVideoChatModeVideo, nbase::UTF16ToUTF8(L"开始游戏"), "", json_value))
-		{
-			AddText("vchat start error", GAME_CLR_WINNING);
-			OnVChatStartCallback(0);
-		}
-		else
-		{
-			auto start_cb = nbase::Bind(&ChatroomForm::OnVChatStartCallback, this, std::placeholders::_1);
-			auto connect_cb = nbase::Bind(&ChatroomForm::OnVChatConnectCallback, this, std::placeholders::_1);
-			auto people_cb = nbase::Bind(&ChatroomForm::OnVChatPeopleChangeCallback, this, std::placeholders::_1, std::placeholders::_2);
-			nim_comp::VideoManager::GetInstance()->SetChatRoomCb(start_cb, connect_cb, people_cb);
-			screen_[3]->SetAccount(game_uid_);
-
-			//nim::VChat::StartDevice(nim::kNIMDeviceTypeAudioIn, "", 0, 0, 0, nullptr);
-		}
+		//nim::VChat::StartDevice(nim::kNIMDeviceTypeAudioIn, "", 0, 0, 0, nullptr);
 	}
 }
 void ChatroomForm::EndVChat()
@@ -215,15 +204,7 @@ void ChatroomForm::OnVChatPeopleChangeCallback(std::string uid, bool join_type)
 {
 	if (join_type && game_step_ == kGameStepInvite)
 	{
-		AddText(nbase::StringPrintf("game start %s", uid.c_str()), GAME_CLR_STEP);
-		DoGameControl(kGctAddCoins, "");
-		game_step_ = kGameStepStart;
-		game_ret_timer_.Cancel();
-		game_go_timer_.Cancel();
-		game_start_timer_.Cancel();
-
-		StdClosure task = nbase::Bind(&ChatroomForm::GameTimeout, this);
-		nbase::ThreadManager::PostDelayedTask(kThreadUI, game_start_timer_.ToWeakCallback(task), nbase::TimeDelta::FromSeconds(GAME_GO_TIME_OUT));
+		GameStart();
 		//std::wstring path = nim_ui::UserConfig::GetInstance()->GetUserDataPath() + L"\\self.mp4";
 		//nbase::DeleteFile(path);
 		//nim::VChat::StartRecord(nbase::UTF16ToUTF8(path), "", nim::VChat::Mp4OptCallback());

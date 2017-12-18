@@ -45,9 +45,9 @@ void _DoAfterLogin()
 {
 	QLOG_APP(L"-----{0} account login-----") << LoginManager::GetInstance()->GetAccount();
 
-	std::string res_audio_path = nbase::UTF16ToUTF8(GetUserDataPath());
-	bool ret = AudioManager::GetInstance()->InitAudio(res_audio_path);
-	assert(ret);
+	//std::string res_audio_path = nbase::UTF16ToUTF8(GetUserDataPath());
+	//bool ret = AudioManager::GetInstance()->InitAudio(res_audio_path);
+	//assert(ret);
 
 	TeamService::GetInstance()->QueryAllTeamInfo();
 
