@@ -44,6 +44,7 @@ Demo将娃娃机与PC之间的串口通讯协议封装成单独的一个类WwjCo
 ![Alt text](img/wwjcontrol.jpg)
 
 格式说明如下
+
 |名称|定义|长度|备注|
 |--|--|--|--|
 |head(帧头)|固定为0xAA|1 Bety||
