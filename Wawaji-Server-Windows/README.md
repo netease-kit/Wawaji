@@ -45,12 +45,12 @@ Demo将娃娃机与PC之间的串口通讯协议封装成单独的一个类WwjCo
 
 格式说明如下
 |名称|定义|长度|备注|
-|:--:|:--:|:--:|
+|:--:|:--:|:--:|:--:|
 |head(帧头)|固定为0xAA|1 Bety||
 |length(长度)|Index + CMD +Data + check 的长度|1 Bety||
 |Index (索引)|主机：0x01 终端：0x01~0xFF|1 Bety|根据不同硬件设备固定为不同索引|
 |CMD(命令)|表明数据帧的类型|1 Bety||
-|Data[N](数据)|此帧数据区|N Bety（N<200B）|数据区长度可以为0|
+|Data\[N\](数据)|此帧数据区|N Bety（N<200B）|数据区长度可以为0|
 |check(校验)|校验范围：Length+ Index+ CMD+ Data|1 Bety|校验算法为：异或值|
 |End(帧尾)|固定为0xDD|1 Bety||
 
