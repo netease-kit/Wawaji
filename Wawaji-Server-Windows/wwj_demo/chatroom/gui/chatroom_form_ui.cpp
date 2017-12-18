@@ -14,18 +14,24 @@ ChatroomForm::ChatroomForm(__int64 room_id)
 	room_id_ = room_id;
 
 	exit_ = false;
+	game_play_type_ = kGptNone;
 	game_step_ = kGameStepEmpty;
 	game_stop_ = false;
 	game_get_member_try_num_ = 0;
 	game_camera_front_ = true;
 	game_ret_success_ = false;
-
+	serial_ = 0;
+	game_handle_ = NULL;
 	paint_pic_ = false;
 }
 
 ChatroomForm::~ChatroomForm()
 {
+	nbase::NAutoLock auto_lock(&serial_opt_lock_);
+	delete game_handle_;
+	game_handle_ = NULL;
 }
+
 ui::Control* ChatroomForm::CreateControl(const std::wstring& pstrClass)
 {
 	if (pstrClass == _T("BitmapControl"))
@@ -141,9 +147,17 @@ void ChatroomForm::InitWindow()
 
 	InitGameHandle(GetConfigValue("com_id"));
 	GameReset();
-	WWJCameraLiveStream::GetInstance()->SetErrorCb(nbase::Bind(&ChatroomForm::OnLsErrorCb, this, std::placeholders::_1, std::placeholders::_2));
-	WWJCameraLiveStream::GetInstance()->SetStartCb(nbase::Bind(&ChatroomForm::OnLsStartCb, this, std::placeholders::_1, std::placeholders::_2));
-	WWJCameraLiveStream::GetInstance()->StartLiveStream();
+	if (GetConfigValueNum("kLiveStream", 1) == 1)
+	{
+		WWJCameraLiveStream::GetInstance()->SetErrorCb(nbase::Bind(&ChatroomForm::OnLsErrorCb, this, std::placeholders::_1, std::placeholders::_2));
+		WWJCameraLiveStream::GetInstance()->SetStartCb(nbase::Bind(&ChatroomForm::OnLsStartCb, this, std::placeholders::_1, std::placeholders::_2));
+		WWJCameraLiveStream::GetInstance()->StartLiveStream();
+	}
+	if (GetConfigValueNum("kH5Stream", 1) == 1)
+	{
+		rts_stream_1_.StartRtsStream("1", nbase::StringPrintf("%lld_1", room_id_));
+		rts_stream_2_.StartRtsStream("2", nbase::StringPrintf("%lld_2", room_id_));
+	}
 }
 
 void ChatroomForm::OnRelink(const Json::Value &json)
@@ -189,6 +203,8 @@ LRESULT ChatroomForm::HandleMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
 }
 void ChatroomForm::OnFinalMessage(HWND hWnd)
 {
+	rts_stream_1_.StopRtsStream();
+	rts_stream_2_.StopRtsStream();
 	WWJCameraLiveStream::GetInstance()->StopLiveStream();
 	EndVChat();
     CloseGameHandle();

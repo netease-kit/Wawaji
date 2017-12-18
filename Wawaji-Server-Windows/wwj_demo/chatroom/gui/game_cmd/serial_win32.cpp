@@ -3,9 +3,8 @@
 #include <windows.h>
 #include <process.h>
 #include "serial_win32.h"
+#include "serial_common.h"
 
-#define BUF_LEN 240
-static unsigned char result_data[BUF_LEN];
 
 static unsigned char frame_head = 0xaa;   //帧头 固定为0xaa
 static unsigned char frame_length = 0x00; //Index + CMD +Data + check 的长度
@@ -53,33 +52,6 @@ enum wwj_cmd
 namespace nim_wwj
 {
 
-	//read_size 串口中应读取的字节数
-	//buf_offset 数据缓存偏移
-	static int serial_read_data(HANDLE SerialHandle, int read_size, int buf_offset)
-	{
-		DWORD  dwRead = 0;
-		if (SerialHandle != INVALID_HANDLE_VALUE)
-		{
-			BOOL bReadOk = ReadFile(SerialHandle, result_data + buf_offset, read_size, &dwRead, NULL);
-			if (!bReadOk || (dwRead <= 0))
-			{
-				//printf("serial receive data failed\n");
-			}
-		}
-		return dwRead;
-	}
-
-	static int serial_write_data(HANDLE SerialHandle, unsigned char* data, size_t length)
-	{
-		if (SerialHandle != INVALID_HANDLE_VALUE)
-		{
-			DWORD WriteNum = 0;
-			if (WriteFile(SerialHandle, data, length, &WriteNum, 0))
-				return 0;
-		}
-		return -1;
-	}
-
 	//监听读线程
 	unsigned int __stdcall serial_read_data_thread(LPVOID lpParam)
 	{
@@ -98,16 +70,17 @@ namespace nim_wwj
 				bResult = ClearCommError(SerialHandle, &dwError, &com_stat);
 				if (com_stat.cbInQue == 0)
 					continue;
-				memset(result_data, 0, BUF_LEN);
-				data_len = serial_read_data(SerialHandle, 1, 0);
+				unsigned char* result_data = NULL;
+				//memset(result_data, 0, BUF_LEN);
+				data_len = serial_read_data(SerialHandle,&result_data, 1, 0);
 				//分析窗口指令
-				if (data_len > 0 && result_data[0] == frame_head)
+				if (data_len > 0 && result_data!=NULL&&result_data[0] == frame_head)
 				{
-					data_len = serial_read_data(SerialHandle, 1, 1);
+					data_len = serial_read_data(SerialHandle, &result_data,1, 1);
 					printf("data[0]:%x data[1] %x\n", result_data[0], result_data[1]);
 					if (data_len > 0)
 					{
-						data_len = serial_read_data(SerialHandle, result_data[1] + 1, 2);
+						data_len = serial_read_data(SerialHandle, &result_data, result_data[1] + 1, 2);
 						printf("data[2]:%x data[3] %x\n", result_data[2], result_data[3]);
 						if (data_len > 0)
 						{
@@ -351,10 +324,15 @@ namespace nim_wwj
 
 			SetupComm(serial_handle_, 1024, 1024);    //设置缓冲区
 			SetSerialComTimeout();//设置读写超时
-			serial_read_thread_id_ = (HANDLE)_beginthreadex(NULL, 0, serial_read_data_thread, this, 0, NULL);
+			StartSerialReadThread();
 			return true;
 		}
 		return false;
+	}
+
+	void WwjControl::StartSerialReadThread()
+	{
+		serial_read_thread_id_ = (HANDLE)_beginthreadex(NULL, 0, serial_read_data_thread, this, 0, NULL);
 	}
 
 	wwj_set_param_t WwjControl::GetSettingParam()
@@ -575,7 +553,7 @@ namespace nim_wwj
 		if (serial_handle_ == INVALID_HANDLE_VALUE)  //打开串口失败
 		{
 			printf("open serial error!\n");
-			ret = false;
+			//ret = false;
 		}
 		serial_close_flag = FALSE;
 		return ret;

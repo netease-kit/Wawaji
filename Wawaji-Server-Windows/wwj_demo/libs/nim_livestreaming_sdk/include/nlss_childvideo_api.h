@@ -15,6 +15,7 @@ extern "C" {
 #endif
 
 /*! \file */
+
 /**
 *  获取摄像头设备支持的采集参数
 *
@@ -22,9 +23,9 @@ extern "C" {
 *  @param  pstCaptureParams: 摄像头支持的采集参数数组，出参
 *  @param  piNum: 摄像头支持的采集参数数组个数，出参
 *
-*  @return _HNLSSCHILDSERVICE 非NULL成功， NULL失败
+*  @return NLSS_RET NLSS_OK成功，NLSS_ERR失败
 */
-	EXPORTS_API   NLSS_RET  Nlss_DeviceGetCamereCaptureInf(ST_NLSS_INDEVICE_INF *pstCamera, NLSS_OUT ST_NLSS_CAMERA_CAPTURE_PARAM **pstCaptureParams, NLSS_OUT int *piNum);
+EXPORTS_API   NLSS_RET  Nlss_DeviceGetCamereCaptureInf(ST_NLSS_INDEVICE_INF *pstCamera, NLSS_OUT ST_NLSS_CAMERA_CAPTURE_PARAM **pstCaptureParams, NLSS_OUT int *piNum);
 
 /**
 *  打开子视频实例，用于推流直播
@@ -132,6 +133,7 @@ EXPORTS_API   void     Nlss_ChildVideoStopCapture(_HNLSSCHILDSERVICE hNLSSChild)
 *  @return 无
 */
 EXPORTS_API       void               Nlss_ChildVideoSetSoloPreviewCB(_HNLSSCHILDSERVICE hNLSSChild, PFN_NLSS_VIDEOSAMPLER_CB pFunVideoSamplerCB);
+
 /**
 *  开|关子视频单独预览
 *

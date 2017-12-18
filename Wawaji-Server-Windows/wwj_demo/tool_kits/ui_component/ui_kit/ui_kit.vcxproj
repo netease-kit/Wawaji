@@ -363,9 +363,6 @@
     <ProjectReference Include="..\..\shared\shared.vcxproj">
       <Project>{9951345f-620b-4bed-bb51-4f928cafd454}</Project>
     </ProjectReference>
-    <ProjectReference Include="..\capture_image\capture_image.vcxproj">
-      <Project>{a8b95530-a231-4089-8f84-b1dbad8f3008}</Project>
-    </ProjectReference>
     <ProjectReference Include="..\image_view\image_view.vcxproj">
       <Project>{92850844-a8e2-43fb-ae1d-14f72aa0a59c}</Project>
     </ProjectReference>

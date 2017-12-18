@@ -20,8 +20,8 @@ extern "C" {
 
 /*! \file */
 
-#define  NLSS_MASK_HANDLE_TYPE(_name)  struct NLSS_stru_##_name##__ {int iUnused; } * 
-#define  NLSS_MASK_TYPE(_name, _type)  struct NLSS_stru_##_name##_type {int iUnused; } *
+#define  NLSS_MASK_HANDLE_TYPE(_name)  struct stru_##_name##__ {int iUnused; } * 
+#define  NLSS_MASK_TYPE(_name, _type)  struct stru_##_name##_type {int iUnused; } *
 
 /***NLSS º¯Êý·µ»ØÖµ***/
 typedef  NLSS_MASK_TYPE(_RET, int)      NLSS_RET;

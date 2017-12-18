@@ -6,6 +6,15 @@ namespace nim_chatroom
 using namespace nim_wwj;
 using namespace ui;
 
+typedef std::function<void(nim_wwj::wwj_callback_func_type_e type, int code, nim_wwj::wwj_device_status_e status)> WWJ_CB;
+WWJ_CB wwj_cb_ = nullptr;
+void on_wwj_callback(nim_wwj::wwj_callback_func_type_e type, int code, nim_wwj::wwj_device_status_e status)
+{
+	if (wwj_cb_)
+	{
+		Post2UI(nbase::Bind(wwj_cb_, type, code, status));
+	}
+}
 int32_t GetConfigValueNum(const std::string& key, int32_t def_value)
 {
 	int32_t ret = def_value;
@@ -15,15 +24,6 @@ int32_t GetConfigValueNum(const std::string& key, int32_t def_value)
 		ret = atoi(value.c_str());
 	}
 	return ret;
-}
-typedef std::function<void(nim_wwj::wwj_callback_func_type_e type, int code, nim_wwj::wwj_device_status_e status)> WWJ_CB;
-WWJ_CB wwj_cb_ = nullptr;
-void on_wwj_callback(nim_wwj::wwj_callback_func_type_e type, int code, nim_wwj::wwj_device_status_e status)
-{
-	if (wwj_cb_)
-	{
-		Post2UI(nbase::Bind(wwj_cb_, type, code, status));
-	}
 }
 void ChatroomForm::RecGameControl(const std::string &uid, int32_t command, const std::string &data, int64_t serial)
 {
@@ -71,6 +71,22 @@ void ChatroomForm::RecGameControl(const std::string &uid, int32_t command, const
 			}
 			break;
 		}
+		case kGctH5Accpt:
+		case kGctH5Reject:
+		{
+			if (game_step_ == kGameStepInvite && data == game_session_id_ && game_play_type_ == kGptH5)
+			{
+				if (command == kGctH5Accpt)
+				{
+					GameStart();
+				}
+				else if (command == kGctH5Reject)
+				{
+					GameEnd();
+				}
+			}
+			break;
+		}
 		}
 	}
 	QLOG_APP(L"rec control step:{0}, cmd:{1}, data:{2}, ret:{3}") << game_step_ << command << data << ret;
@@ -86,45 +102,51 @@ void ChatroomForm::RecGameControl(const std::string &uid, int32_t command, const
 		value["command"] = kGctAck;
 		value["data"]["command"] = command;
 		value["data"]["data"] = data;
-		value["data"]["code"] = code;
-		value["data"]["serial"] = serial;
+		value["serial"] = serial;
+		value["code"] = code;
 		std::string json_value = fs.write(value);
 		SendP2PCustomMsg(uid, json_value, false);
 	}
 }
 int32_t ChatroomForm::DoGameControl(int32_t command, const std::string &data)
 {
+	
 	int32_t ret = -1;
 	switch (command)
 	{
 	case kGctMove:
 	{
-		if (data == "left")
+		nbase::ThreadManager::PostTask(kThreadSerialOpt, ToWeakCallback([=]()
 		{
-			ret = game_handle_.SerialDirectectOpt(kleft);
-		}
-		else if (data == "right")
-		{
-			ret = game_handle_.SerialDirectectOpt(kright);
-		}
-		else if (data == "up")
-		{
-			ret = game_handle_.SerialDirectectOpt(kfront);
-		}
-		else if (data == "down")
-		{
-			ret = game_handle_.SerialDirectectOpt(kback);
-		}
+			nbase::NAutoLock auto_lock(&serial_opt_lock_);
+			if (data == "left")
+			{
+				 game_handle_->SerialDirectectOpt(kleft);
+			}
+			else if (data == "right")
+			{
+				game_handle_->SerialDirectectOpt(kright);
+			}
+			else if (data == "up")
+			{
+				 game_handle_->SerialDirectectOpt(kfront);
+			}
+			else if (data == "down")
+			{
+				 game_handle_->SerialDirectectOpt(kback);
+			}
+		}));
+		ret = true;
 		break;
 	}
 	case kGctGo:
 	{
-		ret = game_handle_.SerialDirectectOpt(kclaw);
+		ret = game_handle_->SerialDirectectOpt(kclaw);
 		break;
 	}
 	case kGctAddCoins:
 	{
-		game_handle_.Pay(1);
+		game_handle_->Pay(1);
 		break;
 	}
 	}
@@ -133,29 +155,35 @@ int32_t ChatroomForm::DoGameControl(int32_t command, const std::string &data)
 
 bool ChatroomForm::InitGameHandle(const std::string &com)
 {
-	game_handle_.CloseSerial();
-	if (game_handle_.OpenSerial(com.c_str()))
+	if (game_handle_ == NULL)
+	{
+		SerialControlFactory factory;
+		int32_t mainbord_index=GetConfigValueNum("kGameMainBordIndex", 0);
+		game_handle_ = factory.createWwjControl((nim_wwj::PRODUCTTYPE)mainbord_index);
+	}
+	game_handle_->CloseSerial();
+	if (game_handle_->OpenSerial(com.c_str()))
 	{
 		serial_param_t param;
-		param.bound_rate = 38400;
+		param.bound_rate = GetConfigValueNum("kGameMainBoardBaudRate", 38400);
 		param.byte_size = 8;
 		param.stop_bits = 1;
 		param.fbinary = 1;
 		param.fparity = 0;
 		param.parity = NOPARITY;
-		if (game_handle_.SetSerialParam(param))
+		if (game_handle_->SetSerialParam(param))
 		{
-			game_handle_.SetOptFuncCb(on_wwj_callback);
+			game_handle_->SetOptFuncCb(on_wwj_callback);
 			//初始化娃娃机设置参数
-			wwj_set_param_t set_param = game_handle_.GetSettingParam();
+			wwj_set_param_t set_param = game_handle_->GetSettingParam();
 			set_param.prize_pattern = GetConfigValueNum("kGamePrizePattern", 0);
 			set_param.power_time = GetConfigValueNum("kGamePowerTime", 20);
 			set_param.power_claw = GetConfigValueNum("kGamePowerClaw", 38);
 			set_param.top_claw_power = GetConfigValueNum("kGameTopPower", 20);
 			set_param.weak_claw_power = GetConfigValueNum("kGameWeakPower", 20);
-			game_handle_.SetSettingParam(set_param);
+			game_handle_->SetSettingParam(set_param);
 			//初始化天车移动的步进值
-			game_handle_.SerialSetStepSize(GetConfigValueNum("kGameStepSize", 70));
+			game_handle_->SerialSetStepSize(GetConfigValueNum("kGameStepSize", 70));
 			wwj_cb_ = nbase::Bind(&ChatroomForm::OnGameRetCallback, this, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
 
 			AddText("Init Game Ok!", GAME_CLR_STEP);
@@ -167,7 +195,7 @@ bool ChatroomForm::InitGameHandle(const std::string &com)
 }
 void ChatroomForm::CheckGameHanle()
 {
-	game_handle_.QueryDeviceInfo();
+	game_handle_->QueryDeviceInfo();
 }
 void ChatroomForm::OnGameRetCallback(int32_t type, int32_t code, int32_t status)
 {
@@ -239,16 +267,57 @@ void ChatroomForm::OnGameRetCallback(int32_t type, int32_t code, int32_t status)
 }
 bool ChatroomForm::CloseGameHandle()
 {
-	game_handle_.CloseSerial();
+	game_handle_->CloseSerial();
 	return true;
 }
 bool ChatroomForm::ResetClaw()
 {
-	if (game_handle_.CrownBlockReset())
+	if (game_handle_->CrownBlockReset())
 	{
 		return true;
 	}
 	return false;
+}
+void ChatroomForm::GameInvite(const std::string& uid)
+{
+	if (game_step_ == kGameStepInvite)
+	{
+		AddText(nbase::StringPrintf("game invite %s", uid.c_str()), GAME_CLR_STEP);
+		//ResetClaw();
+		game_ret_timer_.Cancel();
+		game_go_timer_.Cancel();
+		game_start_timer_.Cancel();
+		StdClosure task = nbase::Bind(&ChatroomForm::GameEnd, this);
+		nbase::ThreadManager::PostDelayedTask(kThreadUI, game_start_timer_.ToWeakCallback(task), nbase::TimeDelta::FromSeconds(GAME_START_TIME_OUT));
+
+
+		switch (game_play_type_)
+		{
+			break;
+		case kGptWebrtc:
+			StartVChat(uid, true);
+			break;
+		case kGptH5:
+			H5Invite(uid);
+			break;
+		case kGptVChat:
+		default:
+			StartVChat(uid, false);
+			break;
+		}
+	}
+}
+void ChatroomForm::GameStart()
+{
+	AddText(nbase::StringPrintf("game start %s", game_uid_.c_str()), GAME_CLR_STEP);
+	DoGameControl(kGctAddCoins, "");
+	game_step_ = kGameStepStart;
+	game_ret_timer_.Cancel();
+	game_go_timer_.Cancel();
+	game_start_timer_.Cancel();
+
+	StdClosure task = nbase::Bind(&ChatroomForm::GameTimeout, this);
+	nbase::ThreadManager::PostDelayedTask(kThreadUI, game_start_timer_.ToWeakCallback(task), nbase::TimeDelta::FromSeconds(GAME_GO_TIME_OUT));
 }
 void ChatroomForm::GameTimeout()
 {
@@ -256,14 +325,20 @@ void ChatroomForm::GameTimeout()
 	{
 		AddText("gamer go", GAME_CLR_STEP);
 		game_step_ = kGameStepClaw;
-		DoGameControl(kGctGo, "");
 
 		game_go_timer_.Cancel();
 		game_ret_timer_.Cancel();
 		game_start_timer_.Cancel();
+		StdClosure claw_task = nbase::Bind(&ChatroomForm::GameClaw, this);
+		nbase::ThreadManager::PostDelayedTask(kThreadUI, game_ret_timer_.ToWeakCallback(claw_task), nbase::TimeDelta::FromMilliseconds(100));
 		StdClosure task = nbase::Bind(&ChatroomForm::GameEnd, this);
 		nbase::ThreadManager::PostDelayedTask(kThreadUI, game_ret_timer_.ToWeakCallback(task), nbase::TimeDelta::FromSeconds(GAME_RET_TIME_OUT));
 	}
+}
+void ChatroomForm::GameClaw()
+{
+	int32_t ret = DoGameControl(kGctGo, "");
+	QLOG_APP(L"game control go! ret {0}") << ret;
 }
 void ChatroomForm::GameEnd()
 {
@@ -275,6 +350,7 @@ void ChatroomForm::GameEnd()
 		Json::Value value;
 		value["command"] = kGctRetNotify;
 		value["data"] = game_ret_success_ ? "true" : "false";
+		value["serial"] = GetSerial();
 		std::string json_value = fs.write(value);
 		auto task = nbase::Bind(&ChatroomForm::SendP2PCustomMsg, this, game_uid_, json_value, false);
 		cb = nbase::Bind(&ChatroomForm::QueuePollCb, this, task, std::placeholders::_1, std::placeholders::_2, std::placeholders::_3);
@@ -292,6 +368,7 @@ void ChatroomForm::GameEnd()
 }
 void ChatroomForm::GameReset()
 {
+	game_play_type_ = kGptNone;
 	game_step_ = kGameStepEmpty;
 	game_ret_success_ = false;
 	game_camera_front_ = true;
@@ -306,6 +383,21 @@ void ChatroomForm::QueuePollCb(const StdClosure &task, int64_t room_id, int erro
 {
 	QLOG_APP(L"QueuePollCb {0} {1}") << room_id << error_code;
 	Post2UI(task);
+}
+int64_t ChatroomForm::GetSerial()
+{
+	return ++serial_;
+}
+
+void ChatroomForm::H5Invite(const std::string& uid)
+{
+	Json::FastWriter fs;
+	Json::Value value;
+	value["command"] = kGctH5Invite;
+	value["data"] = game_session_id_;
+	value["serial"] = GetSerial();
+	std::string json_value = fs.write(value);
+	SendP2PCustomMsg(uid, json_value, false);
 }
 
 }

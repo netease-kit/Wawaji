@@ -53,7 +53,7 @@ void ChatroomCallback::OnEnterCallback(__int64 room_id, const NIMChatRoomEnterSt
 					return;
 				}
 				else
-			chat_form->OnEnterCallback(error_code, info, my_info);
+					chat_form->OnEnterCallback(error_code, info, my_info);
 		}
 	};
 	Post2UI(cb);

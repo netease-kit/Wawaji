@@ -126,8 +126,9 @@ EXPORTS_API   void     Nlss_SetVideoSamplerCB(_HNLSSERVICE hNLSService, PFN_NLSS
 *  设置直播过程中状态回调
 *
 *  @param  pFunStatusNty 直播状态通知函数
+*  @param  pUserData     用户自定义数据，SDK不做修改，直接传回pFunStatusNty
 */
-EXPORTS_API   void     Nlss_SetStatusCB(_HNLSSERVICE hNLSService, PFN_NLSS_STATUS_NTY pFunStatusNty);
+EXPORTS_API   void     Nlss_SetStatusCB(_HNLSSERVICE hNLSService, PFN_NLSS_STATUS_NTY pFunStatusNty, void* pUserData);
 
 /**
 *  清除Nlss_InitParam设置的直播参数

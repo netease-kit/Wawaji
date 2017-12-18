@@ -65,7 +65,7 @@ namespace nim_wwj
 
 	typedef enum
 	{
-		error = -1,//接口调用失败
+		error = -1,
 		normal = 0, //正常
 		left_error, //向左故障
 		right_error,//向右故障
@@ -91,34 +91,37 @@ namespace nim_wwj
 	public:
 		WwjControl();
 		virtual ~WwjControl();
-		bool OpenSerial(const char* com);//打开串口
-		void CloseSerial();//关闭串口
-		bool SetSerialParam(serial_param_t param);//设置串口参数
+		virtual bool OpenSerial(const char* com);//打开串口
+		virtual void CloseSerial();//关闭串口
+		virtual bool SetSerialParam(serial_param_t param);//设置串口参数
 		virtual bool CrownBlockReset();//天车归位
-		virtual wwj_set_param_t GetSettingParam();//获取娃娃机参数
-		virtual bool  SetSettingParam(wwj_set_param_t param);//设置娃娃机设备参数
+		wwj_set_param_t GetSettingParam();//获取娃娃机参数
+		bool  SetSettingParam(wwj_set_param_t param);//设置娃娃机设备参数
 		virtual bool SerialDirectectOpt(serial_direction_opt_type_e type);//娃娃机方向操作
 		virtual void SerialSetStepSize(unsigned char step_size);//娃娃机步长
 		virtual void  Pay(int coins);//云上分，上分之前应先调用CheckNormal接口检测设备状态 结果由回调返回
 		virtual bool QueryDeviceInfo();//查询终端账目（用于查询设备的账目状况，故障状态等 结果由回调返回
 		virtual bool CheckNormal();//查询链接, 用户查询是否正常,结果由回调返回
-		void SetOptFuncCb(wwj_callback_func cb) { wwj_opt_cb_ = cb; }//设置回调函数
-		wwj_callback_func GetOptFuncCb() { return wwj_opt_cb_; }//获取回调函数
+		virtual void SetOptFuncCb(wwj_callback_func cb) { wwj_opt_cb_ = cb; }//设置回调函数
+		virtual wwj_callback_func GetOptFuncCb() { return wwj_opt_cb_; }//获取回调函数
 		HANDLE GetSerialHandle() { return serial_handle_; } //获取串口句柄
 		void SetMainBoardIndex(wwj_mainboard_index index) { wwj_mainboard_index_ = index; }//设置主板类型
+		virtual void StartSerialReadThread();
 		
 	private:
 		unsigned char cmd_data_[BUF_LEN];
 		unsigned char send_data_[BUF_LEN];
-		HANDLE serial_read_thread_id_;//串口读线程
 		wwj_callback_func wwj_opt_cb_;
-		HANDLE serial_handle_;
 		wwj_set_param_t wwj_setting_param_;
 		unsigned char wwj_step_size_;
 		wwj_mainboard_index wwj_mainboard_index_;
 	private:
 		int SerialCmdHelp(unsigned char* buf, unsigned int buf_size, unsigned char cmd, unsigned char* data, size_t data_size, int* length);
 		int SetSerialComTimeout();
+
+	public:
+		HANDLE serial_handle_;
+		HANDLE serial_read_thread_id_;//串口读线程
 
 	};
 }

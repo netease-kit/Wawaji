@@ -10,6 +10,7 @@ enum ThreadId
 	kThreadDuilibHelper,//Duilib专用，UI辅助线程
 	kThreadLiveStreaming,//直播线程
 	kThreadScreenCapture,//取屏线程
+	kThreadSerialOpt,//串口操作线程
 };
 
 #endif // SHARED_THREADS_H_

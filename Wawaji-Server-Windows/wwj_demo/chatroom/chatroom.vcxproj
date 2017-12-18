@@ -58,7 +58,7 @@
       <PreprocessorDefinitions>WIN32;NIM_WIN_DESKTOP_ONLY_SDK;_DEBUG;_WINDOWS;__WINDOWS__;__i386__;__SUPPORT_XP__;_LIB;WITH_ENCRYPT;TIXML_USE_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>
       </SDLCheck>
-      <AdditionalIncludeDirectories>.\;..\;..\nim_win_demo\;..\third_party\;..\third_party\jsoncpp\include\json\;..\libs\nim_sdk_desktop\nim_cpp_sdk\;..\libs\nim_sdk_desktop\nim_cpp_sdk\api\;..\libs\nim_sdk_desktop\nim_cpp_sdk\util\;..\libs\nim_sdk_desktop\nim_cpp_sdk\helper\;..\libs\nim_sdk_desktop\nim_tools_cpp_sdk\nim_audio_cpp\;..\libs\nim_sdk_desktop\nim_tools_cpp_sdk\nim_http_cpp\;..\libs\nim_sdk_desktop\nim_c_sdk\include\;..\libs\nim_sdk_desktop\nim_c_sdk\util\;..\libs\nim_sdk_desktop\nim_chatroom_cpp_sdk\;..\libs\nim_sdk_desktop\nim_chatroom_cpp_sdk\api\;..\libs\nim_sdk_desktop\nim_chatroom_cpp_sdk\util\;..\libs\nim_sdk_desktop\nim_chatroom_cpp_sdk\helper\;..\libs\nim_sdk_desktop\nim_chatroom_c_sdk\include\;..\tool_kits\ui_component\ui_kit\;..\tool_kits\;..\libs\nim_livestreaming_sdk\;..\libs\nim_livestreaming_sdk\api\;..\libs\nim_livestreaming_sdk\include\;..\libs\nim_livestreaming_sdk\util\</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;.\ffmpeg\include\;..\;..\nim_win_demo\;..\third_party\;..\third_party\jsoncpp\include\json\;..\libs\nim_sdk_desktop\nim_cpp_sdk\;..\libs\nim_sdk_desktop\nim_cpp_sdk\api\;..\libs\nim_sdk_desktop\nim_cpp_sdk\util\;..\libs\nim_sdk_desktop\nim_cpp_sdk\helper\;..\libs\nim_sdk_desktop\nim_tools_cpp_sdk\nim_audio_cpp\;..\libs\nim_sdk_desktop\nim_tools_cpp_sdk\nim_http_cpp\;..\libs\nim_sdk_desktop\nim_c_sdk\include\;..\libs\nim_sdk_desktop\nim_c_sdk\util\;..\libs\nim_sdk_desktop\nim_chatroom_cpp_sdk\;..\libs\nim_sdk_desktop\nim_chatroom_cpp_sdk\api\;..\libs\nim_sdk_desktop\nim_chatroom_cpp_sdk\util\;..\libs\nim_sdk_desktop\nim_chatroom_cpp_sdk\helper\;..\libs\nim_sdk_desktop\nim_chatroom_c_sdk\include\;..\tool_kits\ui_component\ui_kit\;..\tool_kits\;..\libs\nim_livestreaming_sdk\;..\libs\nim_livestreaming_sdk\api\;..\libs\nim_livestreaming_sdk\include\;..\libs\nim_livestreaming_sdk\util\</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
     </ClCompile>
@@ -81,7 +81,7 @@
       <PreprocessorDefinitions>WIN32;NIM_WIN_DESKTOP_ONLY_SDK;NDEBUG;_WINDOWS;__WINDOWS__;__i386__;__SUPPORT_XP__;_LIB;WITH_ENCRYPT;TIXML_USE_STL;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>
       </SDLCheck>
-      <AdditionalIncludeDirectories>.\;..\;..\nim_win_demo\;..\third_party\;..\third_party\jsoncpp\include\json\;..\libs\nim_sdk_desktop\nim_cpp_sdk\;..\libs\nim_sdk_desktop\nim_cpp_sdk\api\;..\libs\nim_sdk_desktop\nim_cpp_sdk\util\;..\libs\nim_sdk_desktop\nim_cpp_sdk\helper\;..\libs\nim_sdk_desktop\nim_tools_cpp_sdk\nim_audio_cpp\;..\libs\nim_sdk_desktop\nim_tools_cpp_sdk\nim_http_cpp\;..\libs\nim_sdk_desktop\nim_c_sdk\include\;..\libs\nim_sdk_desktop\nim_c_sdk\util\;..\libs\nim_sdk_desktop\nim_chatroom_cpp_sdk\;..\libs\nim_sdk_desktop\nim_chatroom_cpp_sdk\api\;..\libs\nim_sdk_desktop\nim_chatroom_cpp_sdk\util\;..\libs\nim_sdk_desktop\nim_chatroom_cpp_sdk\helper\;..\libs\nim_sdk_desktop\nim_chatroom_c_sdk\include\;..\tool_kits\ui_component\ui_kit\;..\tool_kits\;..\libs\nim_livestreaming_sdk\;..\libs\nim_livestreaming_sdk\api\;..\libs\nim_livestreaming_sdk\util;..\libs\nim_livestreaming_sdk\include</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>.\;.\ffmpeg\include\;..\;..\nim_win_demo\;..\third_party\;..\third_party\jsoncpp\include\json\;..\libs\nim_sdk_desktop\nim_cpp_sdk\;..\libs\nim_sdk_desktop\nim_cpp_sdk\api\;..\libs\nim_sdk_desktop\nim_cpp_sdk\util\;..\libs\nim_sdk_desktop\nim_cpp_sdk\helper\;..\libs\nim_sdk_desktop\nim_tools_cpp_sdk\nim_audio_cpp\;..\libs\nim_sdk_desktop\nim_tools_cpp_sdk\nim_http_cpp\;..\libs\nim_sdk_desktop\nim_c_sdk\include\;..\libs\nim_sdk_desktop\nim_c_sdk\util\;..\libs\nim_sdk_desktop\nim_chatroom_cpp_sdk\;..\libs\nim_sdk_desktop\nim_chatroom_cpp_sdk\api\;..\libs\nim_sdk_desktop\nim_chatroom_cpp_sdk\util\;..\libs\nim_sdk_desktop\nim_chatroom_cpp_sdk\helper\;..\libs\nim_sdk_desktop\nim_chatroom_c_sdk\include\;..\tool_kits\ui_component\ui_kit\;..\tool_kits\;..\libs\nim_livestreaming_sdk\;..\libs\nim_livestreaming_sdk\api\;..\libs\nim_livestreaming_sdk\util;..\libs\nim_livestreaming_sdk\include</AdditionalIncludeDirectories>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <ForcedIncludeFiles>stdafx.h</ForcedIncludeFiles>
     </ClCompile>
@@ -99,9 +99,15 @@
   <ItemGroup>
     <ClInclude Include="callback\chatroom_callback.h" />
     <ClInclude Include="gui\chatroom_form.h" />
+    <ClInclude Include="gui\game_cmd\serial_common.h" />
+    <ClInclude Include="gui\game_cmd\serial_control_factory.h" />
     <ClInclude Include="gui\game_cmd\serial_win32.h" />
+    <ClInclude Include="gui\game_cmd\serial_win32_jj.h" />
+    <ClInclude Include="gui\game_cmd\serial_win32_wmq.h" />
     <ClInclude Include="gui\live_stream\live_stream.h" />
     <ClInclude Include="gui\meeting_frontpage.h" />
+    <ClInclude Include="gui\rts_stream\Mpeg1Transcoder.h" />
+    <ClInclude Include="gui\rts_stream\rts_stream.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
   </ItemGroup>
@@ -111,9 +117,15 @@
     <ClCompile Include="gui\chatroom_form_msg.cpp" />
     <ClCompile Include="gui\chatroom_form_ui.cpp" />
     <ClCompile Include="gui\chatroom_form_vchat.cpp" />
+    <ClCompile Include="gui\game_cmd\serial_common.cpp" />
+    <ClCompile Include="gui\game_cmd\serial_control_factory.cpp" />
     <ClCompile Include="gui\game_cmd\serial_win32.cpp" />
+    <ClCompile Include="gui\game_cmd\serial_win32_jj.cpp" />
+    <ClCompile Include="gui\game_cmd\serial_win32_wmq.cpp" />
     <ClCompile Include="gui\live_stream\live_stream.cpp" />
     <ClCompile Include="gui\meeting_frontpage.cpp" />
+    <ClCompile Include="gui\rts_stream\Mpeg1Transcoder.cpp" />
+    <ClCompile Include="gui\rts_stream\rts_stream.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
