@@ -30,7 +30,7 @@ export default {
 </script>
 <style lang="postcss" scoped>
   .mask {
-    position: fixed;
+    position: absolute;
     width: 100%;
     height: 100%;
     background: rgba(0,0,0,0.70);
