@@ -83,7 +83,7 @@ export default {
           if (resp.status === 200) {
             if (resp.data.code === 200) {
               let data = resp.data.data
-              let room = data.list[0]
+              let room = data.list[window.wawaRoomId || 0]
               this.machineId = room.creator
               this.roomId = room.roomId
               this.roomName = room.name

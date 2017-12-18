@@ -1,8 +1,8 @@
 ## 娃娃机 Web Html5 Demo 源码导读
 
 ### 体验地址
-- [webrtc-娃娃机](https://app.netease.im/webdemo/wawaji)
 - [html5-娃娃机](https://app.netease.im/webdemo/wawajih5)
+- [webrtc-娃娃机](https://app.netease.im/webdemo/wawaji)
 
 ### 工程说明
 
@@ -69,7 +69,7 @@
   - 云信互动白板(html5直播播放器)能力
 - 娃娃机排队逻辑
   - 云信聊天室麦序队列
-  - 云信webrtc信令通知
+  - 云信IM自定义系统消息
 - 娃娃机操作控制逻辑
   - 云信IM自定义系统消息
 - 娃娃机操作结果通知
@@ -268,7 +268,7 @@
   - `setVideoContainer`，`setVideoContainer2` 为初始化两路流播放器
     - 第一个参数为canvas节点, 第二个参数为视频第一帧流开始渲染时的回调
     - 在第一帧流开始渲染之前，用户可以做一些诸如loading画面/广告播放等操作
-  - 本质为接听webrtc
+  - 本质为websocket传输流及mpeg1解码器
 - 切换摄像头、初始化摄像头
   - `changeCamera` 切换摄像头，摄像头id由类内部自行控制，可通过`getCameraId`方法获取
   - `resetCamera` 重置摄像头
