@@ -49,7 +49,7 @@ void WWJRtsStream::StartRtsStream(const std::string &uid, const std::string &roo
 	QLOG_APP(L"rts {0} start {1}") << uid << room_name;
 	uid_ = uid;
 	room_name_ = room_name;
-	CreateRtsRoom();
+	ReStartRts();
 }
 void WWJRtsStream::StopRtsStream()
 {
@@ -70,7 +70,9 @@ void WWJRtsStream::ReStartRts()
 		restart_timer_.Cancel();
 		StopRts(session_id_);
 		StdClosure task = nbase::Bind(&WWJRtsStream::CreateRtsRoom, this);
-		nbase::ThreadManager::PostDelayedTask(kThreadUI, restart_timer_.ToWeakCallback(task), nbase::TimeDelta::FromSeconds(5));
+		nbase::ThreadManager::PostDelayedTask(kThreadUI, restart_timer_.ToWeakCallback(task), nbase::TimeDelta::FromSeconds(10));
+		StdClosure task2 = nbase::Bind(&WWJRtsStream::ReStartRts, this);
+		nbase::ThreadManager::PostDelayedTask(kThreadUI, restart_timer_.ToWeakCallback(task2), nbase::TimeDelta::FromSeconds(90));
 	}
 }
 void WWJRtsStream::CreateRtsRoom()
@@ -139,6 +141,7 @@ void WWJRtsStream::RtsConnectCb(const std::string& session_id, int channel_type,
 		QLOG_APP(L"rts {0} connect rts cb {1}, session {2}") << uid_ << code << session_id;
 		if (code == 200)
 		{
+			restart_timer_.Cancel();
 			StdClosure task = nbase::Bind(&WWJRtsStream::SendPic, this, session_id, uid_, mpeg1_transcoder_);
 			int32_t ft = GetConfigValueNum("kH5ft", 120);
 			nbase::ThreadManager::PostRepeatedTask(kThreadScreenCapture, send_timer_.ToWeakCallback(task), nbase::TimeDelta::FromMilliseconds(ft));
