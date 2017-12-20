@@ -1,0 +1,145 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netease.mmc.demo.dao.DollsLiveDao">
+    <resultMap id="dollsLiveDOMap" type="com.netease.mmc.demo.dao.domain.DollsLiveDO">
+        <id column="id" jdbcType="BIGINT" property="id"/>
+        <result column="cid" jdbcType="VARCHAR" property="cid"/>
+        <result column="name" jdbcType="VARCHAR" property="name"/>
+        <result column="type" jdbcType="TINYINT" property="type"/>
+        <result column="push_url" jdbcType="VARCHAR" property="pushUrl"/>
+        <result column="http_pull_url" jdbcType="VARCHAR" property="httpPullUrl"/>
+        <result column="hls_pull_url" jdbcType="VARCHAR" property="hlsPullUrl"/>
+        <result column="rtmp_pull_url" jdbcType="VARCHAR" property="rtmpPullUrl"/>
+        <result column="created_at" jdbcType="TIMESTAMP" property="createdAt"/>
+        <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt"/>
+    </resultMap>
+    <sql id="dollsLiveDO_Base_Column_List">
+        id, cid, `name`, `type`, push_url, http_pull_url, hls_pull_url, rtmp_pull_url, created_at,
+        updated_at
+    </sql>
+    <select id="findByPrimaryKey" parameterType="java.lang.Long" resultMap="dollsLiveDOMap">
+        select
+        <include refid="dollsLiveDO_Base_Column_List"/>
+        from demo_dolls_live
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <insert id="insertSelective" parameterType="com.netease.mmc.demo.dao.domain.DollsLiveDO">
+        <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+            SELECT LAST_INSERT_ID()
+        </selectKey>
+        insert into demo_dolls_live
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="cid != null">
+                cid,
+            </if>
+            <if test="name != null">
+                `name`,
+            </if>
+            <if test="type != null">
+                `type`,
+            </if>
+            <if test="pushUrl != null">
+                push_url,
+            </if>
+            <if test="httpPullUrl != null">
+                http_pull_url,
+            </if>
+            <if test="hlsPullUrl != null">
+                hls_pull_url,
+            </if>
+            <if test="rtmpPullUrl != null">
+                rtmp_pull_url,
+            </if>
+            created_at, updated_at,
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="cid != null">
+                #{cid,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                #{type,jdbcType=TINYINT},
+            </if>
+            <if test="pushUrl != null">
+                #{pushUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="httpPullUrl != null">
+                #{httpPullUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="hlsPullUrl != null">
+                #{hlsPullUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="rtmpPullUrl != null">
+                #{rtmpPullUrl,jdbcType=VARCHAR},
+            </if>
+            <choose>
+                <when test="createdAt != null">
+                    #{createdAt},
+                </when>
+                <otherwise>
+                    now(),
+                </otherwise>
+            </choose>
+            <choose>
+                <when test="updatedAt != null">
+                    #{updatedAt},
+                </when>
+                <otherwise>
+                    now(),
+                </otherwise>
+            </choose>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="com.netease.mmc.demo.dao.domain.DollsLiveDO">
+        update demo_dolls_live
+        <set>
+            <if test="cid != null">
+                cid = #{cid,jdbcType=VARCHAR},
+            </if>
+            <if test="name != null">
+                `name` = #{name,jdbcType=VARCHAR},
+            </if>
+            <if test="type != null">
+                `type` = #{type,jdbcType=TINYINT},
+            </if>
+            <if test="pushUrl != null">
+                push_url = #{pushUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="httpPullUrl != null">
+                http_pull_url = #{httpPullUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="hlsPullUrl != null">
+                hls_pull_url = #{hlsPullUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="rtmpPullUrl != null">
+                rtmp_pull_url = #{rtmpPullUrl,jdbcType=VARCHAR},
+            </if>
+            <choose>
+                <when test="updatedAt != null">
+                    updated_at = #{updatedAt},
+                </when>
+                <otherwise>
+                    updated_at = now(),
+                </otherwise>
+            </choose>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+
+    <select id="findByCid" resultMap="dollsLiveDOMap">
+        SELECT
+            <include refid="dollsLiveDO_Base_Column_List"/>
+        FROM demo_dolls_live WHERE cid = #{cid}
+    </select>
+
+    <select id="listByCids" resultMap="dollsLiveDOMap">
+        SELECT
+        <include refid="dollsLiveDO_Base_Column_List"/>
+        FROM demo_dolls_live WHERE cid IN
+        <foreach close=")" collection="cids" index="index" item="item" open="(" separator=",">
+            #{item,jdbcType=VARCHAR}
+        </foreach>
+    </select>
+</mapper>

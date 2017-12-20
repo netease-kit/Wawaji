@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="334,100" mininfo="334,100" caption="0,0,0,34" textid="STRING_TIPS">
+    <VBox bkcolor="bk_wnd_lightcolor" height="auto" >
+        <HBox class="caption" height="34" >
+            <Label class="font_title" name="title" width="stretch" valign="center" normaltextcolor="darkcolor" textid="STRING_TIPS"/>
+            <HBox width="auto" height="auto" valign="top">
+                <Button class="btn_wnd_min" name="minbtn" margin="4,6,0,0"/>
+                <Button class="btn_wnd_close" name="closebtn" margin="10,6,0,0"/>
+            </HBox>
+        </HBox>
+
+        <VBox width="auto" height="auto" halign="center">
+			<Label width="auto" margin="0,30,0,0" font="2" text="老师已通过你的发言申请，" />
+			<Label width="auto" margin="0,10,0,0" font="2" text="请选择发言方式：" />
+            <HBox margin="0,30,0,0" childmargin="20" height="auto" width="auto" >
+                <CheckBoxBox name="audio_mode" width="auto" height="auto" mousechild="false" selected="true" >
+                    <Event type="select" receiver=".\check_icon" applyattribute="bkimage=&quot;select1.png&quot;"/>
+                    <Event type="unselect" receiver=".\check_icon" applyattribute="bkimage=&quot;select0.png&quot;"/>
+					<HBox width="auto" height="auto" >
+						<Control name="check_icon" width="auto" height="auto" valign="center" bkimage="select1.png" />
+						<Label width="auto" height="auto" valign="center" margin="10" font="2" text="语音"/>
+					</HBox>
+                </CheckBoxBox> 
+				<Control />
+                <CheckBoxBox name="video_mode" width="auto" height="auto" mousechild="false" selected="true" >
+                    <Event type="select" receiver=".\check_icon" applyattribute="bkimage=&quot;select1.png&quot;"/>
+                    <Event type="unselect" receiver=".\check_icon" applyattribute="bkimage=&quot;select0.png&quot;"/>
+					<HBox width="auto" height="auto" >
+						<Control name="check_icon" width="auto" height="auto" valign="center" bkimage="select1.png" />
+						<Label name="manage_label" width="auto" height="auto" valign="center" margin="10" font="2" text="视频"/>
+					</HBox>
+                </CheckBoxBox>
+				<Control />
+                <CheckBoxBox name="board_mode" visible="true" width="auto" height="auto" mousechild="false" selected="true" enabled="false" >
+                    <Event type="select" receiver=".\check_icon" applyattribute="bkimage=&quot;select1.png&quot;"/>
+                    <Event type="unselect" receiver=".\check_icon" applyattribute="bkimage=&quot;select0.png&quot;"/>
+					<HBox width="auto" height="auto" >
+						<Control name="check_icon" width="auto" height="auto" valign="center" bkimage="select2.png" />
+						<Label name="manage_label" width="auto" height="auto" valign="center" margin="10" font="2" text="白板"/>
+					</HBox>
+                </CheckBoxBox>
+            </HBox>
+            <Button class="btn_global_green_80x30" margin="0,30,0,30"  name="btn_ok" halign="center" text="确定" />
+        </VBox>
+    </VBox>
+</Window>

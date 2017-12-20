@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Window>
+    <ListContainerElement class="listitem" normalcolor="bk_wnd_lightcolor" height="70" >
+        <HBox padding="10,11,10,11">
+            <Control name="doc_image" bkimage="doc_default.png" height="48" width="48" bordersize="1" bordercolor="doc_image_border"/>
+            <Label name="doc_title" text="" width="125" height="48" margin="10,0,15,0" valign="center" endellipsis="true" singleline="false" />
+            <TabBox name="tab_switch" halign="right" width="152">
+                <HBox name="download_panel" childmargin="10">
+                    <TabBox name="tab_download_controls">
+                        <Control name="btn_download_init" width="24" height="24" valign="center" bkimage="loading.gif" margin="23,0,24,0"/>
+                        <Button class="btn_global_white_80x30" name="btn_download" valign="center" width="71" text="下载使用" />
+                        <Button class="btn_global_white_80x30" name="btn_downloading" valign="center" width="71" text="下载中..." enabled="false"/>
+                        <Button class="btn_global_red_80x30" name="btn_download_retry" valign="center" width="71" text="重试" />
+                        <Button class="btn_global_green_80x30" name="btn_download_use" valign="center" width="71" text="使用" />
+                    </TabBox>
+                    <Button class="btn_global_white_80x30" name="btn_delete" valign="center" width="71" text="删除" />
+                </HBox>
+                <HBox name="upload_panel" childmargin="10">
+                    <TabBox name="tab_upload_controls">、
+                        <HBox>
+                            <Control />
+                            <Label name="upload_prog_tip" text="" valign="center" font="7" singleline="true" normaltextcolor="doc_tip_upload"/>
+                        </HBox>
+                        <HBox>
+                            <Control />
+                            <Label name="upload_error_tip" text="" valign="center" font="7" singleline="true" normaltextcolor="doc_tip_error" />
+                            <Button name="btn_upload_retry" normaltextcolor="doc_btn_blue" font="7" valign="center" text="重试" margin="9,0,0,0" />
+                        </HBox>
+                    </TabBox>
+                    <Control width="1" height="12" valign="center" bkcolor="doc_sep" />
+                    <Button name="btn_upload_cancel" normaltextcolor="doc_btn_blue" font="7" valign="center" text="取消"/>
+                </HBox>
+            </TabBox>
+        </HBox>
+        <Box height="5" valign="bottom">
+            <Control class="splitline_hor_level1" margin="10,0,10,0" name="split_line" valign="bottom"/>
+            <Progress name="prog_upload" width="stretch" height="5" min="0" max="100" value="0" bkcolor="doc_progress_bk" progresscolor="doc_progress_fore" visible="false"/>
+            <Progress name="prog_transcode" width="stretch" height="5" min="0" max="100" value="0" progresscolor="doc_progress_fore2" visible="false"/>
+        </Box>
+    </ListContainerElement>
+</Window>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="redisPassword" class="java.lang.String">
+        <constructor-arg index="0" value="${redis.password}"/>
+    </bean>
+
+    <!-- redis key命名空间 -->
+    <bean id="redisNamespace" class="java.lang.String">
+        <constructor-arg index="0" value="app_demo_dolls"/>
+    </bean>
+
+    <!-- start of redisson config-->
+    <!-- see https://github.com/redisson/redisson/wiki/2.-Configuration -->
+    <bean id="redissonConfig" class="com.netease.mmc.demo.common.redisson.config.RedissonConfig">
+        <!-- 指定对象序列化和反序列化时的编码格式 -->
+        <!--<property name="codec" ref="redissonCodec" />-->
+        <!-- 线程池数量， 0表示为当前处理核数量*2 -->
+        <property name="threads" value="0" />
+        <!-- 单节点模式配置 -->
+        <property name="singleServerConfig" ref="singleServerConfig" />
+    </bean>
+
+    <bean id="singleServerConfig" class="org.redisson.SingleServerConfig">
+        <!-- 节点地址 host:port -->
+        <property name="address" value="${redis.ip}:${redis.port}" />
+        <!-- redis密码 -->
+        <property name="password" value="#{redisPassword ?: null }" />
+        <property name="subscriptionConnectionPoolSize" value="64" />
+        <property name="connectionPoolSize" value="100" />
+        <property name="timeout" value="10000" />
+        <property name="retryAttempts" value="3" />
+        <property name="retryInterval" value="1000" />
+        <property name="database" value="0" />
+        <property name="subscriptionsPerConnection" value="10" />
+    </bean>
+
+    <!-- 编码类， 默认使用 JsonJacksonCodec， 由于与Spring使用Jackson版本冲突，自定义-->
+    <!--<bean id="redissonCodec" class="org.redisson.codec.SerializationCodec"/>-->
+
+    <bean id="redisson" class="com.netease.mmc.demo.common.redisson.factory.RedissonFactoryBean">
+        <property name="redissonConfig" ref="redissonConfig" />
+    </bean>
+    <!-- end of redisson config-->
+</beans>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+    <HBox width="stretch" height="35" menu="true">
+		<CheckBox class="checkbox_green" name="member_show" margin="10,0,0,0" width="auto" height="auto" valign="center" selected="true" >
+		</CheckBox>
+		<Label name="name" text="" font="2" height="auto" width="stretch" valign="center" normaltextcolor="darkcolor" textpadding="7,0,0,0"/>
+		<Label name="time" text="" font="2" height="stretch" width="auto" align="vcenter" normaltextcolor="darkcolor" textpadding="7,0,10,0"/>
+		
+    </HBox>
+</Window>

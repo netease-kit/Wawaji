@@ -1,0 +1,7 @@
+extends: standard
+globals:
+  SDK: true
+  WebRTC: true
+  videojs: true
+  neplayer: true
+plugins: ['vue']

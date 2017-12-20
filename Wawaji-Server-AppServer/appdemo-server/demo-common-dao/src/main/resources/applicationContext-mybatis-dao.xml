@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <!-- DataSource Config -->
+    <bean id="dataSource" class="org.apache.ibatis.datasource.pooled.PooledDataSource">
+        <property name="driver" value="${mysql.driver}"/>
+        <property name="url" value="${mysql.url}"/>
+        <property name="username" value="${mysql.user}"/>
+        <property name="password" value="${mysql.pwd}"/>
+
+        <property name="poolMaximumActiveConnections" value="50"/>
+        <property name="poolTimeToWait" value="5000"/>
+        <property name="poolPingEnabled" value="true"/>
+        <property name="poolPingQuery" value="select 1"/>
+        <property name="poolPingConnectionsNotUsedFor" value="20000"/>
+    </bean>
+
+    <!-- Mybatis Config -->
+    <bean id="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <property name="dataSource" ref="dataSource"/>
+        <property name="mapperLocations" value="classpath:mybatis/*.xml"/>
+        <property name="configuration">
+            <!-- http://www.mybatis.org/mybatis-3/zh/configuration.html -->
+            <bean class="org.apache.ibatis.session.Configuration">
+                <!-- 全局映射器启用缓存 -->
+                <property name="cacheEnabled" value="true"/>
+                <!-- 查询时，关闭关联对象的延时加载以提高性能 -->
+                <property name="lazyLoadingEnabled" value="false"/>
+                <!-- 当开启时，任何方法的调用都会加载该对象的所有属性；关闭时，每个属性会按需加载 -->
+                <property name="aggressiveLazyLoading" value="false"/>
+                <!-- 允许单一语句返回多结果集 -->
+                <property name="multipleResultSetsEnabled" value="true"/>
+                <!-- 使用列标签代替列名 -->
+                <property name="useColumnLabel" value="true"/>
+                <!-- 允许 JDBC 支持自动生成主键 -->
+                <property name="useGeneratedKeys" value="true"/>
+                <!-- 指定 MyBatis 应如何自动映射列到字段或属性，FULL 会自动映射任意复杂的结果集（无论是否嵌套） -->
+                <property name="autoMappingBehavior" value="FULL"/>
+                <!-- 配置默认的执行器。SIMPLE 就是普通的执行器 -->
+                <property name="defaultExecutorType" value="SIMPLE"/>
+                <!-- 设置超时时间，它决定驱动等待数据库响应的秒数。 -->
+                <property name="defaultStatementTimeout" value="300"/>
+            </bean>
+        </property>
+    </bean>
+
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <property name="basePackage" value="com.netease.mmc.demo.dao"/>
+    </bean>
+
+    <!-- Transaction Management -->
+    <bean id="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <property name="dataSource" ref="dataSource" />
+    </bean>
+</beans>

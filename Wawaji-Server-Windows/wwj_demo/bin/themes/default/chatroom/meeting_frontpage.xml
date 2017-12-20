@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window size="410,150" mininfo="410,150" caption="0,0,0,60" textid="STRID_MEETING_FRONTPAGE_TITLE">
+	<VBox bkcolor="bk_wnd_lightcolor" height="auto" >
+		<HBox class="caption" height="60" >
+			<Box width="48" height="48" mouse="false" valign="center">
+				<Control name="header_image" width="46" height="46" borderround="46,46,46,46" margin="1,1,1,1" mouse="false"/>
+				<Control name="head_image_mask" bkimage="../public/headmask/icon_headimage_mask_48x48_selected.png" mouse="false"/>
+			</Box>
+			<Label name="name" font="18" normaltextcolor="dark2color" valign="center" margin="10"/>
+		
+			<Control width="stretch"/>
+			<HBox width="auto" height="auto" valign="top">
+                <Button class="btn_wnd_white_menu" name="menu_button" margin="10,6,0,0"/>
+				<Button class="btn_wnd_min" name="minbtn" margin="4,6,0,0"/>
+				<Button class="btn_wnd_close" name="close_btn" margin="4,6,0,0"/>
+			</HBox>
+		</HBox>
+		<VBox height="auto" margin="0,0,0,30" >
+			<HBox margin="10,16,0,0" height="auto" >
+				<Control valign="center" width="auto" height="auto" bkimage="join_pic.png" />
+				<Label margin="8,0,0,0" font="18" normaltextcolor="darkcolor" text="进入房间" />
+			</HBox>
+			<HBox height="auto" margin="31,20,0,0" >
+				<Label font="1" normaltextcolor="lightcolor" valign="center" text="房间ID号：" />
+				<RichEdit class="simple input prompt" name="edit_room_id" prompttext="输入房间ID" number="true" width="190" height="30" margin="0,0,0,0" padding="2,4,2,4"valign="center" font="2" />
+				<Button class="btn_global_green_80x30" name="join_room" text="进入房间" margin="10,0,0,0" />
+			</HBox>
+			<!--HBox margin="10,30,0,0" height="auto" >
+				<Control valign="center" width="auto" height="auto" bkimage="create_pic.png" />
+				<Label margin="8,0,0,0" font="18" normaltextcolor="darkcolor" text="创建房间" />
+			</HBox>
+			<HBox height="auto" margin="31,20,0,30" >
+				<Label font="1" normaltextcolor="lightcolor" valign="center" text="房间名称：" />
+				<RichEdit class="simple input prompt" name="edit_room_name" prompttext="输入房间名称" width="190" height="30" margin="0,0,0,0" padding="2,4,2,4"valign="center" font="2" />
+				<Button class="btn_global_green_80x30" name="create_room" text="创建房间" margin="10,0,0,0" />
+			</HBox-->
+		</VBox>
+	</VBox>
+</Window>

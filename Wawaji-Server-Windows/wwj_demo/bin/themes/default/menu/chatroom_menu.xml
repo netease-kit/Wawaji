@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+    <VListBox class="menu" >
+        <MenuElement class="MenuElement" name="reject_speek" width="170" tooltiptext="拒绝发言" visible="false">
+            <Label class="menu_text" text="拒绝发言" />
+        </MenuElement>
+        <MenuElement class="MenuElement" name="kick" width="170" tooltiptext="移除直播室" visible="false">
+            <Label class="menu_text" text="踢人" />
+        </MenuElement>
+        <MenuElement class="MenuElement" name="addmute" width="170" tooltiptext="禁止发言" visible="false">
+            <Label class="menu_text" text="禁言" />
+        </MenuElement>
+        <MenuElement class="MenuElement" name="removemute" width="170" visible="false">
+            <Label class="menu_text" text="解除禁言" />
+        </MenuElement>
+        <MenuElement class="MenuElement" name="addblacklist" width="170" tooltiptext="永久不能进入该直播间" visible="false">
+            <Label class="menu_text" text="拉黑该用户" />
+        </MenuElement>
+        <MenuElement class="MenuElement" name="removeblacklist" width="170" visible="false">
+            <Label class="menu_text" text="解除拉黑" />
+        </MenuElement>
+        <MenuElement class="MenuElement" name="addadmin" width="170" visible="false">
+            <Label class="menu_text" text="任命管理员" />
+        </MenuElement>
+        <MenuElement class="MenuElement" name="removeadmin" width="170" visible="false">
+            <Label class="menu_text" text="解除管理员" />
+        </MenuElement>
+        <MenuElement class="MenuElement" name="tempmute" width="170" height="24" visible="false">
+            <Label class="menu_text" text="临时禁言60秒(测试)" />
+        </MenuElement>
+        <MenuElement class="MenuElement" name="tempunmute" width="170" height="24" visible="false">
+            <Label class="menu_text" text="解除临时禁言" />
+        </MenuElement>
+    </VListBox>
+</Window>

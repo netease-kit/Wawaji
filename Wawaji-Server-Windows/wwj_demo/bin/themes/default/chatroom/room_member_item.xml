@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window>
+    <HBox width="stretch" height="auto" menu="true" margin="0,2,0,0" >
+		<HBox width="stretch" height="auto" mousechild="false" mouse="false">
+			<Control name="hand_type" margin="8,9,0,0" width="auto" height="auto" valign="center" visible="false" bkimage="hand.gif"/>
+			<Control name="member_type" margin="8,0,0,0" width="auto" height="auto" valign="center" bkimage=""/>
+			<Box width="29" height="29" margin="6,0,0,0" valign="center">
+				<Control name="header_image" width="27" height="27" borderround="27,27" margin="1,1,1,1" mouse="false"/>
+				<Control width="29" height="29" bkimage="mask_25x25.png"/>
+				<Control name="member_volume" width="29" height="29" bkimage="mask_25x25.png" visible="false"/>
+			</Box>
+			<Label name="name" text="" font="2" height="stretch" align="vcenter" normaltextcolor="darkcolor" textpadding="7,0,0,0"/>
+		</HBox>
+        <Button class="btn_global_red_80x30" name="btn_av_y" cursortype="hand" normaltextcolor="white" disabledtextcolor="white" margin="0,0,10,0" width="66" height="26" valign="center" text="结束互动" />
+        <Button class="btn_global_green_80x30" name="btn_av_n" cursortype="hand" normaltextcolor="white" disabledtextcolor="white" margin="0,0,10,0" width="66" height="26" valign="center" text="允许互动" />
+		<Label name="speeker_type" text="互动中..." font="2" height="stretch" align="vcenter" normaltextcolor="dark2color" margin="0,0,20,0" />
+    </HBox>
+</Window>

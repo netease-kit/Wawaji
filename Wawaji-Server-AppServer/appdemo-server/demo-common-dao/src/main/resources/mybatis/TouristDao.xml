@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.netease.mmc.demo.dao.TouristDao">
+  <resultMap id="touristDOMap" type="com.netease.mmc.demo.dao.domain.TouristDO">
+    <id column="id" jdbcType="BIGINT" property="id" />
+    <result column="accid" jdbcType="VARCHAR" property="accid" />
+    <result column="nickname" jdbcType="VARCHAR" property="nickname" />
+    <result column="im_token" jdbcType="VARCHAR" property="imToken" />
+    <result column="available_at" jdbcType="BIGINT" property="availableAt" />
+    <result column="created_at" jdbcType="TIMESTAMP" property="createdAt" />
+    <result column="updated_at" jdbcType="TIMESTAMP" property="updatedAt" />
+  </resultMap>
+  <sql id="touristDO_Base_Column_List">
+    id, accid, nickname, im_token, available_at, created_at, updated_at
+  </sql>
+  <select id="findByPrimaryKey" parameterType="java.lang.Long" resultMap="touristDOMap">
+    select 
+    <include refid="touristDO_Base_Column_List" />
+    from demo_dolls_tourist
+    where id = #{id,jdbcType=BIGINT}
+  </select>
+  <insert id="insertSelective" parameterType="com.netease.mmc.demo.dao.domain.TouristDO">
+    <selectKey keyProperty="id" order="AFTER" resultType="java.lang.Long">
+      SELECT LAST_INSERT_ID()
+    </selectKey>
+    insert into demo_dolls_tourist
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="accid != null">
+        accid,
+      </if>
+      <if test="nickname != null">
+        nickname,
+      </if>
+      <if test="imToken != null">
+        im_token,
+      </if>
+      <if test="availableAt != null">
+        available_at,
+      </if>
+      created_at, updated_at, 
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="accid != null">
+        #{accid,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="imToken != null">
+        #{imToken,jdbcType=VARCHAR},
+      </if>
+      <if test="availableAt != null">
+        #{availableAt,jdbcType=BIGINT},
+      </if>
+      <choose>
+        <when test="createdAt != null">
+          #{createdAt},
+        </when>
+        <otherwise>
+          now(),
+        </otherwise>
+      </choose>
+      <choose>
+        <when test="updatedAt != null">
+          #{updatedAt},
+        </when>
+        <otherwise>
+          now(),
+        </otherwise>
+      </choose>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.netease.mmc.demo.dao.domain.TouristDO">
+    update demo_dolls_tourist
+    <set>
+      <if test="accid != null">
+        accid = #{accid,jdbcType=VARCHAR},
+      </if>
+      <if test="nickname != null">
+        nickname = #{nickname,jdbcType=VARCHAR},
+      </if>
+      <if test="imToken != null">
+        im_token = #{imToken,jdbcType=VARCHAR},
+      </if>
+      <if test="availableAt != null">
+        available_at = #{availableAt,jdbcType=BIGINT},
+      </if>
+      <choose>
+        <when test="updatedAt != null">
+          updated_at = #{updatedAt},
+        </when>
+        <otherwise>
+          updated_at = now(),
+        </otherwise>
+      </choose>
+    </set>
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+  <select id="findByAccid" parameterType="java.lang.String" resultMap="touristDOMap">
+    select
+    <include refid="touristDO_Base_Column_List" />
+    from demo_dolls_tourist
+    where accid = #{accid}
+  </select>
+
+  <select id="listAvailableTouristByPage" resultMap="touristDOMap">
+    select * from demo_dolls_tourist where available_at <![CDATA[<]]> #{availableAt} LIMIT #{limit} OFFSET #{offset}
+  </select>
+
+  <update id="updateAvailableAtByAccid">
+    UPDATE demo_dolls_tourist SET available_at = #{availableAt} WHERE accid = #{accid}
+  </update>
+
+  <update id="batchUpdateAvailableAt" parameterType="Map">
+    UPDATE demo_dolls_tourist SET available_at = #{availableAt,jdbcType=BIGINT} WHERE accid IN
+    <foreach close=")" collection="accids" index="index" item="item" open="(" separator=",">
+      #{item,jdbcType=VARCHAR}
+    </foreach>
+  </update>
+
+</mapper>

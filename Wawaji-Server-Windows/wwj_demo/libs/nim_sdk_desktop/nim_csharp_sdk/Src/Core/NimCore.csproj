@@ -1,0 +1,199 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{3F88DD96-1392-409A-89E8-475FC56E4647}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>NIM</RootNamespace>
+    <AssemblyName>NimCore</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\..\..\..\..\sdk\bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <DocumentationFile>
+    </DocumentationFile>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\..\..\..\..\sdk\bin\c#\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>..\..\Bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Deploy|AnyCPU'">
+    <OutputPath>bin\Deploy\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Deploy|x86'">
+    <OutputPath>..\..\..\..\..\..\sdk\bin\C#\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <DocumentationFile>..\..\..\..\..\..\sdk\bin\deploy\nim_csharp.XML</DocumentationFile>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Development\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Development|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>..\..\..\..\..\..\test\nim_sdk_csharp_demo\Dependents\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=7.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ThirdParty\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="NimUtility, Version=2.0.0.0, Culture=neutral, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\..\..\test\nim_sdk_csharp_demo\Dependents\NimUtility.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="api\Core\Client\ClientNativeMethods.cs" />
+    <Compile Include="api\Core\NimException\SdkException.cs" />
+    <Compile Include="api\DataSync\DataSyncNativeMethods.cs" />
+    <Compile Include="api\Device\DeviceNativeMethods.cs" />
+    <Compile Include="api\Friend\FriendNativeMethods.cs" />
+    <Compile Include="api\Friend\NIMFriendChangedInfo.cs" />
+    <Compile Include="api\MessageLog\MsgLogNativeMethods.cs" />
+    <Compile Include="api\MessageLog\NIMMsgLogAPI.cs" />
+    <Compile Include="api\MessageLog\NIMMsgLogDef.cs" />
+    <Compile Include="api\Message\MessageAttachmentFactory.cs" />
+    <Compile Include="api\Message\MessageFactory.cs" />
+    <Compile Include="api\Message\MessageObject\NIMAudioMessage.cs" />
+    <Compile Include="api\Message\MessageObject\NIMCustomMessage.cs" />
+    <Compile Include="api\Message\MessageObject\NIMFileMessage.cs" />
+    <Compile Include="api\Message\MessageObject\NIMImageMessage.cs" />
+    <Compile Include="api\Message\MessageObject\NIMIMMessage.cs" />
+    <Compile Include="api\Message\MessageObject\NIMLocationMessage.cs" />
+    <Compile Include="api\Message\MessageObject\NIMMessageAttachment.cs" />
+    <Compile Include="api\Message\MessageObject\NIMTeamNotificationMessage.cs" />
+    <Compile Include="api\Message\MessageObject\NIMTextMessage.cs" />
+    <Compile Include="api\Message\MessageObject\NIMUnknownMessage.cs" />
+    <Compile Include="api\Message\MessageObject\NIMVedioMessage.cs" />
+    <Compile Include="api\Message\NIMMessageEnums.cs" />
+    <Compile Include="api\Message\NIMMessageSetting.cs" />
+    <Compile Include="api\Message\NIMReceivedMessage.cs" />
+    <Compile Include="api\Message\TalkNativeMethods.cs" />
+    <Compile Include="api\Core\Client\NIMClientAPI.cs" />
+    <Compile Include="api\Core\Client\NIMClientDef.cs" />
+    <Compile Include="api\DataSync\NIMDataSyncAPI.cs" />
+    <Compile Include="api\DataSync\NIMDataSyncDef.cs" />
+    <Compile Include="api\Device\NIMDeviceAPI.cs" />
+    <Compile Include="api\Device\NIMDeviceDef.cs" />
+    <Compile Include="api\Friend\NIMFriendAPI.cs" />
+    <Compile Include="api\Friend\NIMFriendDef.cs" />
+    <Compile Include="api\Core\Common\NIMGlobalAPI.cs" />
+    <Compile Include="api\Core\Common\NIMGlobalDef.cs" />
+    <Compile Include="api\Nos\NIMNosAPI.cs" />
+    <None Include="api\Core\Client\NIMSDKConfig.cs" />
+    <Compile Include="api\Nos\NosNativeMethods.cs" />
+    <Compile Include="api\Rts\NIMRtsAPI.cs" />
+    <Compile Include="api\Rts\NIMRtsDef.cs" />
+    <Compile Include="api\Rts\RtsNativeMethods.cs" />
+    <Compile Include="api\Session\NIMSessionDef.cs" />
+    <Compile Include="api\Message\NIMTalkAPI.cs" />
+    <Compile Include="api\NIMToolsAPI.cs" />
+    <Compile Include="api\NIMToolsDef.cs" />
+    <Compile Include="api\Session\SessionNativeMethods.cs" />
+    <Compile Include="api\SysMessage\NIMSysMessage.cs" />
+    <Compile Include="api\SysMessage\NIMSysMsgAPI.cs" />
+    <Compile Include="api\SysMessage\NIMSysMsgDef.cs" />
+    <Compile Include="api\SysMessage\SysMsgNativeMethods.cs" />
+    <Compile Include="api\Team\NIMTeamAPI.cs" />
+    <Compile Include="api\Team\NIMTeamDef.cs" />
+    <Compile Include="api\Team\NIMTeamEvent.cs" />
+    <Compile Include="api\Team\NIMTeamNotificationType.cs" />
+    <Compile Include="api\Team\TeamNativeMethods.cs" />
+    <Compile Include="api\User\NIMUserDef.cs" />
+    <Compile Include="api\NIMVChatAPI.cs" />
+    <Compile Include="api\NIMVChatDef.cs" />
+    <Compile Include="api\User\NIMUserAPI.cs" />
+    <Compile Include="api\User\UserNativeMethods.cs" />
+    <Compile Include="api\Session\NIMSessionAPI.cs" />
+    <Compile Include="Plugin\ChatRoom.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>set excludeDir=bin,obj,..\.vs
+if $(ConfigurationName)==Release ( for %25%25d in (%25excludeDir%25) do if exist "$(ProjectDir)%25%25d" rmdir /s /q "$(ProjectDir)%25%25d")</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+            http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd
+            http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd
+            http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
+    <mvc:default-servlet-handler />
+
+    <context:component-scan base-package="com.netease.mmc.demo.web">
+        <!-- enable controller advice -->
+        <context:include-filter type="annotation" expression="org.springframework.web.bind.annotation.ControllerAdvice"/>
+    </context:component-scan>
+
+    <context:annotation-config />
+
+    <mvc:interceptors>
+    	<mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.netease.mmc.demo.web.interceptor.DDOSInterceptor">
+                <property name="close" value="false"/>
+                <property name="maxRequest" value="2000"/>
+                <property name="ttlSeconds" value="10"/>
+            </bean>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/dollsCatcher/host/create"/>
+            <mvc:mapping path="/dollsCatcher/host/manage"/>
+            <ref bean="internalIpInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/dollsCatcher/host/query"/>
+            <ref bean="catcherIpInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+            <mvc:mapping path="/**"/>
+            <bean class="com.netease.mmc.demo.web.interceptor.WebContextHolderInterceptor"/>
+        </mvc:interceptor>
+        <mvc:interceptor>
+		    <mvc:mapping path="/dollsCatcher/room/**" />
+		    <bean class="com.netease.mmc.demo.web.interceptor.ValidateUserInterceptor" />
+		</mvc:interceptor>
+    </mvc:interceptors>
+
+    <mvc:annotation-driven ignore-default-model-on-redirect="true">
+        <!-- message converters -->
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.ByteArrayHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.StringHttpMessageConverter">
+                <constructor-arg value="UTF-8"/>
+            </bean>
+            <bean class="org.springframework.http.converter.xml.SourceHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.FormHttpMessageConverter"/>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper" ref="objectMapper"/>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <!-- view resolver -->
+    <bean class="org.springframework.web.servlet.view.ContentNegotiatingViewResolver">
+        <property name="contentNegotiationManager" ref="contentNegotiationManager"/>
+        <!-- api server has no page view resolvers, add viewResolvers config here if required -->
+        <property name="defaultViews">
+            <list>
+                <bean class="org.springframework.web.servlet.view.json.MappingJackson2JsonView">
+                    <property name="objectMapper" ref="objectMapper"/>
+                    <property name="contentType" value="application/json;charset=UTF-8"/>
+                    <property name="modelKeys">
+                        <set>
+                            <value>code</value>
+                            <value>data</value>
+                            <value>msg</value>
+                        </set>
+                    </property>
+                </bean>
+                <bean class="org.springframework.web.servlet.view.xml.MarshallingView">
+                    <property name="marshaller" ref="xstreamMarshaller"/>
+                    <property name="modelKey" value="data"/>
+                    <property name="contentType" value="application/xml"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+
+    <bean id="contentNegotiationManager" class="org.springframework.web.accept.ContentNegotiationManagerFactoryBean">
+        <property name="mediaTypes">
+            <map>
+                <entry key="json" value="application/json;charset=UTF-8"/>
+                <entry key="xml" value="application/xml;charset=UTF-8"/>
+                <entry key="html" value="text/html;charset=UTF-8"/>
+            </map>
+        </property>
+        <property name="defaultContentType" value="application/json;charset=UTF-8"/>
+    </bean>
+
+    <bean id="objectMapper" class="com.fasterxml.jackson.databind.ObjectMapper">
+        <property name="serializationInclusion" value="NON_NULL" />
+    </bean>
+
+    <bean id="xstreamMarshaller" class="org.springframework.oxm.xstream.XStreamMarshaller">
+        <property name="autodetectAnnotations" value="true" />
+        <property name="streamDriver">
+            <bean class="com.thoughtworks.xstream.io.xml.DomDriver" />
+        </property>
+    </bean>
+
+    <aop:aspectj-autoproxy/>
+</beans>
