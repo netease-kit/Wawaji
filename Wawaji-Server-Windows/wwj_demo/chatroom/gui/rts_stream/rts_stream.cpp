@@ -142,6 +142,7 @@ void WWJRtsStream::RtsConnectCb(const std::string& session_id, int channel_type,
 		if (code == 200)
 		{
 			restart_timer_.Cancel();
+			send_timer_.Cancel();
 			StdClosure task = nbase::Bind(&WWJRtsStream::SendPic, this, session_id, uid_, mpeg1_transcoder_);
 			int32_t ft = GetConfigValueNum("kH5ft", 120);
 			nbase::ThreadManager::PostRepeatedTask(kThreadScreenCapture, send_timer_.ToWeakCallback(task), nbase::TimeDelta::FromMilliseconds(ft));
