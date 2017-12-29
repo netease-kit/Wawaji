@@ -43,6 +43,8 @@ copy /Y "avcodec-57.dll" %BIN_DIR%\
 copy /Y "avformat-57.dll" %BIN_DIR%\
 copy /Y "avutil-55.dll" %BIN_DIR%\
 copy /Y "swresample-2.dll" %BIN_DIR%\
+copy /Y "libcrypto-1_1.dll" %BIN_DIR%\
+copy /Y "libssl-1_1.dll" %BIN_DIR%\
 
 copy /Y server_conf.txt %BIN_DIR%\
 

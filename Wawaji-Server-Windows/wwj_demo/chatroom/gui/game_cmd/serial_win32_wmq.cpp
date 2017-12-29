@@ -93,12 +93,14 @@ namespace nim_wwj
 							if (wwj_opt_cb_ != NULL)
 							{
 								wwj_opt_cb_(kgameend, kSerialOptSuccess, normal);
+								wwj_opt_cb_(kgameprize, kSerialOptFailed, normal);
 							}
 						}
 						else if (result_data[2] == 0x01)
 						{
 							if (wwj_opt_cb_ != NULL)
 							{
+								wwj_opt_cb_(kgameend, kSerialOptSuccess, normal);
 								wwj_opt_cb_(kgameprize, kSerialOptSuccess, normal);
 							}
 						}
