@@ -69,6 +69,9 @@
     <ClInclude Include="gui\game_cmd\serial_win32_jj.h">
       <Filter>gui\game_cmd</Filter>
     </ClInclude>
+    <ClInclude Include="gui\game_cmd\WebSocket.h">
+      <Filter>gui\game_cmd</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="stdafx.cpp">
@@ -114,6 +117,9 @@
       <Filter>gui\game_cmd</Filter>
     </ClCompile>
     <ClCompile Include="gui\game_cmd\serial_win32_jj.cpp">
+      <Filter>gui\game_cmd</Filter>
+    </ClCompile>
+    <ClCompile Include="gui\game_cmd\WebSocket.cpp">
       <Filter>gui\game_cmd</Filter>
     </ClCompile>
   </ItemGroup>
