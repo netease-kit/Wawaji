@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib\adler32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib\compress.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib\crc32.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib\deflate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib\gzclose.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib\gzio.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib\gzlib.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib\gzread.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib\gzwrite.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib\infback.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib\inffast.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib\inflate.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib\inftrees.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib\trees.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib\uncompr.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib\zutil.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{553FA459-087E-31DA-A9F3-732CE098B9E2}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

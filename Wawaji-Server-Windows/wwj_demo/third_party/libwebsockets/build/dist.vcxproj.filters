@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\CMakeLists.txt" />
+    <CustomBuild Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\40cac7737c4850b496f413ced7801dc9\dist.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\dist" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{45100703-E099-30A6-9D3C-54A6E3FF8635}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

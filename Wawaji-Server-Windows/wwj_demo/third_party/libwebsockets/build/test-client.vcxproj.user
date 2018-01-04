@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <LocalDebuggerCommandArguments>-s -A D:\\yinshipin\\Embedded\\branch\\gaoqi\\wwj_demo\\third_party\\libwebsockets\\build\\bin\\Debug\\cacert.pem  wss://play2.azusasoft.com:4557/play/9380abc788153e6c1c2755186259d70f</LocalDebuggerCommandArguments>
+    <DebuggerFlavor>WindowsLocalDebugger</DebuggerFlavor>
+  </PropertyGroup>
+</Project>
