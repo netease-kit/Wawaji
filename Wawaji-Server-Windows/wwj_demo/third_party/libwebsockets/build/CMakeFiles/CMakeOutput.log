@@ -1,0 +1,1007 @@
+The system is: Windows - 10.0.15063 - AMD64
+Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+Compiler:  
+Build flags: 
+Id flags:  
+
+The output was:
+0
+Microsoft(R) ��������汾 12.0.40629.0
+[Microsoft .NET Framework �汾 4.0.30319.42000]
+��Ȩ���� (C) Microsoft Corporation����������Ȩ����
+
+��������ʱ��Ϊ 2017/12/14 18:43:47��
+�ڵ� 1 �ϵ���Ŀ��D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\3.10.0\CompilerIdC\CompilerIdC.vcxproj��(Ĭ��Ŀ��)��
+PrepareForBuild:
+  ���ڴ���Ŀ¼��Debug\����
+  ���ڴ���Ŀ¼��Debug\CompilerIdC.tlog\����
+InitializeBuildStatus:
+  ���ڴ�����Debug\CompilerIdC.tlog\unsuccessfulbuild������Ϊ��ָ����AlwaysCreate����
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /nologo /W0 /WX- /Od /Oy- /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Debug\\" /Fd"Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue CMakeCCompilerId.c
+  CMakeCCompilerId.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:".\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\CompilerIdC.lib" /MACHINE:X86 /SAFESEH Debug\CMakeCCompilerId.obj
+  CompilerIdC.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\3.10.0\CompilerIdC\.\CompilerIdC.exe
+PostBuildEvent:
+  for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+  :VCEnd
+  CMAKE_C_COMPILER=F:\vs2013\VC\bin\cl.exe
+FinalizeBuildStatus:
+  ����ɾ���ļ���Debug\CompilerIdC.tlog\unsuccessfulbuild����
+  ���ڶԡ�Debug\CompilerIdC.tlog\CompilerIdC.lastbuildstate��ִ�� Touch ����
+�����������Ŀ��D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\3.10.0\CompilerIdC\CompilerIdC.vcxproj��(Ĭ��Ŀ��)�Ĳ�����
+
+�ѳɹ����ɡ�
+    0 ������
+    0 ������
+
+����ʱ�� 00:00:00.89
+
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+
+Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+
+The C compiler identification is MSVC, found in "D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/3.10.0/CompilerIdC/CompilerIdC.exe"
+
+Determining if the C compiler works passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_4541a.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:43:48。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_4541a.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_4541a.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_4541a.dir\Debug\cmTC_4541a.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_4541a.dir\Debug\cmTC_4541a.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_4541a.dir\Debug\\" /Fd"cmTC_4541a.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\testCCompiler.c
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_4541a.dir\Debug\\" /Fd"cmTC_4541a.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\testCCompiler.c
+  
+  testCCompiler.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_4541a.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_4541a.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_4541a.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_4541a.dir\Debug\testCCompiler.obj
+  cmTC_4541a.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_4541a.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_4541a.dir\Debug\cmTC_4541a.tlog\unsuccessfulbuild”。
+  正在对“cmTC_4541a.dir\Debug\cmTC_4541a.tlog\cmTC_4541a.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_4541a.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.96
+
+
+Detecting C compiler ABI info compiled with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_f4312.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:43:49。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_f4312.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_f4312.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_f4312.dir\Debug\cmTC_f4312.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_f4312.dir\Debug\cmTC_f4312.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_f4312.dir\Debug\\" /Fd"cmTC_f4312.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeCCompilerABI.c"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_f4312.dir\Debug\\" /Fd"cmTC_f4312.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeCCompilerABI.c"
+  
+  CMakeCCompilerABI.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_f4312.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_f4312.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_f4312.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_f4312.dir\Debug\CMakeCCompilerABI.obj
+  cmTC_f4312.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_f4312.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_f4312.dir\Debug\cmTC_f4312.tlog\unsuccessfulbuild”。
+  正在对“cmTC_f4312.dir\Debug\cmTC_f4312.tlog\cmTC_f4312.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_f4312.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.65
+
+
+Performing C SOURCE FILE Test LWS_HAVE___inline succeeded with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_e1bb1.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:43:51。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_e1bb1.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_e1bb1.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_e1bb1.dir\Debug\cmTC_e1bb1.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_e1bb1.dir\Debug\cmTC_e1bb1.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D LWS_HAVE___inline /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_e1bb1.dir\Debug\\" /Fd"cmTC_e1bb1.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\src.c
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D LWS_HAVE___inline /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_e1bb1.dir\Debug\\" /Fd"cmTC_e1bb1.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\src.c
+  
+  src.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_e1bb1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_e1bb1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_e1bb1.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_e1bb1.dir\Debug\src.obj
+  cmTC_e1bb1.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_e1bb1.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_e1bb1.dir\Debug\cmTC_e1bb1.tlog\unsuccessfulbuild”。
+  正在对“cmTC_e1bb1.dir\Debug\cmTC_e1bb1.tlog\cmTC_e1bb1.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_e1bb1.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.66
+
+Source file was:
+
+		#include <stdio.h>
+		static KEYWORD void a() {}
+		int main(int argc, char **argv) { a(); return 0; }
+		
+Determining if the function getenv exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_d7a83.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:43:53。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_d7a83.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_d7a83.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_d7a83.dir\Debug\cmTC_d7a83.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_d7a83.dir\Debug\cmTC_d7a83.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=getenv /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_d7a83.dir\Debug\\" /Fd"cmTC_d7a83.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=getenv /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_d7a83.dir\Debug\\" /Fd"cmTC_d7a83.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_d7a83.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_d7a83.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_d7a83.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_d7a83.dir\Debug\CheckFunctionExists.obj
+  cmTC_d7a83.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_d7a83.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_d7a83.dir\Debug\cmTC_d7a83.tlog\unsuccessfulbuild”。
+  正在对“cmTC_d7a83.dir\Debug\cmTC_d7a83.tlog\cmTC_d7a83.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_d7a83.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.65
+
+
+Determining if the function malloc exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_728cc.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:43:54。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_728cc.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_728cc.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_728cc.dir\Debug\cmTC_728cc.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_728cc.dir\Debug\cmTC_728cc.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=malloc /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_728cc.dir\Debug\\" /Fd"cmTC_728cc.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=malloc /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_728cc.dir\Debug\\" /Fd"cmTC_728cc.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_728cc.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_728cc.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_728cc.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_728cc.dir\Debug\CheckFunctionExists.obj
+  cmTC_728cc.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_728cc.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_728cc.dir\Debug\cmTC_728cc.tlog\unsuccessfulbuild”。
+  正在对“cmTC_728cc.dir\Debug\cmTC_728cc.tlog\cmTC_728cc.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_728cc.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.68
+
+
+Determining if the function memset exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_05b05.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:43:55。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_05b05.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_05b05.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_05b05.dir\Debug\cmTC_05b05.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_05b05.dir\Debug\cmTC_05b05.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=memset /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_05b05.dir\Debug\\" /Fd"cmTC_05b05.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=memset /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_05b05.dir\Debug\\" /Fd"cmTC_05b05.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_05b05.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_05b05.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_05b05.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_05b05.dir\Debug\CheckFunctionExists.obj
+  cmTC_05b05.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_05b05.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_05b05.dir\Debug\cmTC_05b05.tlog\unsuccessfulbuild”。
+  正在对“cmTC_05b05.dir\Debug\cmTC_05b05.tlog\cmTC_05b05.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_05b05.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.65
+
+
+Determining if the function realloc exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_d8a9d.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:43:56。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_d8a9d.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_d8a9d.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_d8a9d.dir\Debug\cmTC_d8a9d.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_d8a9d.dir\Debug\cmTC_d8a9d.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=realloc /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_d8a9d.dir\Debug\\" /Fd"cmTC_d8a9d.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=realloc /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_d8a9d.dir\Debug\\" /Fd"cmTC_d8a9d.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_d8a9d.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_d8a9d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_d8a9d.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_d8a9d.dir\Debug\CheckFunctionExists.obj
+  cmTC_d8a9d.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_d8a9d.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_d8a9d.dir\Debug\cmTC_d8a9d.tlog\unsuccessfulbuild”。
+  正在对“cmTC_d8a9d.dir\Debug\cmTC_d8a9d.tlog\cmTC_d8a9d.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_d8a9d.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.64
+
+
+Determining if the function strerror exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_d00d2.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:43:58。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_d00d2.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_d00d2.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_d00d2.dir\Debug\cmTC_d00d2.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_d00d2.dir\Debug\cmTC_d00d2.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=strerror /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_d00d2.dir\Debug\\" /Fd"cmTC_d00d2.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=strerror /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_d00d2.dir\Debug\\" /Fd"cmTC_d00d2.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_d00d2.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_d00d2.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_d00d2.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_d00d2.dir\Debug\CheckFunctionExists.obj
+  cmTC_d00d2.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_d00d2.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_d00d2.dir\Debug\cmTC_d00d2.tlog\unsuccessfulbuild”。
+  正在对“cmTC_d00d2.dir\Debug\cmTC_d00d2.tlog\cmTC_d00d2.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_d00d2.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.63
+
+
+Determining if the function execvpe exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_c258d.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:43:59。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_c258d.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_c258d.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_c258d.dir\Debug\cmTC_c258d.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_c258d.dir\Debug\cmTC_c258d.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=execvpe /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_c258d.dir\Debug\\" /Fd"cmTC_c258d.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=execvpe /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_c258d.dir\Debug\\" /Fd"cmTC_c258d.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_c258d.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_c258d.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_c258d.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_c258d.dir\Debug\CheckFunctionExists.obj
+  cmTC_c258d.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_c258d.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_c258d.dir\Debug\cmTC_c258d.tlog\unsuccessfulbuild”。
+  正在对“cmTC_c258d.dir\Debug\cmTC_c258d.tlog\cmTC_c258d.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_c258d.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.63
+
+
+Determining if the function _snprintf exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_f5804.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:44:02。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_f5804.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_f5804.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_f5804.dir\Debug\cmTC_f5804.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_f5804.dir\Debug\cmTC_f5804.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=_snprintf /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_f5804.dir\Debug\\" /Fd"cmTC_f5804.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=_snprintf /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_f5804.dir\Debug\\" /Fd"cmTC_f5804.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_f5804.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_f5804.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_f5804.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_f5804.dir\Debug\CheckFunctionExists.obj
+  cmTC_f5804.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_f5804.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_f5804.dir\Debug\cmTC_f5804.tlog\unsuccessfulbuild”。
+  正在对“cmTC_f5804.dir\Debug\cmTC_f5804.tlog\cmTC_f5804.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_f5804.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.66
+
+
+Determining if the function _vsnprintf exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_a6369.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:44:03。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_a6369.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_a6369.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_a6369.dir\Debug\cmTC_a6369.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_a6369.dir\Debug\cmTC_a6369.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=_vsnprintf /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_a6369.dir\Debug\\" /Fd"cmTC_a6369.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=_vsnprintf /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_a6369.dir\Debug\\" /Fd"cmTC_a6369.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_a6369.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_a6369.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_a6369.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_a6369.dir\Debug\CheckFunctionExists.obj
+  cmTC_a6369.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_a6369.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_a6369.dir\Debug\cmTC_a6369.tlog\unsuccessfulbuild”。
+  正在对“cmTC_a6369.dir\Debug\cmTC_a6369.tlog\cmTC_a6369.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_a6369.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.66
+
+
+Determining if the function atoll exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_a3a3b.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:44:04。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_a3a3b.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_a3a3b.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_a3a3b.dir\Debug\cmTC_a3a3b.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_a3a3b.dir\Debug\cmTC_a3a3b.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=atoll /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_a3a3b.dir\Debug\\" /Fd"cmTC_a3a3b.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=atoll /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_a3a3b.dir\Debug\\" /Fd"cmTC_a3a3b.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_a3a3b.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_a3a3b.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_a3a3b.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_a3a3b.dir\Debug\CheckFunctionExists.obj
+  cmTC_a3a3b.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_a3a3b.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_a3a3b.dir\Debug\cmTC_a3a3b.tlog\unsuccessfulbuild”。
+  正在对“cmTC_a3a3b.dir\Debug\cmTC_a3a3b.tlog\cmTC_a3a3b.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_a3a3b.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.64
+
+
+Determining if the function _atoi64 exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_df063.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:44:05。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_df063.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_df063.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_df063.dir\Debug\cmTC_df063.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_df063.dir\Debug\cmTC_df063.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=_atoi64 /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_df063.dir\Debug\\" /Fd"cmTC_df063.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=_atoi64 /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_df063.dir\Debug\\" /Fd"cmTC_df063.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_df063.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_df063.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_df063.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_df063.dir\Debug\CheckFunctionExists.obj
+  cmTC_df063.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_df063.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_df063.dir\Debug\cmTC_df063.tlog\unsuccessfulbuild”。
+  正在对“cmTC_df063.dir\Debug\cmTC_df063.tlog\cmTC_df063.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_df063.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.75
+
+
+Determining if the function _stat32i64 exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_a3eae.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:44:06。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_a3eae.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_a3eae.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_a3eae.dir\Debug\cmTC_a3eae.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_a3eae.dir\Debug\cmTC_a3eae.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=_stat32i64 /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_a3eae.dir\Debug\\" /Fd"cmTC_a3eae.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=_stat32i64 /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_a3eae.dir\Debug\\" /Fd"cmTC_a3eae.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue "C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c"
+  
+  CheckFunctionExists.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_a3eae.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_a3eae.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_a3eae.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_a3eae.dir\Debug\CheckFunctionExists.obj
+  cmTC_a3eae.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_a3eae.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_a3eae.dir\Debug\cmTC_a3eae.tlog\unsuccessfulbuild”。
+  正在对“cmTC_a3eae.dir\Debug\cmTC_a3eae.tlog\cmTC_a3eae.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_a3eae.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.69
+
+
+Determining if the include file fcntl.h exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_0c505.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:44:08。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_0c505.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_0c505.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_0c505.dir\Debug\cmTC_0c505.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_0c505.dir\Debug\cmTC_0c505.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_0c505.dir\Debug\\" /Fd"cmTC_0c505.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_0c505.dir\Debug\\" /Fd"cmTC_0c505.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_0c505.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_0c505.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_0c505.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_0c505.dir\Debug\CheckIncludeFile.obj
+  cmTC_0c505.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_0c505.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_0c505.dir\Debug\cmTC_0c505.tlog\unsuccessfulbuild”。
+  正在对“cmTC_0c505.dir\Debug\cmTC_0c505.tlog\cmTC_0c505.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_0c505.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.73
+
+
+Determining if the include file inttypes.h exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_48454.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:44:09。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_48454.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_48454.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_48454.dir\Debug\cmTC_48454.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_48454.dir\Debug\cmTC_48454.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_48454.dir\Debug\\" /Fd"cmTC_48454.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_48454.dir\Debug\\" /Fd"cmTC_48454.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_48454.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_48454.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_48454.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_48454.dir\Debug\CheckIncludeFile.obj
+  cmTC_48454.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_48454.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_48454.dir\Debug\cmTC_48454.tlog\unsuccessfulbuild”。
+  正在对“cmTC_48454.dir\Debug\cmTC_48454.tlog\cmTC_48454.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_48454.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.66
+
+
+Determining if the include file memory.h exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_caa51.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:44:10。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_caa51.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_caa51.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_caa51.dir\Debug\cmTC_caa51.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_caa51.dir\Debug\cmTC_caa51.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_caa51.dir\Debug\\" /Fd"cmTC_caa51.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_caa51.dir\Debug\\" /Fd"cmTC_caa51.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_caa51.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_caa51.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_caa51.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_caa51.dir\Debug\CheckIncludeFile.obj
+  cmTC_caa51.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_caa51.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_caa51.dir\Debug\cmTC_caa51.tlog\unsuccessfulbuild”。
+  正在对“cmTC_caa51.dir\Debug\cmTC_caa51.tlog\cmTC_caa51.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_caa51.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.75
+
+
+Determining if the include file stdint.h exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_bb199.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:44:11。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_bb199.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_bb199.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_bb199.dir\Debug\cmTC_bb199.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_bb199.dir\Debug\cmTC_bb199.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_bb199.dir\Debug\\" /Fd"cmTC_bb199.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_bb199.dir\Debug\\" /Fd"cmTC_bb199.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_bb199.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_bb199.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_bb199.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_bb199.dir\Debug\CheckIncludeFile.obj
+  cmTC_bb199.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_bb199.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_bb199.dir\Debug\cmTC_bb199.tlog\unsuccessfulbuild”。
+  正在对“cmTC_bb199.dir\Debug\cmTC_bb199.tlog\cmTC_bb199.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_bb199.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.68
+
+
+Determining if the include file stdlib.h exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_b47ca.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:44:12。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_b47ca.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_b47ca.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_b47ca.dir\Debug\cmTC_b47ca.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_b47ca.dir\Debug\cmTC_b47ca.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_b47ca.dir\Debug\\" /Fd"cmTC_b47ca.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_b47ca.dir\Debug\\" /Fd"cmTC_b47ca.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_b47ca.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_b47ca.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_b47ca.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_b47ca.dir\Debug\CheckIncludeFile.obj
+  cmTC_b47ca.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_b47ca.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_b47ca.dir\Debug\cmTC_b47ca.tlog\unsuccessfulbuild”。
+  正在对“cmTC_b47ca.dir\Debug\cmTC_b47ca.tlog\cmTC_b47ca.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_b47ca.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.70
+
+
+Determining if the include file string.h exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_baeb3.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:44:14。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_baeb3.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_baeb3.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_baeb3.dir\Debug\cmTC_baeb3.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_baeb3.dir\Debug\cmTC_baeb3.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_baeb3.dir\Debug\\" /Fd"cmTC_baeb3.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_baeb3.dir\Debug\\" /Fd"cmTC_baeb3.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_baeb3.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_baeb3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_baeb3.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_baeb3.dir\Debug\CheckIncludeFile.obj
+  cmTC_baeb3.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_baeb3.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_baeb3.dir\Debug\cmTC_baeb3.tlog\unsuccessfulbuild”。
+  正在对“cmTC_baeb3.dir\Debug\cmTC_baeb3.tlog\cmTC_baeb3.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_baeb3.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.66
+
+
+Determining if the include file sys/stat.h exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_893ec.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:44:16。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_893ec.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_893ec.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_893ec.dir\Debug\cmTC_893ec.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_893ec.dir\Debug\cmTC_893ec.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_893ec.dir\Debug\\" /Fd"cmTC_893ec.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_893ec.dir\Debug\\" /Fd"cmTC_893ec.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_893ec.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_893ec.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_893ec.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_893ec.dir\Debug\CheckIncludeFile.obj
+  cmTC_893ec.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_893ec.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_893ec.dir\Debug\cmTC_893ec.tlog\unsuccessfulbuild”。
+  正在对“cmTC_893ec.dir\Debug\cmTC_893ec.tlog\cmTC_893ec.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_893ec.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.72
+
+
+Determining if the include file sys/types.h exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_827e7.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:44:17。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_827e7.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_827e7.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_827e7.dir\Debug\cmTC_827e7.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_827e7.dir\Debug\cmTC_827e7.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_827e7.dir\Debug\\" /Fd"cmTC_827e7.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_827e7.dir\Debug\\" /Fd"cmTC_827e7.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_827e7.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_827e7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_827e7.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_827e7.dir\Debug\CheckIncludeFile.obj
+  cmTC_827e7.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_827e7.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_827e7.dir\Debug\cmTC_827e7.tlog\unsuccessfulbuild”。
+  正在对“cmTC_827e7.dir\Debug\cmTC_827e7.tlog\cmTC_827e7.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_827e7.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.68
+
+
+Determining if files stdlib.h;stdarg.h;string.h;float.h exist passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_c58d3.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:44:21。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_c58d3.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_c58d3.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_c58d3.dir\Debug\cmTC_c58d3.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_c58d3.dir\Debug\cmTC_c58d3.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_c58d3.dir\Debug\\" /Fd"cmTC_c58d3.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFiles.c
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_c58d3.dir\Debug\\" /Fd"cmTC_c58d3.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFiles.c
+  
+  CheckIncludeFiles.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_c58d3.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_c58d3.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_c58d3.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_c58d3.dir\Debug\CheckIncludeFiles.obj
+  cmTC_c58d3.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_c58d3.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_c58d3.dir\Debug\cmTC_c58d3.tlog\unsuccessfulbuild”。
+  正在对“cmTC_c58d3.dir\Debug\cmTC_c58d3.tlog\cmTC_c58d3.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_c58d3.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.78
+
+
+Performing C SOURCE FILE Test LWS_HAS_INTPTR_T succeeded with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_8ae42.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:44:22。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_8ae42.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_8ae42.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_8ae42.dir\Debug\cmTC_8ae42.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_8ae42.dir\Debug\cmTC_8ae42.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D LWS_HAS_INTPTR_T /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_8ae42.dir\Debug\\" /Fd"cmTC_8ae42.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\src.c
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D LWS_HAS_INTPTR_T /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_8ae42.dir\Debug\\" /Fd"cmTC_8ae42.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\src.c
+  
+  src.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_8ae42.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_8ae42.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_8ae42.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_8ae42.dir\Debug\src.obj
+  cmTC_8ae42.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_8ae42.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_8ae42.dir\Debug\cmTC_8ae42.tlog\unsuccessfulbuild”。
+  正在对“cmTC_8ae42.dir\Debug\cmTC_8ae42.tlog\cmTC_8ae42.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_8ae42.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:00.69
+
+Source file was:
+#include <stdint.h> 
+	int main(void) {
+		intptr_t test = 1;
+		return 0;
+	}
+Determining if the include file openssl/ecdh.h exists passed with the following output:
+Change Dir: D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp
+
+Run Build Command:"C:/Program Files (x86)/MSBuild/12.0/bin/MSBuild.exe" "cmTC_059b7.vcxproj" "/p:Configuration=Debug" "/p:VisualStudioVersion=12.0"
+Microsoft(R) 生成引擎版本 12.0.40629.0
+[Microsoft .NET Framework 版本 4.0.30319.42000]
+版权所有 (C) Microsoft Corporation。保留所有权利。
+
+生成启动时间为 2017/12/14 18:50:54。
+节点 1 上的项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_059b7.vcxproj”(默认目标)。
+PrepareForBuild:
+  正在创建目录“cmTC_059b7.dir\Debug\”。
+  正在创建目录“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\”。
+  正在创建目录“cmTC_059b7.dir\Debug\cmTC_059b7.tlog\”。
+InitializeBuildStatus:
+  正在创建“cmTC_059b7.dir\Debug\cmTC_059b7.tlog\unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+ClCompile:
+  F:\vs2013\VC\bin\CL.exe /c /I"C:\OpenSSL-Win32\include" /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_059b7.dir\Debug\\" /Fd"cmTC_059b7.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  用于 x86 的 Microsoft (R) C/C++ 优化编译器 18.00.40629 版版权所有(C) Microsoft Corporation。  保留所有权利。
+  
+  cl /c /I"C:\OpenSSL-Win32\include" /Zi /W3 /WX- /Od /Ob0 /Oy- /D WIN32 /D _WINDOWS /D KEYWORD=__inline /D "CMAKE_INTDIR=\"Debug\"" /D _MBCS /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Fo"cmTC_059b7.dir\Debug\\" /Fd"cmTC_059b7.dir\Debug\vc120.pdb" /Gd /TC /analyze- /errorReport:queue D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\CheckIncludeFile.c
+  
+  CheckIncludeFile.c
+Link:
+  F:\vs2013\VC\bin\link.exe /ERRORREPORT:QUEUE /OUT:"D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_059b7.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_059b7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/CMakeTmp/Debug/cmTC_059b7.lib" /MACHINE:X86 /SAFESEH  /machine:X86 cmTC_059b7.dir\Debug\CheckIncludeFile.obj
+  cmTC_059b7.vcxproj -> D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\Debug\cmTC_059b7.exe
+FinalizeBuildStatus:
+  正在删除文件“cmTC_059b7.dir\Debug\cmTC_059b7.tlog\unsuccessfulbuild”。
+  正在对“cmTC_059b7.dir\Debug\cmTC_059b7.tlog\cmTC_059b7.lastbuildstate”执行 Touch 任务。
+已完成生成项目“D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\CMakeTmp\cmTC_059b7.vcxproj”(默认目标)的操作。
+
+已成功生成。
+    0 个警告
+    0 个错误
+
+已用时间 00:00:02.39
+
+

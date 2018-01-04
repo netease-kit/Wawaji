@@ -1,0 +1,14 @@
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/test-echo.dir
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/websockets.dir
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/test-client.dir
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/websockets_shared.dir
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/test-server-extpoll.dir
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/zlib_internal.dir
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/test-server.dir
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/test-fraggle.dir
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/test-ping.dir
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/dist.dir
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/PACKAGE.dir
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/INSTALL.dir
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/ALL_BUILD.dir
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/ZERO_CHECK.dir

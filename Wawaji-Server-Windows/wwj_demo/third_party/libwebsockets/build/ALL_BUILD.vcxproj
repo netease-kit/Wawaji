@@ -1,0 +1,202 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{D199A52A-7524-38A4-88BF-5737AC28D4A2}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>ALL_BUILD</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v120</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\win32helpers;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib;C:\OpenSSL-Win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\win32helpers;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib;C:\OpenSSL-Win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\win32helpers;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib;C:\OpenSSL-Win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\win32helpers;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\zlib;C:\OpenSSL-Win32\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HD:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets -BD:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build --check-stamp-file D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/CMakeLists.txt;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\CMakeLists.txt;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\3.10.0\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\3.10.0\CMakeCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\3.10.0\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindOpenSSL.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\lws_config.h.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\lws_config_private.h.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\FindOpenSSLbins.cmake;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\LibwebsocketsConfig.cmake.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\LibwebsocketsConfig.cmake.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\LibwebsocketsConfigVersion.cmake.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\UseRPMTools.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.10\Templates\CPackConfig.cmake.in;C:\Program Files\CMake\share\cmake-3.10\Templates\CPackConfig.cmake.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HD:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets -BD:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build --check-stamp-file D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/CMakeLists.txt;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\CMakeLists.txt;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\3.10.0\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\3.10.0\CMakeCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\3.10.0\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindOpenSSL.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\lws_config.h.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\lws_config_private.h.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\FindOpenSSLbins.cmake;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\LibwebsocketsConfig.cmake.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\LibwebsocketsConfig.cmake.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\LibwebsocketsConfigVersion.cmake.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\UseRPMTools.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.10\Templates\CPackConfig.cmake.in;C:\Program Files\CMake\share\cmake-3.10\Templates\CPackConfig.cmake.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HD:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets -BD:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build --check-stamp-file D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/CMakeLists.txt;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\CMakeLists.txt;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\3.10.0\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\3.10.0\CMakeCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\3.10.0\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindOpenSSL.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\lws_config.h.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\lws_config_private.h.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\FindOpenSSLbins.cmake;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\LibwebsocketsConfig.cmake.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\LibwebsocketsConfig.cmake.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\LibwebsocketsConfigVersion.cmake.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\UseRPMTools.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.10\Templates\CPackConfig.cmake.in;C:\Program Files\CMake\share\cmake-3.10\Templates\CPackConfig.cmake.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -HD:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets -BD:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build --check-stamp-file D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/CMakeLists.txt;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\CMakeLists.txt;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\3.10.0\CMakeSystem.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInitialize.cmake;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\3.10.0\CMakeCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeSystemSpecificInformation.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeGenericSystem.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\Platform\Windows.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\Platform\WindowsPaths.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeCInformation.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeLanguageInformation.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC-C.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\Platform\Windows-MSVC.cmake;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\3.10.0\CMakeRCCompiler.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeRCInformation.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CMakeCommonLanguageInclude.cmake;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\FindGit.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckCSourceCompiles.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckSymbolExists.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFiles.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckLibraryExists.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckTypeSize.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFile.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFileCXX.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindOpenSSL.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\SelectLibraryConfigurations.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindPackageHandleStandardArgs.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\FindPackageMessage.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckIncludeFile.c.in;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;C:\Program Files\CMake\share\cmake-3.10\Modules\CheckFunctionExists.c;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\lws_config.h.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\lws_config_private.h.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\FindOpenSSLbins.cmake;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\LibwebsocketsConfig.cmake.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\LibwebsocketsConfig.cmake.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\LibwebsocketsConfigVersion.cmake.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\cmake\UseRPMTools.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CPack.cmake;C:\Program Files\CMake\share\cmake-3.10\Modules\CPackComponent.cmake;C:\Program Files\CMake\share\cmake-3.10\Templates\CPackConfig.cmake.in;C:\Program Files\CMake\share\cmake-3.10\Templates\CPackConfig.cmake.in;D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\ZERO_CHECK.vcxproj">
+      <Project>{AB042ECB-EDE8-3FDC-90D6-3F77287EB2D2}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\test-client.vcxproj">
+      <Project>{2FEB50D8-AFB3-391A-9CFD-2C115589CAC7}</Project>
+      <Name>test-client</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\test-echo.vcxproj">
+      <Project>{FE42B016-C98D-32C3-A272-AB9E97D7F351}</Project>
+      <Name>test-echo</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\test-fraggle.vcxproj">
+      <Project>{7EBA2F74-AC48-3207-A3CA-B94FFBCC3E0D}</Project>
+      <Name>test-fraggle</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\test-ping.vcxproj">
+      <Project>{4E8C3359-A32E-3CCC-8B14-C76C95A741F8}</Project>
+      <Name>test-ping</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\test-server.vcxproj">
+      <Project>{FD23CE7B-FAD6-3607-AA58-8CC7483D263A}</Project>
+      <Name>test-server</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\test-server-extpoll.vcxproj">
+      <Project>{A56DD714-D0F4-3AA2-B96D-855FBC4E1DBE}</Project>
+      <Name>test-server-extpoll</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\websockets.vcxproj">
+      <Project>{1AAB037E-E3AF-3D9F-8A53-720F41BC1AA8}</Project>
+      <Name>websockets</Name>
+    </ProjectReference>
+    <ProjectReference Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\zlib_internal.vcxproj">
+      <Project>{8E722E9B-400E-394A-A559-551D90CC6648}</Project>
+      <Name>zlib_internal</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

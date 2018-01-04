@@ -1,0 +1,123 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\misc\base64-decode.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\handshake.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\libwebsockets.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\service.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\pollfd.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\output.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\server\parsers.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\context.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\alloc.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\header.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\misc\lws-ring.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\client\client.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\client\client-handshake.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\client\client-parser.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\ssl.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\misc\lws-genhash.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\server\ssl-server.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\client\ssl-client.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\misc\sha-1.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\plat\lws-plat-win.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\server\server.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\server\lws-spa.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\server\server-handshake.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\ext\extension.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\ext\extension-permessage-deflate.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\server\ranges.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\server\fops-zip.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\win32helpers\gettimeofday.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\private-libwebsockets.h">
+      <Filter>Headers Private</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\ext\extension-permessage-deflate.h">
+      <Filter>Headers Private</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\win32helpers\gettimeofday.h">
+      <Filter>Headers Private</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\lib\libwebsockets.h">
+      <Filter>Headers Public</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\build\lws_config.h">
+      <Filter>Headers Public</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\plugins\ssh-base\include\lws-plugin-ssh.h">
+      <Filter>Headers Public</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers Private">
+      <UniqueIdentifier>{A9587DA4-952D-3300-B5F2-217899CB13A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Headers Public">
+      <UniqueIdentifier>{C4771CED-C77F-39C6-B755-0BF10A854A04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{91F6B8AF-B051-36DC-BDEB-65AD0DC5643F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

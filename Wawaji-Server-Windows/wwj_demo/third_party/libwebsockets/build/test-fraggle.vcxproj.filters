@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\test-apps\test-fraggle.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\win32helpers\getopt.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\win32helpers\getopt_long.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+    <ClCompile Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\win32helpers\gettimeofday.c">
+      <Filter>Sources</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\win32helpers\getopt.h">
+      <Filter>Headers Private</Filter>
+    </ClInclude>
+    <ClInclude Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\win32port\win32helpers\gettimeofday.h">
+      <Filter>Headers Private</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="D:\yinshipin\Embedded\branch\gaoqi\wwj_demo\third_party\libwebsockets\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="Headers Private">
+      <UniqueIdentifier>{A9587DA4-952D-3300-B5F2-217899CB13A8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Sources">
+      <UniqueIdentifier>{91F6B8AF-B051-36DC-BDEB-65AD0DC5643F}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
