@@ -35,7 +35,7 @@
         width: 100%;
         margin: 0;
         padding: 0;
-        background-color: #00cdbc;
+        background-color: #fff;
       }
       #app {
         display: flex;
@@ -53,26 +53,47 @@
         padding: 0;
         background: #fff;
       }
-      #app h1 {
-        width: 100%;
-        padding: 2rem 1rem 0.5rem;
+      #app .header-title {
+        width: 90%;
+        margin: 2rem auto 0;
         text-align: center;
         font-size: 1.6rem;
         color:#00cdbc;
+        z-index: 1;
+      }
+      #app .header-title img {
+        width: 100%;
+        height: auto;
+      }
+      .header {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url('./src/assets/roomlist-header.png');
+        background-size: 100% 100%;
+        z-index: 0;
       }
       .room-box {
         margin-top: 2rem;
         position: relative;
         width: 40%;
-        padding: 0.6rem;
-        min-height: 1rem;
-        background: #fff;
+        background: #00cdbc;
         border: 2px solid #00cdbc;
         border-bottom-width: 1rem;
         border-radius: 0.5rem;
       }
+      .room-box-inner {
+        display: block;
+        position: relative;
+        width: 90%;
+        height: 100%;
+        padding: 0.6rem 5%;
+        min-height: 1rem;
+        background: #fff;
+        border-radius: 0.3rem;
+      }
       .logo {
-        border: 1px solid #ccc;
+        /* border: 1px solid #eee; */
         border-radius: 3px;
         width: 100%;
       }
@@ -92,16 +113,25 @@
       }
       .info .status {
         margin-top: 0.5rem;
-        float: right;
+        /* float: right; */
         font-size: 0.8rem;
         color: #999;
         line-height: 1.2rem;
+      }
+      .status .active {
+        color: #00cdbc;
+      }
+      .status .invalid {
+        color: #f38a34;
       }
     </style>
   </head>
   <body>
     <div id="app">
-      <h1>网易云信 娃娃机HTML5 DEMO</h1>
+      <div class="header"></div>
+      <h1 class="header-title">
+        <img src="./src/assets/roomlist-title.png" alt="网易云信 娃娃机HTML5 DEMO">
+      </h1>
       <!-- <div class="room-box">
         <div class="logo">
           <img src="./src/assets/album.jpg" alt="">
@@ -200,7 +230,7 @@
         for (var i = 0; i < roomList.length; i ++) {
           var item = roomList[i]
           var roomBox = document.createElement('div')
-          roomBox.className = 'room-box'
+          roomBox.className = 'room-box-inner'
           var content = ''
           content += '<div class="logo">'
           content += '<img src="./src/assets/album' + i + '.jpg" alt="">'
@@ -210,12 +240,16 @@
           content += '<span class="name">' + item.name + '</span>'
           content += '<span class="total">人数：' + item.onlineUserCount + '</span>'
           content += '</h3>'
-          content += '<p class="status">状态：' + (item.liveStatus ? '可用' : '维护中') + '</p>'
+          content += '<p class="status">状态：' + (item.liveStatus ? '<span class="active">可用</span>' : '<span class="invalid">维护中</span>') + '</p>'
           content += '</div>'
           content += '</div>'
           roomBox.innerHTML = content
           roomBox.dataset.roomid = i
-          appDoc.appendChild(roomBox)
+          // appDoc.appendChild(roomBox)
+          var roomBoxWrapper = document.createElement('div')
+          roomBoxWrapper.className = 'room-box'
+          roomBoxWrapper.appendChild(roomBox)
+          appDoc.appendChild(roomBoxWrapper)
           if (item.liveStatus) {
             roomBox.addEventListener('click', function (_ev) {
               var roomid = _ev.currentTarget.dataset.roomid
