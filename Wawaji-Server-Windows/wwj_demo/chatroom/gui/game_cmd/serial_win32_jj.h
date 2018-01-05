@@ -1,8 +1,25 @@
 /*¾Þ¾ÛÍøÂç*/
 #pragma once
+#include<mutex>
 #include "serial_win32.h"
+#include"lws_config.h"
+#include "WebSocket.h"
+
+using namespace network;
 namespace nim_wwj
 {
+#define WS_RX_BUFFER_SIZE (65536)
+	enum class GameState
+	{
+		UnInit,
+		Init,  /** &lt; value 0 */
+		Charge,
+		Coin,
+		Play,        /** &lt; value 1 */
+		GameOver,     /** &lt; value 2 */
+	};
+
+
 	struct RoomInfo
 	{
 		int id_;
@@ -12,7 +29,7 @@ namespace nim_wwj
 		string status_;
 	};
 
-	class WwjControl_jj :public WwjControl,public virtual nbase::SupportWeakCallback
+	class WwjControl_jj :public WwjControl,public virtual nbase::SupportWeakCallback,WebSocket::Delegate
 	{
 	public:
 		WwjControl_jj();
@@ -31,8 +48,13 @@ namespace nim_wwj
 		virtual void StartSerialReadThread();
 		virtual void SetOptFuncCb(wwj_callback_func cb) { wwj_opt_cb_ = cb; }
 	private:
-		unsigned char send_data_[BUF_LEN];
+		virtual void onOpen(WebSocket* ws);
+		virtual void onMessage(WebSocket* ws, const WebSocket::Data& data);
+		virtual void onClose(WebSocket* ws);
+		virtual void onError(WebSocket* ws, const WebSocket::ErrorCode& error);
 	private:
+		unsigned char send_data_[BUF_LEN];
+		string ca_path_;
 		wwj_set_param_t wwj_set_param_;
 		int wwj_step_size_;
 		int opt_count_;
@@ -40,5 +62,11 @@ namespace nim_wwj
 		wwj_callback_func wwj_opt_cb_;
 		string wss_url_;
 		std::list<RoomInfo> room_info_;
+	private:
+		friend class WebSocketCallbackWrapper;
+		WebSocket* web_socket_;
+		GameState game_state_;
+		int extra_id_;
+		std::mutex   game_state_mutex_;
 	};
 }

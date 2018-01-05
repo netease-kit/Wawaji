@@ -1,0 +1,50 @@
+# CMake generation dependency list for this directory.
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/CMakeLists.txt
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/3.10.0/CMakeSystem.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CMakeSystemSpecificInitialize.cmake
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/3.10.0/CMakeCCompiler.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CMakeSystemSpecificInformation.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CMakeGenericSystem.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/Platform/Windows.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/Platform/WindowsPaths.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CMakeCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CMakeLanguageInformation.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/Platform/Windows-MSVC-C.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/Platform/Windows-MSVC.cmake
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/build/CMakeFiles/3.10.0/CMakeRCCompiler.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CMakeRCInformation.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CMakeCommonLanguageInclude.cmake
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/cmake/FindGit.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CheckCSourceCompiles.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CheckFunctionExists.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CheckSymbolExists.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CheckIncludeFile.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CheckIncludeFiles.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CheckLibraryExists.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CheckTypeSize.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CheckIncludeFile.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CheckIncludeFileCXX.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/FindOpenSSL.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/SelectLibraryConfigurations.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/FindPackageHandleStandardArgs.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/FindPackageMessage.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CheckIncludeFile.c.in
+C:/Program Files/CMake/share/cmake-3.10/Modules/CheckFunctionExists.c
+C:/Program Files/CMake/share/cmake-3.10/Modules/CheckFunctionExists.c
+C:/Program Files/CMake/share/cmake-3.10/Modules/CheckFunctionExists.c
+C:/Program Files/CMake/share/cmake-3.10/Modules/CheckFunctionExists.c
+C:/Program Files/CMake/share/cmake-3.10/Modules/CheckFunctionExists.c
+C:/Program Files/CMake/share/cmake-3.10/Modules/CheckFunctionExists.c
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/cmake/lws_config.h.in
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/cmake/lws_config_private.h.in
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/cmake/FindOpenSSLbins.cmake
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/cmake/LibwebsocketsConfig.cmake.in
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/cmake/LibwebsocketsConfig.cmake.in
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/cmake/LibwebsocketsConfigVersion.cmake.in
+D:/yinshipin/Embedded/branch/gaoqi/wwj_demo/third_party/libwebsockets/cmake/UseRPMTools.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CPack.cmake
+C:/Program Files/CMake/share/cmake-3.10/Modules/CPackComponent.cmake
+C:/Program Files/CMake/share/cmake-3.10/Templates/CPackConfig.cmake.in
+C:/Program Files/CMake/share/cmake-3.10/Templates/CPackConfig.cmake.in

@@ -303,3 +303,39 @@ QueueInfo 说明：
 |getWaitingCount()|队列中正在排队人数|
 |isSelfInQueue()|自己是否在队列中|
 
+#### 进入队列
+
+```
+public void addQueue(RequestCallbackWrapper<Void> callback)
+```
+
+- 示例
+
+```
+queueController.addQueue(new RequestCallbackWrapper<Void>() {
+    @Override
+    public void onResult(int code, Void result, Throwable exception) {
+        // code == 200 表示加入成功
+    }
+});
+```
+
+#### 移除队列
+
+```
+public void cancelQueue(RequestCallbackWrapper<Void> callback) 
+```
+
+- 示例
+
+```
+queueController.cancelQueue(new RequestCallbackWrapper<Void>() {
+    @Override
+    public void onResult(int code, Void result, Throwable exception) {
+        // code == 200 表示移除队列成功
+    }
+});
+```
+
+
+
