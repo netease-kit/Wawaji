@@ -1,9 +1,8 @@
 <template>
   <div id="app">
-    <!--div class="head">
-      <i></i>
-      <img src="./assets/logo.png" alt="网易云通讯与视频" class="logo">
-      <img src="./assets/title.png" alt="可能是全球首个公开的WebRTC在线抓娃娃方案" class="title">
+    <!--div class="header"></div>
+    <div class="header-title">
+      <img src="./assets/roomlist-title.png" alt="网易云信 娃娃机HTML5 DEMO"/>
     </div-->
     <div class="play clearfix">
       <player

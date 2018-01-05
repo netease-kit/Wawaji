@@ -4,7 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta charset="utf-8">
-    <title>网易云信-娃娃机DEMO</title>
+    <title>网易云信-娃娃机HTML5 DEMO</title>
     <link rel="stylesheet" href="./3rd/neplayer.min.css">
     <style>
       /* reset */
@@ -35,18 +35,229 @@
         width: 100%;
         margin: 0;
         padding: 0;
-        background-color: #00cdbc;
+        background-color: #fff;
+      }
+      #app {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        align-items: center;
+        align-content: flex-start;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        margin: 0;
+        padding: 0;
+        background: #fff;
+      }
+      #app .header-title {
+        width: 90%;
+        margin: 2rem auto 0;
+        text-align: center;
+        font-size: 1.6rem;
+        color:#00cdbc;
+        z-index: 1;
+      }
+      #app .header-title img {
+        width: 100%;
+        height: auto;
+      }
+      .header {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-image: url('./src/assets/roomlist-header.png');
+        background-size: 100% 100%;
+        z-index: 0;
+      }
+      .room-box {
+        margin-top: 2rem;
+        position: relative;
+        width: 40%;
+        background: #00cdbc;
+        border: 2px solid #00cdbc;
+        border-bottom-width: 1rem;
+        border-radius: 0.5rem;
+      }
+      .room-box-inner {
+        display: block;
+        position: relative;
+        width: 90%;
+        height: 100%;
+        padding: 0.6rem 5%;
+        min-height: 1rem;
+        background: #fff;
+        border-radius: 0.3rem;
+      }
+      .logo {
+        /* border: 1px solid #eee; */
+        border-radius: 3px;
+        width: 100%;
+      }
+      .logo img {
+        width: 100%;
+        height: auto;
+      }
+      .info h3 {
+        margin-top: 0.8rem;
+        padding: 0 0.1rem;
+        font-size: 0.9rem;
+        color: #666;
+      }
+      .info .total {
+        font-weight: normal;
+        float: right;
+      }
+      .info .status {
+        margin-top: 0.5rem;
+        /* float: right; */
+        font-size: 0.8rem;
+        color: #999;
+        line-height: 1.2rem;
+      }
+      .status .active {
+        color: #00cdbc;
+      }
+      .status .invalid {
+        color: #f38a34;
       }
     </style>
   </head>
   <body>
-    <div id="app"></div>
-    <script src="./3rd/NIM_Web_SDK_v4.5.7.js"></script>
-    <script src="./3rd/NIM_Web_WhiteBoard_v4.5.7.js"></script>
-    <script src="./3rd/jsmpeg.min.js"></script>
-    <script src="./dist/build.js"></script>
-    <script src="./3rd/vconsole.min.js"></script>
+    <div id="app">
+      <div class="header"></div>
+      <h1 class="header-title">
+        <img src="./src/assets/roomlist-title.png" alt="网易云信 娃娃机HTML5 DEMO">
+      </h1>
+      <!-- <div class="room-box">
+        <div class="logo">
+          <img src="./src/assets/album.jpg" alt="">
+        </div>
+        <div class="info">
+          <h3>
+            <span class="name">海娃王</span>
+            <span class="total">人数：3</span>
+          </h3>
+          <p class="status">状态：维护中</p>
+        </div>
+      </div> -->
+    </div>
     <script>
+      window.platform = window.navigator.userAgent
+      if (/iPhone/i.test(window.platform) || /Android/i.test(window.platform) || /SymbianOS/i.test(window.platform) || /iPad/i.test(window.platform) || /iPod/i.test(window.platform) || /Windows Phone/i.test(window.platform)) {
+        window.isMobile = true
+      } else {
+        window.document.body.style.height = '750px'
+        window.document.body.style.width = '420px'
+        window.document.body.style.margin = '0 auto'
+        window.isMobile = false
+      }
+    </script>
+    <script>
+      var cookieUtil = {
+        // 写cookies
+        setCookie(name, value) {
+          let days = 1
+          let exp = new Date()
+          exp.setTime(exp.getTime() + days * 24 * 60 * 60 * 1000)
+          document.cookie = name + '=' + value + ';expires=' + exp.toGMTString()
+        },
+        // 读取cookies
+        readCookie(name) {
+          let arr = null
+          let reg = new RegExp('(^| )' + name + '=([^;]*)(;|$)')
+          if (document.cookie && (arr = document.cookie.match(reg))) {
+            return unescape(arr[2])
+          } else {
+            return null
+          }
+        },
+        // 删除cookies
+        delCookie(name) {
+          let cval = this.readCookie(name)
+          if (cval != null) {
+            document.cookie = name + '=' + cval + ';expires=' + (new Date(0)).toGMTString()
+          }
+        }
+      }
+    </script>
+    <script>
+      function postRequest (postUrl, data, callback) {
+        if (!(callback instanceof Function)) {
+          callback = function () {}
+        }
+        var xmlhttp = new XMLHttpRequest()
+        xmlhttp.onreadystatechange = function () {
+          if (xmlhttp.readyState == 4) {
+            if (xmlhttp.status == 200) {
+              callback(JSON.parse(xmlhttp.responseText))
+            } else {
+              alert("ajax 请求出错");
+            }
+          }
+        }
+        xmlhttp.open("POST", postUrl, true)
+        xmlhttp.setRequestHeader("Content-Type", "application/x-www-form-urlencoded;charset=UTF-8");
+        xmlhttp.send(data)
+      }
+    </script>
+    <script>
+      var sid = cookieUtil.readCookie(sid)
+      var postData = null
+      if (sid) {
+        postData = 'sid=' + sid
+      }
+      var postUrl = '//app.netease.im/appdemo/dollsCatcher/tourist'
+      postRequest(postUrl, postData, function (res) {
+        if (res.code === 200) {
+          sid = res.data.accid
+          cookieUtil.setCookie('sid', sid)
+          var postUrl = '//app.netease.im/appdemo/dollsCatcher/room/list'
+          postData = 'sid=' + sid
+          postRequest(postUrl, postData, function (res) {
+            if (res.code === 200) {
+              buildRoomList(res.data.list)
+            }
+          })
+        }
+      })
+      function buildRoomList (roomList) {
+        console.log(roomList)
+        var appDoc = document.getElementById('app')
+        for (var i = 0; i < roomList.length; i ++) {
+          var item = roomList[i]
+          var roomBox = document.createElement('div')
+          roomBox.className = 'room-box-inner'
+          var content = ''
+          content += '<div class="logo">'
+          content += '<img src="./src/assets/album' + i + '.jpg" alt="">'
+          content += '</div>'
+          content += '<div class="info">'
+          content += '<h3>'
+          content += '<span class="name">' + item.name + '</span>'
+          content += '<span class="total">人数：' + item.onlineUserCount + '</span>'
+          content += '</h3>'
+          content += '<p class="status">状态：' + (item.liveStatus ? '<span class="active">可用</span>' : '<span class="invalid">维护中</span>') + '</p>'
+          content += '</div>'
+          content += '</div>'
+          roomBox.innerHTML = content
+          roomBox.dataset.roomid = i
+          // appDoc.appendChild(roomBox)
+          var roomBoxWrapper = document.createElement('div')
+          roomBoxWrapper.className = 'room-box'
+          roomBoxWrapper.appendChild(roomBox)
+          appDoc.appendChild(roomBoxWrapper)
+          if (item.liveStatus) {
+            roomBox.addEventListener('click', function (_ev) {
+              var roomid = _ev.currentTarget.dataset.roomid
+              location.href = './room.html?roomid=' + roomid
+            })
+          }
+        }
+      }
     </script>
   </body>
 </html>
