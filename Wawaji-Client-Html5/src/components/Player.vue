@@ -1,6 +1,6 @@
 <template>
   <div class="container">
-    <div class="info clearfix">
+    <div class="info clearfix" @click="returnHome">
       <span class="name">{{roomName}}</span>
       <span class="total">人数: {{onlineUserCount}}</span>
     </div>
@@ -106,6 +106,9 @@ export default {
     }
   },
   methods: {
+    returnHome () {
+      window.location.href = './index.html'
+    },
     changeCamera () {
       // if (this.gameState === 'GAMEIN') {
       //   this.playAction.changeCamera()
