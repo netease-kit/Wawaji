@@ -9,6 +9,8 @@
 	kAppKey="682a4df6d71da43ce09787dceb502987"
 	kTestUrl="https://app.netease.im/appdemo"
 	com_id="com3"
+	kGameMainBordIndex="1"
+	kGameMainBoardBaudRate="9600"
 	kQueryKey=""
 	kAccount=""
 	kPwd=""
