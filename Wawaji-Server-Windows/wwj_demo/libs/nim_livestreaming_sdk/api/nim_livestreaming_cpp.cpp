@@ -54,22 +54,26 @@ namespace nim_livestream
 		NLSSDKInstance::UnLoadSdkDll();
 	}
 
+	static std::map<void*, LsSession*> InstSessionMap;
+
 	//直播发生错误回调，当直播过程中发生错误，通知应用层，应用层可以做相应的处理
-	void ErrorCallback(EN_NLSS_STATUS enStatus, EN_NLSS_ERRCODE enErrCode, void* pUserData)
+	void ErrorCallback(_HNLSSERVICE hNLSService, EN_NLSS_STATUS enStatus, EN_NLSS_ERRCODE enErrCode)
 	{
 		QLOG_ERR(L"livesteaming {0}, {1}") << enStatus << enErrCode;
 		switch (enStatus)
 		{
 		case EN_NLSS_STATUS_ERR: //直播出错
 		{
-			if (pUserData)
+			StdClosure closure = [=]() 
 			{
-				StdClosure closure = [=]() {
-					LsSession* session = (LsSession*)pUserData;
+				auto iter = InstSessionMap.find((void*)hNLSService);
+				if (iter != InstSessionMap.end())
+				{
+					LsSession* session = iter->second;
 					session->ls_error_cb_(enErrCode);
-				};
-				Post2UI(closure);
-			}
+				}
+			};
+			Post2UI(closure);
 			break;
 		}
 		default:
@@ -97,8 +101,9 @@ namespace nim_livestream
 				assert(0);
 				return false;
 			}
+			InstSessionMap[*ls_client_] = this;
 
-			NIS_SDK_GET_FUNC(Nlss_SetStatusCB)(LsClient, ErrorCallback, (void*)this);
+			NIS_SDK_GET_FUNC(Nlss_SetStatusCB)(LsClient, ErrorCallback);
 			ls_error_cb_ = ls_error_cb;
 
 			NIS_SDK_GET_FUNC(Nlss_GetDefaultParam)(LsClient, &ls_param_);
@@ -267,6 +272,7 @@ namespace nim_livestream
 			NIS_SDK_GET_FUNC(Nlss_Stop)(LsClient);
 			NIS_SDK_GET_FUNC(Nlss_UninitParam)(LsClient);
 			NIS_SDK_GET_FUNC(Nlss_Destroy)(LsClient);
+			InstSessionMap.erase(*ls_client_);
 			delete ls_client_;
 			ls_client_ = nullptr;
 			init_session_ = false;

@@ -118,17 +118,18 @@ EXPORTS_API   void     Nlss_SetVideoWaterMark(_HNLSSERVICE hNLSService, ST_NLSS_
 /**
 *  设置视频截图的的回调
 *
+*  @param  hNLSService: 直播推流实例，入参
 *  @param  pFunVideoSamplerCB 视频截图图像回调
 */
-EXPORTS_API   void     Nlss_SetVideoSamplerCB(_HNLSSERVICE hNLSService, PFN_NLSS_VIDEOSAMPLER_CB pFunVideoSamplerCB);
+EXPORTS_API void Nlss_SetVideoSamplerCB(_HNLSSERVICE hNLSService, PFN_NLSS_MERGED_VIDEO_SAMPLER_CB pFunVideoSamplerCB);
 
 /**
 *  设置直播过程中状态回调
 *
+*  @param  hNLSService: 直播推流实例
 *  @param  pFunStatusNty 直播状态通知函数
-*  @param  pUserData     用户自定义数据，SDK不做修改，直接传回pFunStatusNty
 */
-EXPORTS_API   void     Nlss_SetStatusCB(_HNLSSERVICE hNLSService, PFN_NLSS_STATUS_NTY pFunStatusNty, void* pUserData);
+EXPORTS_API   void     Nlss_SetStatusCB(_HNLSSERVICE hNLSService, PFN_NLSS_STATUS_NTY pFunStatusNty);
 
 /**
 *  清除Nlss_InitParam设置的直播参数
