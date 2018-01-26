@@ -15,7 +15,6 @@ WWJCameraLiveStream::~WWJCameraLiveStream()
 {
 	wwj_ls_error_cb_ = nullptr;
 	wwj_ls_start_cb_ = nullptr;
-	nim_livestream::LsSession::UnLoadLivestreamingDll();
 	QLOG_APP(L"~WWJCameraLiveStream success!");
 }
 

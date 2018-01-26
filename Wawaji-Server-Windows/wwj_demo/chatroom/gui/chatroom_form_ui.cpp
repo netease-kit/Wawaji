@@ -27,6 +27,8 @@ ChatroomForm::ChatroomForm(__int64 room_id)
 
 ChatroomForm::~ChatroomForm()
 {
+	live_stream_ = nullptr;
+	nim_livestream::LsSession::UnLoadLivestreamingDll();
 	nbase::NAutoLock auto_lock(&serial_opt_lock_);
 	delete game_handle_;
 	game_handle_ = NULL;
@@ -149,9 +151,10 @@ void ChatroomForm::InitWindow()
 	GameReset();
 	if (GetConfigValueNum("kLiveStream", 1) == 1)
 	{
-		WWJCameraLiveStream::GetInstance()->SetErrorCb(nbase::Bind(&ChatroomForm::OnLsErrorCb, this, std::placeholders::_1, std::placeholders::_2));
-		WWJCameraLiveStream::GetInstance()->SetStartCb(nbase::Bind(&ChatroomForm::OnLsStartCb, this, std::placeholders::_1, std::placeholders::_2));
-		WWJCameraLiveStream::GetInstance()->StartLiveStream();
+		live_stream_.reset(new WWJCameraLiveStream);
+		live_stream_->SetErrorCb(nbase::Bind(&ChatroomForm::OnLsErrorCb, this, std::placeholders::_1, std::placeholders::_2));
+		live_stream_->SetStartCb(nbase::Bind(&ChatroomForm::OnLsStartCb, this, std::placeholders::_1, std::placeholders::_2));
+		live_stream_->StartLiveStream();
 	}
 	if (GetConfigValueNum("kH5Stream", 1) == 1)
 	{

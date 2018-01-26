@@ -36,7 +36,26 @@ namespace nim_livestream
 
 	LsSession::~LsSession()
 	{
-		ClearSession();
+		ClearSession();		
+		int32_t num_time = 0;
+		while (!IsClearOk() && num_time < 40)
+		{
+			num_time++;
+			Sleep(100);
+		}
+		if (!IsClearOk())
+		{
+			QLOG_ERR(L"LsSession delete err");
+		}
+
+		nbase::NAutoLock auto_lock(&lock_);
+		printf("clear ls session\n");
+	}
+	bool LsSession::IsClearOk()
+	{
+		if (ls_client_ || ls_child_client_)
+			return false;
+		return true;
 	}
 
 	bool LsSession::LoadLivestreamingDll()
@@ -243,7 +262,6 @@ namespace nim_livestream
 			Post2UI(nbase::Bind(cb, ret));
 		}
 	}
-
 	void LsSession::ClearSession()
 	{
 		nbase::NAutoLock auto_lock(&lock_);

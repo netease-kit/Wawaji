@@ -45,7 +45,8 @@ namespace nim_livestream
 		static void UnLoadLivestreamingDll();
 		//初始化直播模块
 		bool InitSession(const std::string& url, const std::string&camera_id, LsErrorCallback ls_error_cb_);
-		void ClearSession();
+		void ClearSession();	
+		bool IsClearOk();
 		friend void ErrorCallback(_HNLSSERVICE hNLSService, EN_NLSS_STATUS enStatus, EN_NLSS_ERRCODE enErrCode);
 
 		//开始直播推流
