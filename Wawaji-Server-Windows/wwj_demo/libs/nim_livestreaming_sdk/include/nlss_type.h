@@ -310,18 +310,27 @@ typedef enum enum_NLSS_ERRCODE{
 /**
 *  @brief 直播发生错误回调，当直播过程中发生错误，通知应用层，应用层可以做相应的处理
 *
+*  @param  hNLSService: 直播推流实例
 *  @param enStatus:  直播状态
 *  @param enErrCode: 错误码
-*  @param pUserData: Nlss_SetStatusCB设置回调时传入的用户自定义数据
 */
-typedef void(*PFN_NLSS_STATUS_NTY)(EN_NLSS_STATUS enStatus, EN_NLSS_ERRCODE enErrCode, void* pUserData);
+typedef void(*PFN_NLSS_STATUS_NTY)(_HNLSSERVICE hNLSService, EN_NLSS_STATUS enStatus, EN_NLSS_ERRCODE enErrCode);
 
 /**
-*  @brief 获取最新一帧视频截图后的回调
+*  @brief 获取最新一帧合并子视频画面后的视频截图后的回调
 *
-*  @param pstSampler 最新一帧视频截图的结构体参数指针
+*  @param  hNLSService: 直播推流实例
+*  @param pstSampler 最新一帧合并子视频画面后的视频截图的结构体参数指针
 */
-typedef void(*PFN_NLSS_VIDEOSAMPLER_CB)(void *pNlssChildID, ST_NLSS_VIDEO_SAMPLER *pstSampler);
+typedef void(*PFN_NLSS_MERGED_VIDEO_SAMPLER_CB)(_HNLSSERVICE hNLSService, ST_NLSS_VIDEO_SAMPLER *pstSampler);
+
+/**
+*  @brief 获取单个子视频截图后的回调
+*
+*  @param  hNLSSChild: 子视频对象
+*  @param pstSampler 最新一帧单个子视频截图的结构体参数指针
+*/
+typedef void(*PFN_NLSS_CHILD_VIDEO_SAMPLER_CB)(_HNLSSCHILDSERVICE hNLSSChild, ST_NLSS_VIDEO_SAMPLER *pstSampler);
 
 
 _HNLSSCHILDSERVICE Nlss_GetChildVideo(_HNLSSERVICE hNlssService, void *pNlssChildID);

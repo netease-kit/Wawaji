@@ -54,6 +54,7 @@ typedef enum GamePlayType
 #define CAMERA_W		640
 #define CAMERA_H		480
 
+class WWJCameraLiveStream;
 namespace nim_chatroom
 {
 	int32_t GetConfigValueNum(const std::string& key, int32_t def_value);
@@ -176,7 +177,7 @@ namespace nim_chatroom
 		AutoUnregister	unregister_cb;
 
 		ChatRoomInfo info_;
-
+		std::shared_ptr<WWJCameraLiveStream> live_stream_;
 		WWJRtsStream rts_stream_1_;
 		WWJRtsStream rts_stream_2_;
 

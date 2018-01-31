@@ -12,7 +12,7 @@ namespace nim_livestream
 	typedef NLSS_RET(*Nlss_GetDefaultParam)(_HNLSSERVICE hNLSService, NLSS_OUT ST_NLSS_PARAM *pstParam);
 	typedef NLSS_RET(*Nlss_InitParam)(_HNLSSERVICE hNLSService, ST_NLSS_PARAM *pstParam);
 	typedef void(*Nlss_UninitParam)(_HNLSSERVICE hNLSService);
-	typedef void(*Nlss_SetStatusCB)(_HNLSSERVICE hNLSService, PFN_NLSS_STATUS_NTY pFunStatusNty, void* pUserData);
+	typedef void(*Nlss_SetStatusCB)(_HNLSSERVICE hNLSService, PFN_NLSS_STATUS_NTY pFunStatusNty);
 	typedef NLSS_RET(*Nlss_Start)(_HNLSSERVICE hNLSService);
 	typedef void(*Nlss_Stop)(_HNLSSERVICE hNLSService);
 	typedef NLSS_RET(*Nlss_StartLiveStream)(_HNLSSERVICE hNLSService);
@@ -45,8 +45,9 @@ namespace nim_livestream
 		static void UnLoadLivestreamingDll();
 		//初始化直播模块
 		bool InitSession(const std::string& url, const std::string&camera_id, LsErrorCallback ls_error_cb_);
-		void ClearSession();
-		friend void ErrorCallback(EN_NLSS_STATUS enStatus, EN_NLSS_ERRCODE enErrCode, void* pUserData);
+		void ClearSession();	
+		bool IsClearOk();
+		friend void ErrorCallback(_HNLSSERVICE hNLSService, EN_NLSS_STATUS enStatus, EN_NLSS_ERRCODE enErrCode);
 
 		//开始直播推流
 		bool OnStartLiveStream(OptCallback cb);

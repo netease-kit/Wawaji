@@ -132,7 +132,7 @@ EXPORTS_API   void     Nlss_ChildVideoStopCapture(_HNLSSCHILDSERVICE hNLSSChild)
 *
 *  @return 无
 */
-EXPORTS_API       void               Nlss_ChildVideoSetSoloPreviewCB(_HNLSSCHILDSERVICE hNLSSChild, PFN_NLSS_VIDEOSAMPLER_CB pFunVideoSamplerCB);
+EXPORTS_API   void     Nlss_ChildVideoSetSoloPreviewCB(_HNLSSCHILDSERVICE hNLSSChild, PFN_NLSS_CHILD_VIDEO_SAMPLER_CB pFunVideoSamplerCB);
 
 /**
 *  开|关子视频单独预览
