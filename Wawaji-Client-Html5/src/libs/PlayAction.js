@@ -3,6 +3,7 @@ import config from '../configs'
 class PlayAction {
   constructor (obj) {
     let {account, imToken, machineId, onInitSuccess, onInitFailed} = obj
+    console.log(account)
     this._machineId = machineId
     this._cameraId = 1
     this._uuid = null
@@ -10,7 +11,7 @@ class PlayAction {
     this._uuidTimer = null
     let self = this
     window._nim = SDK.NIM.getInstance({
-      debug: true,
+      debug: false,
       appKey: config.appKey,
       account,
       db: false,

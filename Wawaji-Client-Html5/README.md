@@ -305,8 +305,8 @@
     channelName,
     canvas: this._playElement1,
     disableGl: this._disableGl,
-    onSetup (obj) {
-      console.log(obj)
+    onSetup () {
+      console.log(new Date(), 'camera 1 whiteboard room joined')
       // ... 白板joinroom
     },
     onStartRender () {

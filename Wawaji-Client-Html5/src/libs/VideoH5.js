@@ -33,8 +33,8 @@ class VideoH5 {
       channelName,
       canvas: this._playElement1,
       disableGl: this._disableGl,
-      onSetup () {
-        console.log(new Date(), 'camera 1 whiteboard room joined')
+      onSetup (err, obj) {
+        console.log(new Date(), 'camera 1 whiteboard room joined', err, obj)
         // ... 白板joinroom
       },
       onStartRender () {
@@ -45,7 +45,7 @@ class VideoH5 {
     })
     callback()
   }
-  
+
   setVideoContainer2 (node, callback) {
     let channelName = `${this._channelPrefix}_2`
     this._playElement2 = node
