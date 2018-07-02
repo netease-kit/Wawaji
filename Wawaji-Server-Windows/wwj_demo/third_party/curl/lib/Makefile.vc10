@@ -80,7 +80,7 @@ ZLIB_PATH  = ../../zlib
 MACHINE  = X86
 !ENDIF
 
-# Added by Wang Rongtao<rtwang@corp.netease.com>
+# Added by Wang Rongtao
 !IFNDEF NENGINE_LIB_PATH
 NENGINE_LIB_PATH  = ../../../../libs
 !ENDIF
