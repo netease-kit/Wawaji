@@ -1,6 +1,6 @@
 // Copyright (c) 2011, NetEase Inc. All rights reserved.
 //
-// Author: Ruan Liang <ruanliang@corp.netease.com>
+// Author: Ruan Liang 
 // Date: 2011/10/6
 //
 // tuple unittest
